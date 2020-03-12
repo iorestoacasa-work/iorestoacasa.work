@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Smartwork, la soluzione è qui pronta per te!">
+    <meta name="author" content="beFair">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>Homepage</title>
+    <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="../dist/css/style.min.css" rel="stylesheet">
+    <link href="../dist/css/background.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        <header class="topbar" data-navbarbg="skin6">
+            <nav class="navbar top-navbar navbar-expand-md">
+                <div class="navbar-header" data-logobg="skin6">
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+                            class="ti-menu ti-close"></i></a>
+                    <div class="navbar-brand">
+                        <a href="index.html">
+                            <b class="logo-icon">
+                                <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            </b>
+
+                            <span class="logo-text">
+                                <span
+                                    style="margin-left: 6px; color: #272727; font-size: 22px;"><b>io</b>restoacasa</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="#"><i
+                            class="fas fa-question-circle"></i></a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
+
+                        <li class="nav-item d-none d-md-block">
+                            <a class="nav-link" href="javascript:void(0)">
+                                <div class="customize-input">
+                                    <button type="button" class="btn btn-rounded
+                                        btn-secondary"><b>#smartwork</b></button>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="nav-item d-none d-md-block">
+                            <a class="nav-link" href="#">
+                                <i data-feather="info" class="svg-icon"></i>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                    <ul class="navbar-nav float-right">
+                        <li class="nav-item d-none d-md-block">
+                            <a class="nav-link dropdown-toggle" href="#">
+                                <i class="fas fa-question-circle"></i>
+                                <span class="ml-2 d-none d-lg-inline-block"><span>Hey,</span> <span
+                                        class="text-dark">serve aiuto?</span></span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <div class="scroll-sidebar" data-sidebarbg="skin6">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.html"
+                                aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
+                                    class="hide-menu">Dashboard</span></a></li>
+                        <li class="list-divider"></li>
+                        <li class="nav-small-cap"><span class="hide-menu">Utilità</span></li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link" href="faq.html" aria-expanded="false"><i
+                                    data-feather="message-square" class="feather-icon"></i><span class="hide-menu">F.A.Q
+                                </span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="contacts.html"
+                                aria-expanded="false"><i data-feather="mail" class="feather-icon"></i><span
+                                    class="hide-menu">Contatti</span></a></li>
+                        <li class="list-divider"></li>
+
+                        <li class="nav-small-cap"><span class="hide-menu">Informazioni</span></li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="https://befair.it"
+                                aria-expanded="false"><i data-feather="briefcase" class="feather-icon"></i><span
+                                    class="hide-menu">beFair</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i
+                                    data-feather="share-2" class="feather-icon"></i><span
+                                    class="hide-menu">Condividi!</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="page-wrapper">
+
+
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 align-self-center">
+                        <h1 class="page-title text-truncate text-dark font-weight-medium mb-1">Dashboard</h1>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb m-0 p-0">
+                                    <li class="breadcrumb-item"><a href="index.html">Una piattaforma, mille
+                                            utilizzi!</a>
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Crea la tua stanza</h2>
+                                <h6 class="card-subtitle mt-2">Assegna un nome alla stanza, come ad esempio
+                                    <code>lavoro-magico-per-Giorgio</code>, all'interno della casella di testo</h6>
+                                <form class="mt-3">
+                                    <label class="form-control-label" for="inputSuccess1">Inserisci il testo</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="placeholder"
+                                            placeholder="Nome della stanza">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-success" type="button"><b>CREA</b></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-group">
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">236</h2>
+                                        <span
+                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span>
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Stanze create
+                                    </h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="home"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">32</h2>
+                                        <span
+                                            class="badge bg-success font-12 text-white font-weight-medium badge-pill ml-2 d-md-none d-lg-block">+48.83%</span>
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Persone collegate
+                                    </h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="users"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">3 ore</h2>
+                                        <span
+                                            class="badge bg-danger font-12 text-white font-weight-medium badge-pill ml-2 d-md-none d-lg-block">-18.33%</span>
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Tempo risparmiato
+                                    </h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="clock"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup
+                                            class="set-doller">GB</sup>762</h2>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Utilizzo dei dati
+                                    </h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="database"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h2 class="card-title">Stanze disponibili</h2>
+                                    <div class="ml-auto">
+                                        <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i data-feather="refresh-cw"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table no-wrap v-middle mb-0">
+                                        <thead>
+                                            <tr class="border-0">
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Nome stanza
+                                                </th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">Capienza
+                                                </th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Qualità della
+                                                    connesione</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
+                                                    Stato
+                                                </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="border-top-0 px-2 py-4">
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <div class="mr-3">
+                                                            <div class="mr-3"><a class="btn btn-primary rounded-circle btn-circle
+                                                                font-14" style="color: white;"><b>MD</b></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="">
+                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">I
+                                                                magici draghi</h5>
+                                                            <span class="text-muted font-14">12 Ottobre 2020</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14"><b>3 persone</b>
+                                                    su 8</td>
+                                                <td class="border-top-0 px-2 py-4">
+                                                    <div class="popover-icon">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half"></i>
+                                                    </div>
+                                                </td>
+                                                <td class="border-top-0 text-center px-2 py-4"><i
+                                                        class="fa fa-circle text-success font-12" data-toggle="tooltip"
+                                                        title="Libera"></i>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="px-2 py-4">
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <div class="mr-3">
+                                                            <div class="mr-3"><a class="btn btn-primary rounded-circle btn-circle
+                                                                font-14" style="color: white;"><b>NF</b></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="">
+                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Non
+                                                                fermarsi mai
+                                                            </h5>
+                                                            <span class="text-muted font-14">19 Agosto 2020</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-muted px-2 py-4 font-14"><b>16 persone</b> su 25</td>
+                                                <td class="px-2 py-4">
+                                                    <div class="popover-icon">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center px-2 py-4"><i
+                                                        class="fa fa-circle text-success font-12" data-toggle="tooltip"
+                                                        data-placement="top" title="Libera"></i>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="px-2 py-4">
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <div class="mr-3">
+                                                            <div class="mr-3"><a class="btn btn-primary rounded-circle btn-circle
+                                                                font-14" style="color: white;"><b>SL</b></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="">
+                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Si
+                                                                lavora anche da casa!
+                                                            </h5>
+                                                            <span class="text-muted font-14">24 Settembre 2020</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-muted px-2 py-4 font-14"><b>15 persone</b> su 15</td>
+                                                <td class="px-2 py-4">
+                                                    <div class="popover-icon">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half"></i>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center px-2 py-4"><i
+                                                        class="fa fa-circle text-danger font-12" data-toggle="tooltip"
+                                                        data-placement="top" title="Occupata"></i>
+                                                </td>
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="footer text-center text-muted">
+                Made with ❤️ by <a href="https://befair.it">beFair</a>.
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <!-- apps -->
+    <script src="../dist/js/app-style-switcher.js"></script>
+    <script src="../dist/js/feather.min.js"></script>
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <script src="../assets/extra-libs/c3/d3.min.js"></script>
+    <script src="../assets/extra-libs/c3/c3.min.js"></script>
+    <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
+</body>
+
+</html>
