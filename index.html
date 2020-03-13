@@ -267,13 +267,15 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
-                                    <h2 class="card-title">Server disponibili</h2>
-                                    <div class="ml-auto">
+                                    <h2 class="card-title">
+                                        Server disponibili
+                                    </h2>
+                                    <!-- <div class="ml-auto">
                                         <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i data-feather="refresh-cw"></i>
                                         </button>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table no-wrap v-middle mb-0">
@@ -287,9 +289,6 @@
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">
                                                     Stato
                                                 </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                </th>
-                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -297,9 +296,11 @@
                                                 <td class="border-top-0 px-2 py-4">
                                                     <div class="d-flex no-block align-items-center">
                                                         <div class="">
-                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">
-                                                                https://befair1.iorestoacasa.work/
-                                                            </h5>
+                                                            <a href="https://befair1.iorestoacasa.work">
+                                                                <h5 class="text-dark mb-0 font-16 font-weight-medium">
+                                                                    https://befair1.iorestoacasa.work/
+                                                                </h5>
+                                                            </a>
                                                             <span class="text-muted font-14">
                                                                 messo a disposizione da <a href="https://befair.it">beFair</a>
                                                             </span>
@@ -307,26 +308,21 @@
                                                     </div>
                                                 </td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">
-                                                    <b>?</b>
+                                                    <b data-toggle="tooltip" title="funzionalità in arrivo!">?</b>
                                                 </td>
                                                 <td class="border-top-0 text-center px-2 py-4">
-                                                    <i class="fa fa-circle text-success font-12" data-toggle="tooltip" title="Libera"></i>
-                                                </td>
-                                                <td class="border-top-0 text-center px-2 py-4">
-                                                    <a href="https://befair1.iorestoacasa.work">
-                                                        <button class="btn btn-link" type="button">
-                                                            <i data-feather="play"></i>
-                                                        </button>
-                                                    </a>
+                                                    <i class="fa fa-circle text-success font-12" data-toggle="tooltip" title="Online"></i>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="border-top-0 px-2 py-4">
                                                     <div class="d-flex no-block align-items-center">
                                                         <div class="">
-                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">
-                                                                https://befair2.iorestoacasa.work/
-                                                            </h5>
+                                                            <a href="https://befair2.iorestoacasa.work">
+                                                                <h5 class="text-dark mb-0 font-16 font-weight-medium">
+                                                                    https://befair2.iorestoacasa.work/
+                                                                </h5>
+                                                            </a>
                                                             <span class="text-muted font-14">
                                                                 messo a disposizione da <a href="https://befair.it">beFair</a>
                                                             </span>
@@ -334,30 +330,32 @@
                                                     </div>
                                                 </td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">
-                                                    <b>?</b>
+                                                    <b data-toggle="tooltip" title="funzionalità in arrivo!">?</b>
                                                 </td>
                                                 <td class="border-top-0 text-center px-2 py-4">
-                                                    <i class="fa fa-circle text-success font-12" data-toggle="tooltip" title="Libera"></i>
-                                                </td>
-                                                <td class="border-top-0 text-center px-2 py-4">
-                                                    <a href="https://befair2.iorestoacasa.work">
-                                                        <button class="btn btn-link" type="button">
-                                                            <i data-feather="play"></i>
-                                                        </button>
-                                                    </a>
+                                                    <i class="fa fa-circle text-success font-12" data-toggle="tooltip" title="Online"></i>
                                                 </td>
                                             </tr>
                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td><a href="voglio-contribuire.html">Aggiungi il tuo server a questa lista!</a></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
                         </div>
-                    </div></div>
+                    </div>
+                </div>
 
             </div>
 
             <footer class="footer text-center text-muted">
-                Made with ❤️ by <a href="https://befair.it">beFair</a> in Fabriano.
+                Made with ❤️ in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank">Fabriano</a>.
             </footer>
 
         </div>
@@ -365,8 +363,8 @@
     </div>
 
     <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
-    <!-- <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- apps -->
     <!-- apps -->
     <script src="./dist/js/app-style-switcher.js"></script>
