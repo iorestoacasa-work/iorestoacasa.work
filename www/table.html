@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Primary Meta Tags -->
+    <title>Io Resto A Casa .work</title>
+    <meta name="title" content="Io Resto A Casa .work">
+    <meta name="description" content="Continuiamo a lavorare, studiare, socializzare grazie a Jitsi Meet">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iorestoacasa.work/">
+    <meta property="og:title" content="Io Resto A Casa .work">
+    <meta property="og:description" content="Continuiamo a lavorare, studiare, socializzare grazie a Jitsi Meet">
+    <meta property="og:image" content="https://iorestoacasa.work/assets/images/logo-icon.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://iorestoacasa.work/">
+    <meta property="twitter:title" content="Io Resto A Casa .work">
+    <meta property="twitter:description" content="Continuiamo a lavorare, studiare, socializzare grazie a Jitsi Meet">
+    <meta property="twitter:image" content="https://iorestoacasa.work/assets/images/logo-icon.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.png">
+    <title>Io Resto A Casa .work</title>
+    <link href="./assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+    <link href="./assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="./assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="./dist/css/style.min.css" rel="stylesheet">
+    <link href="./dist/css/background.css" rel="stylesheet">
+    <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            line-height: 30px;
+            padding: 4px;
+            background-color: #f9fbfd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        <div class="container-fluid" id="vue-table">
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-sm table-hover no-wrap v-middle mb-0">
+                                    <thead>
+                                        <tr class="border-0">
+                                            <th class="border-0 font-14 font-weight-medium text-muted">Nome server
+                                            </th>
+                                            <th class="border-0 font-14 font-weight-medium text-muted text-center px-2">
+                                                Utenti connessi
+                                            </th>
+                                            <th class="border-0 font-14 font-weight-medium text-muted text-center">
+                                                Stato
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="host in hosts">
+                                            <td class="border-top-0 px-2 py-4">
+                                                <div class="d-flex no-block align-items-center">
+                                                    <div class="">
+                                                        <a :href="host.url">
+                                                            <h4 class="text-dark mb-0 font-weight-medium">
+                                                                {{ host.name }}
+                                                            </h4>
+                                                        </a>
+                                                        <span class="text-muted font-16">
+                                                            messo a disposizione da <a
+                                                                :href="host.by_url"><b>{{ host.by }}</b></a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="border-top-0 text-muted text-center px-2 py-4 font-14">
+                                                <template v-if="host.user_count === '?'">
+                                                    <b data-toggle="tooltip" title="funzionalità in arrivo!">?</b>
+                                                </template>
+                                                <template v-else>
+                                                    {{ host.user_count }}
+                                                </template>
+                                            </td>
+                                            <td class="border-top-0 text-center px-2 py-4">
+                                                <i class="fa fa-circle text-success font-12" data-toggle="tooltip"
+                                                    title="Online"></i>
+                                            </td>
+                                            <td class="border-top-0 text-center px-2 py-4">
+                                                <button @click="window.location.replace(host.url);" type="button"
+                                                    class="btn btn-rounded btn-primary">
+                                                    <i class="fa fa-play text-white font-12" data-toggle="tooltip"
+                                                        title="Online"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>
+                                                <br>
+                                                <a href="https://iorestoacasa.work/voglio-contribuire.html">
+                                                    Aggiungi il tuo server a questa lista!
+                                                </a>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer text-center text-muted">
+            <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank"><b>iorestoacasa.work</b></a> is made with
+            ❤️
+            in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank">Fabriano</a>.
+        </footer>
+
+    </div>
+
+    <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <!-- apps -->
+    <script src="./dist/js/app-style-switcher.js"></script>
+    <script src="./dist/js/feather.min.js"></script>
+    <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="./dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="./dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="./assets/extra-libs/c3/d3.min.js"></script>
+    <script src="./assets/extra-libs/c3/c3.min.js"></script>
+    <script src="./assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="./assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="./assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="./assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="./dist/js/pages/dashboards/dashboard1.min.js"></script> -->
+    <script src="dist/js/vue.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script>
+        var app = new Vue({
+            el: '#vue-table',
+            data: {
+                hosts: [],
+                fixed_hosts: [{
+                        name: "jitsi.linux.it",
+                        user_count: "?",
+                        by: "ILS",
+                        by_url: "https://www.ils.org/",
+                        url: "https://jitsi.linux.it"
+                    },
+                    {
+                        name: "jitsi2.linux.it",
+                        user_count: "?",
+                        by: "ILS",
+                        by_url: "https://www.ils.org/",
+                        url: "https://jitsi2.linux.it"
+                    },
+                    {
+                        name: "webmeeting.opensolution.it",
+                        user_count: "?",
+                        by: "Open Solution Srl",
+                        by_url: "https://www.opensolution.it",
+                        url: "https://webmeeting.opensolution.it"
+                    }
+                ],
+            },
+            mounted: function () {
+                fetch('https://iorestoacasa.work/hosts.json')
+                    .then(r => r.json())
+                    .then(json => {
+                        this.hosts = json.concat(this.fixed_hosts);
+                    });
+
+            },
+        })
+    </script>
+</body>
+
+</html>

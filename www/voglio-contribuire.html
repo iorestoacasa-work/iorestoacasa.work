@@ -32,6 +32,9 @@
     <link href="./assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="./dist/css/style.min.css" rel="stylesheet">
     <link href="./dist/css/background.css" rel="stylesheet">
+    <!-- Pretty HTML -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atelier-sulphurpool-light.min.css">
     <style>
         .footer {
             position: fixed;
@@ -179,7 +182,7 @@
             </div>
         </aside>
 
-        <div class="page-wrapper">
+        <div class="page-wrapper" id="app">
 
 
             <div class="page-breadcrumb">
@@ -235,6 +238,77 @@
                         </div>
                         <div class="card">
                             <div class="card-body">
+                                <h2 class="card-title">Integra la lista dei server nel tuo sito</h2>
+                                <h3 class="card-subtitle mt-2 mb-2 text-muted">Inserisci il seguente snippet nel tuo
+                                    sito web per mostrare ai tuoi utenti la lista di server Jitsi che possono
+                                    utilizzare. Se preferisci puoi attingere direttamente ai dati grezzi tramite il file
+                                    <code>/hosts.json</code></h3>
+
+                                <div class="mt-2 card text-white">
+                                    <div class="card-body">
+                                        <pre style="border-radius: 8px;"><code class="html">&lt;div class="work_iframe"&gt;
+    &lt;iframe src="https://iorestoacasa.work/table.html" height="70" width="120"
+        style="border:0px;" name="iorestoacasa"&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;style&gt;
+    .work_iframe {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+    }
+    .work_iframe iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+&lt;/style&gt;</code></pre>
+
+                                        <div v-if="!show">
+                                            <button @click="showToast()" data-clipboard-text='
+&lt;div class="work_iframe"&gt;
+&lt;iframe src="https://iorestoacasa.work/table.html" height="70" width="120"
+style="border:0px;" name="iorestoacasa"&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;style&gt;
+.work_iframe {
+position: relative;
+height: 0;
+overflow: hidden;
+max-width: 100%;
+}
+.work_iframe iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+&lt;/style&gt;
+                                        ' class=" btn btn-primary btn-block"> <i data-feather="clipboard"></i>
+                                                <b> COPIA!</b>
+                                            </button>
+                                        </div>
+                                        <div v-else>
+                                            <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                                                role="alert">
+                                                <button type="button" class="close" data-dismiss="alert"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                                <strong>Yeah! - </strong> Testo copiato correttamente
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
                                 <h2 class="card-title">Spargi la voce!</h2>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted">Ci sono tante aziende, scuole,
                                     associazioni ed istituzioni che non si sono ancora organizzate per i lavoro a
@@ -261,6 +335,31 @@
         <script src="./dist/js/sidebarmenu.js"></script>
         <!--Custom JavaScript -->
         <script src="./dist/js/custom.min.js"></script>
+        <!-- Pretty HTML -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
+        <!-- Copy -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+        <script>
+            new ClipboardJS('.btn');
+        </script>
+        <script src="dist/js/vue.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    show: false,
+                },
+                methods: {
+                    showToast: function () {
+                        this.show = true;
+                    }
+                },
+            })
+        </script>
         <!--This page JavaScript -->
         <!-- <script src="./assets/extra-libs/c3/d3.min.js"></script>
     <script src="./assets/extra-libs/c3/c3.min.js"></script>
