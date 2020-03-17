@@ -364,9 +364,9 @@
                                                                     {{ host.name }}
                                                                 </h4>
                                                             </a>
-                                                            <span class="text-muted font-16">
-                                                                messo a disposizione da <a
-                                                                    :href="host.by_url"><b>{{ host.by }}</b></a>
+                                                            <span class="text-muted font-16">messo a disposizione da
+                                                            </span>
+                                                            <span v-html="unicorniMagici(host)">
                                                             </span>
                                                         </div>
                                                     </div>
@@ -447,14 +447,14 @@
             el: '#vue-table',
             data: {
                 hosts: [],
-		fixed_hosts: [],
+                fixed_hosts: [],
             },
             mounted: function () {
                 fetch('https://iorestoacasa.work/hosts.json')
                     .then(r => r.json())
                     .then(json => {
                         this.hosts = json.concat(this.fixed_hosts);
-                        this.hosts.sort((a,b) => a.user_count - b.user_count);
+                        this.hosts.sort((a, b) => a.user_count - b.user_count);
                     });
 
             },
@@ -478,6 +478,14 @@
                 },
                 goToPage: function (url) {
                     window.open(url);
+                },
+                unicorniMagici: function (host) {
+                    if (host.by === "\ud83e\udd84") {
+                        return `<a href="https://unicorni.team/"><b>\ud83e\udd84</b></a> e <a
+                            href="https://www.shellrent.com/"><b>Shellrent</b></a>`;
+                    } else {
+                        return `<a href=` + host.by_url + `><b>` + host.by + `</b></a>`;
+                    }
                 }
             },
         })
