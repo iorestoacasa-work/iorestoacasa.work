@@ -447,21 +447,7 @@
             el: '#vue-table',
             data: {
                 hosts: [],
-                fixed_hosts: [{
-                        name: "jitsi.linux.it",
-                        user_count: "?",
-                        by: "ILS",
-                        by_url: "https://www.ils.org/",
-                        url: "https://jitsi.linux.it"
-                    },
-                    {
-                        name: "jitsi2.linux.it",
-                        user_count: "?",
-                        by: "ILS",
-                        by_url: "https://www.ils.org/",
-                        url: "https://jitsi2.linux.it"
-                    }
-                ],
+		fixed_hosts: [],
             },
             mounted: function () {
                 fetch('https://iorestoacasa.work/hosts.json')
