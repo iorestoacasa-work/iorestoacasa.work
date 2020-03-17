@@ -454,6 +454,7 @@
                     .then(r => r.json())
                     .then(json => {
                         this.hosts = json.concat(this.fixed_hosts);
+                        this.hosts.sort((a,b) => a.user_count - b.user_count);
                     });
 
             },
