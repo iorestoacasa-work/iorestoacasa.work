@@ -361,10 +361,10 @@
                                             <tr v-for="host in hosts">
                                                 <td class="border-top-0 py-3">
                                                     <div class="d-flex no-block align-items-center">
-                                                        <!-- <div class="mr-3">
+                                                        <div class="d-none d-lg-block mr-3">
                                                             <a class="btn btn-primary rounded-circle btn-circle font-12 text-white
                                                                 "><b>{{ host.by.substring(0,2).toUpperCase() }}</b></a>
-                                                        </div> -->
+                                                        </div>
                                                         <div class="">
                                                             <a :href="host.url">
                                                                 <h4 class="text-dark mb-0 font-weight-medium">
@@ -387,7 +387,7 @@
                                                     </template>
                                                 </td>
                                                 <td class="border-top-0 text-center py-3">
-                                                    <div class="progress mb-2" v-html="cpuUsage(host.cpu_usage)">
+                                                    <div class="progress" v-html="cpuUsage(host.cpu_usage)">
                                                     </div>
                                                 </td>
                                                 <td class="wrapper border-top-0 text-center py-3">
@@ -465,7 +465,7 @@
                     .then(r => r.json())
                     .then(json => {
                         this.hosts = json.concat(this.fixed_hosts);
-                        this.hosts.sort((a, b) => a.user_count - b.user_count);
+                        this.hosts.sort((a, b) => a.cpu_usage - b.cpu_usage);
                     });
 
             },
