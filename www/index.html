@@ -340,7 +340,7 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table table-hover no-wrap v-middle mb-0">
+                                    <table class="table table-sm table-hover no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Nome server
@@ -348,6 +348,10 @@
                                                 <th
                                                     class="border-0 font-14 font-weight-medium text-muted text-center px-2">
                                                     Utenti connessi
+                                                </th>
+                                                <th
+                                                    class="border-0 font-14 font-weight-medium text-muted text-center px-2">
+                                                    Carico
                                                 </th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">
                                                     Stato
@@ -358,26 +362,34 @@
                                             <tr v-for="host in hosts">
                                                 <td class="border-top-0 px-2 py-4">
                                                     <div class="d-flex no-block align-items-center">
+                                                        <!-- <div class="mr-3">
+                                                            <a class="btn btn-primary rounded-circle btn-circle font-12 text-white
+                                                                "><b>{{ host.by.substring(0,2).toUpperCase() }}</b></a>
+                                                        </div> -->
                                                         <div class="">
                                                             <a :href="host.url">
                                                                 <h4 class="text-dark mb-0 font-weight-medium">
                                                                     {{ host.name }}
                                                                 </h4>
                                                             </a>
-                                                            <span class="text-muted font-16">messo a disposizione da
+                                                            <span class="font-16">messo a disposizione da
                                                             </span>
                                                             <span v-html="unicorniMagici(host)">
                                                             </span>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="border-top-0 text-muted text-center px-2 py-4 font-14">
+                                                <td class="border-top-0 text-center px-2 py-4 font-18">
                                                     <template v-if="host.user_count === '?'">
                                                         <b data-toggle="tooltip" title="funzionalità in arrivo!">?</b>
                                                     </template>
                                                     <template v-else>
-                                                        {{ host.user_count }}
+                                                        <b>{{ host.user_count }}</b>
                                                     </template>
+                                                </td>
+                                                <td class="border-top-0 text-center px-2 py-4">
+                                                    <div class="progress mb-2" v-html="cpuUsage(host.cpu_usage)">
+                                                    </div>
                                                 </td>
                                                 <td class="border-top-0 text-center px-2 py-4">
                                                     <i class="fa fa-circle text-success font-12" data-toggle="tooltip"
@@ -486,6 +498,19 @@
                     } else {
                         return `<a href=` + host.by_url + `><b>` + host.by + `</b></a>`;
                     }
+                },
+                cpuUsage: function (value) {
+                    var color;
+                    if (Math.round(value * 100) <= 60) {
+                        color = "bg-success"
+                    } else if (Math.round(value * 100) > 60 && Math.round(value * 100) <= 80) {
+                        color = "bg-warning"
+                    } else {
+                        color = "bg-error"
+                    }
+                    return `<div class="progress-bar ` + color + ` " role="progressbar"
+                        style="width: ` + Math.round(value * 100) + `%"
+                        aria-valuenow="` + Math.round(value * 100) + `" aria-valuemin="0" aria-valuemax="100"></div>`
                 }
             },
         })
