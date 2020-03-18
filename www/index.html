@@ -32,6 +32,7 @@
     <link href="./assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="./dist/css/style.min.css" rel="stylesheet">
     <link href="./dist/css/background.css" rel="stylesheet">
+    <link href="./dist/css/pulsar.css" rel="stylesheet">
     <style>
         .footer {
             position: fixed;
@@ -345,12 +346,10 @@
                                             <tr class="border-0">
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Nome server
                                                 </th>
-                                                <th
-                                                    class="border-0 font-14 font-weight-medium text-muted text-center px-2">
+                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
                                                     Utenti connessi
                                                 </th>
-                                                <th
-                                                    class="border-0 font-14 font-weight-medium text-muted text-center px-2">
+                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
                                                     Carico
                                                 </th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">
@@ -391,9 +390,9 @@
                                                     <div class="progress mb-2" v-html="cpuUsage(host.cpu_usage)">
                                                     </div>
                                                 </td>
-                                                <td class="border-top-0 text-center px-2 py-4">
-                                                    <i class="fa fa-circle text-success font-12" data-toggle="tooltip"
-                                                        title="Online"></i>
+                                                <td class="wrapper border-top-0 text-center px-2 py-4">
+                                                    <i class="pulsar fa fa-circle text-success font-12"
+                                                        data-toggle="tooltip" title="Online"></i>
                                                 </td>
                                                 <td class="border-top-0 text-center px-2 py-4">
                                                     <button @click="window.location.replace(host.url);" type="button"
@@ -508,7 +507,8 @@
                     } else {
                         color = "bg-error"
                     }
-                    return `<div class="progress-bar ` + color + ` " role="progressbar"
+                    return `<div class="progress-bar ` + color + ` progress-bar-striped progress-bar-animated"
+                        role="progressbar"
                         style="width: ` + Math.round(value * 100) + `%"
                         aria-valuenow="` + Math.round(value * 100) + `" aria-valuemin="0" aria-valuemax="100"></div>`
                 }

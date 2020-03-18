@@ -1,0 +1,28 @@
+.wrapper {
+    padding: 6px;
+}
+
+@keyframes shadow-pulse {
+    0% {
+        box-shadow: 0 0 0 0px rgba(49, 156, 0, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 0 14px rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes shadow-pulse-big {
+    0% {
+        box-shadow: 0 0 0 0px rgba(49, 156, 0, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 0 14px rgba(0, 0, 0, 0);
+    }
+}
+
+.pulsar {
+    border-radius: 60px;
+    animation: shadow-pulse 2s infinite;
+}
