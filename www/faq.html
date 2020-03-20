@@ -31,6 +31,22 @@
     <link href="./assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="./assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="./dist/css/style.min.css" rel="stylesheet">
+    <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            line-height: 30px;
+            padding: 4px;
+            background-color: #f9fbfd;
+        }
+    </style>
 </head>
 
 <body>
@@ -69,14 +85,14 @@
 
                     <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
 
-                        <li class="nav-item d-none d-md-block">
+                        <!-- <li class="nav-item d-none d-md-block">
                             <a class="nav-link" href="javascript:void(0)">
                                 <div class="customize-input">
                                     <button type="button" class="btn btn-rounded
                                         btn-secondary"><b>#smartwork</b></button>
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="nav-item d-none d-md-block">
                             <a class="nav-link" href="#">
@@ -123,6 +139,12 @@
                                 <span class="hide-menu">Voglio contribuire!</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link sidebar-link" href="faq.html" aria-expanded="false">
+                                <i data-feather="copy" class="feather-icon"></i>
+                                <span class="hide-menu">F.A.Q</span>
+                            </a>
+                        </li>
 
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Informazioni</span></li>
@@ -163,84 +185,62 @@
                 </div>
             </div>
 
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card border-dark">
-                            <div class="card-header bg-dark">
-                                <h4 class="mb-0 text-white">Argomento</h4>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Domanda?</h3>
-                                <p class="card-text">Qua invece mettiamo la risposta magica</p>
-                                <a href="javascript:void(0)" class="btn btn-secondary"><b>LINK</b></a>
+            <div class="container-fluid" style="padding-top: 15px;">
+                <div class="accordion" id="accordionWork">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Collapsible Group Item #1
+                                </button>
+                            </h5>
+                        </div>
 
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionWork">
+                            <div class="card-body">
+                                LOREM IPSUM
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card border-dark">
-                            <div class="card-header bg-dark">
-                                <h4 class="mb-0 text-white">Argomento</h4>
-                            </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Collapsible Group Item #2
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionWork">
                             <div class="card-body">
-                                <h3 class="card-title">Domanda?</h3>
-                                <p class="card-text">Qua invece mettiamo la risposta magica</p>
-                                <a href="javascript:void(0)" class="btn btn-secondary"><b>LINK</b></a>
+                                LOREM IPSUM
                             </div>
                         </div>
                     </div>
-
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Collapsible Group Item #3
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionWork">
+                            <div class="card-body">
+                                LOREM IPSUM
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card border-dark">
-                            <div class="card-header bg-dark">
-                                <h4 class="mb-0 text-white">Argomento</h4>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Domanda?</h3>
-                                <p class="card-text">Qua invece mettiamo la risposta magica</p>
-                                <a href="javascript:void(0)" class="btn btn-secondary"><b>LINK</b></a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card border-dark">
-                            <div class="card-header bg-dark">
-                                <h4 class="mb-0 text-white">Argomento</h4>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Domanda?</h3>
-                                <p class="card-text">Qua invece mettiamo la risposta magica</p>
-                                <a href="javascript:void(0)" class="btn btn-secondary"><b>LINK</b></a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card border-dark">
-                            <div class="card-header bg-dark">
-                                <h4 class="mb-0 text-white">Argomento</h4>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Domanda?</h3>
-                                <p class="card-text">Qua invece mettiamo la risposta magica</p>
-                                <a href="javascript:void(0)" class="btn btn-secondary"><b>LINK</b></a>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
 
             <footer class="footer text-center text-muted">
-                Made with ❤️ by <a href="https://befair.it">beFair</a>.
+                Made with ❤️ in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank">Fabriano</a>.
             </footer>
 
         </div>
