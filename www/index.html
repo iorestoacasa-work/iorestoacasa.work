@@ -48,6 +48,15 @@
             padding: 4px;
             background-color: #f9fbfd;
         }
+        #total-info .card-body {
+            padding: 10px 20px;
+        }
+        #total-info {
+            margin-bottom: 12px;
+        }
+        #breadcrumb {
+            padding-top: 15px;
+        }
     </style>
 </head>
 
@@ -183,7 +192,7 @@
         <div class="page-wrapper" id="vue-table">
 
 
-            <div class="page-breadcrumb mb-4">
+            <div class="page-breadcrumb" id="breadcrumb">
                 <div class="row">
                     <div class="col-12 align-self-center">
                         <h1 class="page-title text-dark font-weight-medium mb-1">Restiamo a casa, ma continuiamo a
@@ -204,7 +213,7 @@
                 </div>
             </div>
 
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding-top: 15px;">
                 <!-- <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -228,7 +237,7 @@
                 </div> -->
 
 
-                <div class="card-group">
+                <div class="card-group" id="total-info">
                     <div class="card border-right">
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
@@ -359,7 +368,7 @@
                                         </thead>
                                         <tbody>
                                             <tr v-for="host in hosts">
-                                                <td class="border-top-0 py-3">
+                                                <td class="border-top-0 py-2">
                                                     <div class="d-flex no-block align-items-center">
                                                         <div class="d-none d-lg-block mr-3">
                                                             <a class="btn btn-primary rounded-circle btn-circle font-12 text-white
@@ -378,7 +387,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="border-top-0 text-center py-3 font-18">
+                                                <td class="border-top-0 text-center py-2 font-18">
                                                     <template v-if="host.user_count === '?'">
                                                         <b data-toggle="tooltip" title="funzionalità in arrivo!">?</b>
                                                     </template>
@@ -386,15 +395,15 @@
                                                         <b>{{ host.user_count }}</b>
                                                     </template>
                                                 </td>
-                                                <td class="border-top-0 text-center py-3">
+                                                <td class="border-top-0 text-center py-2">
                                                     <div class="progress" v-html="cpuUsage(host.cpu_usage)">
                                                     </div>
                                                 </td>
-                                                <td class="wrapper border-top-0 text-center py-3">
+                                                <td class="wrapper border-top-0 text-center py-2">
                                                     <i class="pulsar fa fa-circle text-success font-12"
                                                         data-toggle="tooltip" title="Online"></i>
                                                 </td>
-                                                <td class="border-top-0 text-center py-3">
+                                                <td class="border-top-0 text-center py-2">
                                                     <button @click="window.location.replace(host.url);" type="button"
                                                         class="btn btn-rounded btn-primary">
                                                         <i class="fa fa-play text-white font-14" data-toggle="tooltip"
