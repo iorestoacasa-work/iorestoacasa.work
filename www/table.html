@@ -32,6 +32,7 @@
     <link href="./assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="./dist/css/style.min.css" rel="stylesheet">
     <link href="./dist/css/background.css" rel="stylesheet">
+    <link href="./dist/css/pulsar.css" rel="stylesheet">
     <style>
         .footer {
             position: fixed;
@@ -65,146 +66,163 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-sm table-hover no-wrap v-middle mb-0">
-                                    <thead>
-                                        <tr class="border-0">
-                                            <th class="border-0 font-14 font-weight-medium text-muted">Nome server
-                                            </th>
-                                            <th class="border-0 font-14 font-weight-medium text-muted text-center px-2">
-                                                Utenti connessi
-                                            </th>
-                                            <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                Stato
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="host in hosts">
-                                            <td class="border-top-0 px-2 py-4">
-                                                <div class="d-flex no-block align-items-center">
-                                                    <div class="">
-                                                        <a :href="host.url">
-                                                            <h4 class="text-dark mb-0 font-weight-medium">
-                                                                {{ host.name }}
-                                                            </h4>
-                                                        </a>
-                                                        <span class="text-muted font-16">
-                                                            messo a disposizione da <a
-                                                                :href="host.by_url"><b>{{ host.by }}</b></a>
-                                                        </span>
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-hover no-wrap v-middle mb-0">
+                                        <thead>
+                                            <tr class="border-0">
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Nome server
+                                                </th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
+                                                    Utenti connessi
+                                                </th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
+                                                    Carico
+                                                </th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
+                                                    Stato
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="host in hosts">
+                                                <td class="border-top-0 py-2">
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <div class="d-none d-lg-block mr-3">
+                                                            <a class="btn btn-primary rounded-circle btn-circle font-12 text-white
+                                                                "><b>{{ host.by.substring(0,2).toUpperCase() }}</b></a>
+                                                        </div>
+                                                        <div class="">
+                                                            <a :href="host.url">
+                                                                <h4 class="text-dark mb-0 font-weight-medium">
+                                                                    {{ host.name }}
+                                                                </h4>
+                                                            </a>
+                                                            <span class="font-16">messo a disposizione da
+                                                            </span>
+                                                            <span v-html="unicorniMagici(host)">
+                                                            </span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td class="border-top-0 text-muted text-center px-2 py-4 font-14">
-                                                <template v-if="host.user_count === '?'">
-                                                    <b data-toggle="tooltip" title="funzionalità in arrivo!">?</b>
-                                                </template>
-                                                <template v-else>
-                                                    {{ host.user_count }}
-                                                </template>
-                                            </td>
-                                            <td class="border-top-0 text-center px-2 py-4">
-                                                <i class="fa fa-circle text-success font-12" data-toggle="tooltip"
-                                                    title="Online"></i>
-                                            </td>
-                                            <td class="border-top-0 text-center px-2 py-4">
-                                                <button @click="window.location.replace(host.url);" type="button"
-                                                    class="btn btn-rounded btn-primary">
-                                                    <i class="fa fa-play text-white font-12" data-toggle="tooltip"
-                                                        title="Online"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td>
-                                                <br>
-                                                <a href="https://iorestoacasa.work/voglio-contribuire.html">
-                                                    Aggiungi il tuo server a questa lista!
-                                                </a>
-                                            </td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                                </td>
+                                                <td class="border-top-0 text-center py-2 font-18">
+                                                    <template v-if="host.user_count === '?'">
+                                                        <b data-toggle="tooltip" title="funzionalità in arrivo!">?</b>
+                                                    </template>
+                                                    <template v-else>
+                                                        <b>{{ host.user_count }}</b>
+                                                    </template>
+                                                </td>
+                                                <td class="border-top-0 text-center py-2">
+                                                    <div class="progress" v-html="cpuUsage(host.cpu_usage)">
+                                                    </div>
+                                                </td>
+                                                <td class="wrapper border-top-0 text-center py-2">
+                                                    <i class="pulsar fa fa-circle text-success font-12"
+                                                        data-toggle="tooltip" title="Online"></i>
+                                                </td>
+                                                <td class="border-top-0 text-center py-2">
+                                                    <button @click="window.location.replace(host.url);" type="button"
+                                                        class="btn btn-rounded btn-primary">
+                                                        <i class="fa fa-play text-white font-14" data-toggle="tooltip"
+                                                            title="Online"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td>
+                                                    <a href="voglio-contribuire.html">
+                                                        Aggiungi il tuo server a questa lista!
+                                                    </a>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
+
+            <footer class="footer text-center text-muted">
+                <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank"><b>iorestoacasa.work</b></a> is made
+                with
+                ❤️
+                in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank">Fabriano</a>.
+            </footer>
 
         </div>
 
-        <footer class="footer text-center text-muted">
-            <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank"><b>iorestoacasa.work</b></a> is made with
-            ❤️
-            in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank">Fabriano</a>.
-        </footer>
-
-    </div>
-
-    <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- apps -->
-    <!-- apps -->
-    <script src="./dist/js/app-style-switcher.js"></script>
-    <script src="./dist/js/feather.min.js"></script>
-    <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="./dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="./dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <!-- <script src="./assets/extra-libs/c3/d3.min.js"></script>
+        <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+        <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- apps -->
+        <!-- apps -->
+        <script src="./dist/js/app-style-switcher.js"></script>
+        <script src="./dist/js/feather.min.js"></script>
+        <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+        <script src="./dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="./dist/js/custom.min.js"></script>
+        <!--This page JavaScript -->
+        <!-- <script src="./assets/extra-libs/c3/d3.min.js"></script>
     <script src="./assets/extra-libs/c3/c3.min.js"></script>
     <script src="./assets/libs/chartist/dist/chartist.min.js"></script>
     <script src="./assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="./assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="./assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="./dist/js/pages/dashboards/dashboard1.min.js"></script> -->
-    <script src="dist/js/vue.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
-    <script>
-        var app = new Vue({
-            el: '#vue-table',
-            data: {
-                hosts: [],
-                fixed_hosts: [{
-                        name: "jitsi.linux.it",
-                        user_count: "?",
-                        by: "ILS",
-                        by_url: "https://www.ils.org/",
-                        url: "https://jitsi.linux.it"
-                    },
-                    {
-                        name: "jitsi2.linux.it",
-                        user_count: "?",
-                        by: "ILS",
-                        by_url: "https://www.ils.org/",
-                        url: "https://jitsi2.linux.it"
-                    },
-                    {
-                        name: "webmeeting.opensolution.it",
-                        user_count: "?",
-                        by: "Open Solution Srl",
-                        by_url: "https://www.opensolution.it",
-                        url: "https://webmeeting.opensolution.it"
-                    }
-                ],
-            },
-            mounted: function () {
-                fetch('https://iorestoacasa.work/hosts.json')
-                    .then(r => r.json())
-                    .then(json => {
-                        this.hosts = json.concat(this.fixed_hosts);
-                    });
+        <script src="dist/js/vue.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+        <script>
+            var app = new Vue({
+                el: '#vue-table',
+                data: {
+                    hosts: [],
+                    fixed_hosts: [],
+                },
+                mounted: function () {
+                    fetch('https://iorestoacasa.work/hosts.json')
+                        .then(r => r.json())
+                        .then(json => {
+                            this.hosts = json.concat(this.fixed_hosts);
+                        });
 
-            },
-        })
-    </script>
+                },
+                methods: {
+                    unicorniMagici: function (host) {
+                        if (host.by === "\ud83e\udd84") {
+                            return `<a href="https://unicorni.team/"><b>\ud83e\udd84</b></a> e <a
+                        href="https://www.shellrent.com/"><b>Shellrent</b></a>`;
+                        } else {
+                            return `<a href=` + host.by_url + `><b>` + host.by + `</b></a>`;
+                        }
+                    },
+                    cpuUsage: function (value) {
+                        var color;
+                        if (Math.round(value * 100) <= 60) {
+                            color = "bg-success"
+                        } else if (Math.round(value * 100) > 60 &&
+                            Math.round(value * 100) <= 80) {
+                            color = "bg-warning"
+                        } else {
+                            color = "bg-danger"
+                        }
+                        return `<div
+                            class="progress-bar ` + color + ` progress-bar-striped progress-bar-animated"
+                            role="progressbar" style="width: ` + Math.round(value * 100) + `%"
+                            aria-valuenow="` + Math.round(value * 100) + `" aria-valuemin="0" aria-valuemax="100">
+                            </div>`
+                    }
+                },
+            })
+        </script>
 </body>
 
 </html>
