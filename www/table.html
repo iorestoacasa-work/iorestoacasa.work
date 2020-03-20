@@ -194,8 +194,8 @@
                         .then(r => r.json())
                         .then(json => {
                             this.hosts = json.concat(this.fixed_hosts);
+                            this.hosts.sort((a, b) => a.cpu_usage - b.cpu_usage);
                         });
-
                 },
                 methods: {
                     unicorniMagici: function (host) {
