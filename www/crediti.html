@@ -186,8 +186,6 @@
         </aside>
 
         <div class="page-wrapper">
-
-
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 align-self-center">
@@ -204,70 +202,76 @@
                                             coscienza<br>
                                             di non aver sprecato il vostro tempo, ma di avere fatto "del vostro
                                             meglio".»<br>
-                                            Lord Baden Powell</i>
+                                            <div style="margin-top: 6px;">
+                                                <b>Lord Baden Powell</b>
+                                            </div>
+                                        </i>
                                     </li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
-
                 </div>
             </div>
-
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding-top: 15px;" id="vue-credits">
                 <div class="row">
                     <div class="col-md-12">
-
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title">Persone</h2>
+                                <h2 class="card-title">Nato dall'idea di:</h2>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted">Dawid Węglarz</h3>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted">Francesco Coppola</h3>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted">Luca `fero[da]` Ferroni</h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted">Riccardo Serafini</h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.linkedin.com/in/davidefoschi/" target="_blank">Davide `argaar` Foschi</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.linkedin.com/in/andreacervesato/" target="_blank">Andrea `Koma` Cervesato</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.augiero.it" target="_blank">Giuseppe Augiero</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://minucci.net" target="_blank">Carlo Minucci</a></h3>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">Aziende</h2>
+				                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.linkedin.com/in/r-serafini/" target="_blank">Riccardo Serafini</a></h3>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://befair.it" target="_blank">beFair</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.opensolution.it/" target="_blank">Open Solution Srl</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.seeweb.it" target="_blank">Seeweb</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://unicorni.team/" target="_blank">🦄</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://win-tek.eu/" target="_blank">Win-Tek SRL</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.software.ready-web.it/" target="_blank">Ready Software</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.ifinet.it" target="_blank">Pawel Zorzan Urban - IFInet s.r.l.</a></h3>
+                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://pdp.linux.it" target="_blank">PDP Free Software User Group</a></h3>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">Associazioni</h2>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://pdp.linux.it" target="_blank">PDP Free Software User Group</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.ils.org/" target="_blank">Italian Linux Society</a></h3>
+                        <div class="row">
+                            <div class="col-12 align-self-center mb-2">
+                            <h1 class="page-title text-dark font-weight-medium mb-1">Server messi a disposizione da:</h1>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-body">
                                 <h2 class="card-title">Istituzioni</h2>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.garr.it" target="_blank">GARR</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.imaa.cnr.it" target="_blank">Consiglio Nazionale delle Ricerche - IMAA</a></h3>
+                                <template v-for="item in credits.INSTITUTION">
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">{{ item[0] }}</a></h3>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Persone</h2>
+                                <template v-for="item in credits.PERSON">
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">{{ item[0] }}</a></h3>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Associazioni</h2>
+                                <template v-for="item in credits.ASSOCIATION">
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">{{ item[0] }}</a></h3>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Aziende</h2>
+                                <template v-for="item in credits.COMPANY">
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">{{ item[0] }}</a></h3>
+                                </template>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
         <footer class="footer text-center text-muted">
             Made with ❤️ in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank">Fabriano</a>.
         </footer>
-
     </div>
-
     <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -287,6 +291,30 @@
     <script src="./assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="./assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="./dist/js/pages/dashboards/dashboard1.min.js"></script> -->
+    <!-- <script src="dist/js/vue.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#vue-credits',
+            data: {
+                credits: {
+                    'INSTITUTION': [],
+                    'PERSON': [],
+                    'COMPANY': [],
+                    'ASSOCIATION': [],
+                },
+            },
+            mounted: function () {
+                fetch('https://iorestoacasa.work/hosts.json')
+                .then(r => r.json())
+                .then(json => {
+                    this.credits = json.credits;
+                });
+            },
+            methods: {
+            },
+        })
+    </script>
 </body>
 
 </html>
