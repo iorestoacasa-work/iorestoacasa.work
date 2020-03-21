@@ -225,23 +225,7 @@
             <div class="container-fluid" style="padding-top: 15px;">
 
                 <div class="row" style="align-items: center;">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title">Crea la tua stanza</h3>
-                                <form>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="placeholder"
-                                            placeholder="Inserisci il nome della stanza">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-success" type="button"><b>CREA</b></button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex d-lg-flex d-md-block align-items-center">
@@ -262,7 +246,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Crea la tua stanza</h3>
+                                <form>
+                                    <div class="input-group">
+                                        <input v-model="room" type="text" class="form-control" id="placeholder"
+                                            placeholder="Inserisci il nome della stanza">
+                                        <div class="input-group-append">
+                                            <button @click="goToRoom()" class="btn btn-success"
+                                                type="button"><b>CREA</b></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex d-lg-flex d-md-block align-items-center">
@@ -421,6 +422,7 @@
         var app = new Vue({
             el: '#vue-table',
             data: {
+                room: "",
                 hosts: [],
             },
             mounted: function () {
@@ -474,6 +476,9 @@
                         role="progressbar"
                         style="width: ` + Math.round(value * 100) + `%"
                         aria-valuenow="` + Math.round(value * 100) + `" aria-valuemin="0" aria-valuemax="100"></div>`
+                },
+                goToRoom: function () {
+                    window.open(this.hosts[0].url + "/" + this.room);
                 }
             },
         })
