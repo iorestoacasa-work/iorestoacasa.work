@@ -478,13 +478,12 @@
             el: '#vue-table',
             data: {
                 hosts: [],
-                fixed_hosts: [],
             },
             mounted: function () {
                 fetch('https://iorestoacasa.work/hosts.json')
                     .then(r => r.json())
                     .then(json => {
-                        this.hosts = json.concat(this.fixed_hosts);
+                        this.hosts = json.instances;
                         this.hosts.sort((a, b) => a.cpu_usage - b.cpu_usage);
                     });
 
