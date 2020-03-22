@@ -250,17 +250,15 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">Crea la tua stanza</h3>
-                                <form>
-                                    <div class="input-group">
-                                        <input :autofocus="'autofocus'" @keyup.enter="goToRoom()" v-model="room"
-                                            class="form-control" id="room-name"
-                                            placeholder="Inserisci il nome della stanza">
-                                        <div class="input-group-append">
-                                            <button @click="goToRoom()" class="btn btn-success"
-                                                type="button"><b>CREA</b></button>
-                                        </div>
+                                <div class="input-group">
+                                    <input v-model="room" autofocus="autofocus" v-on:keydown.enter="goToRoom"
+                                        class="form-control" id="room-name"
+                                        placeholder="nome della stanza">
+                                    <div class="input-group-append">
+                                        <button @click="goToRoom()" class="btn btn-success"
+                                            type="button"><b>CREA</b></button>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -433,7 +431,6 @@
                         this.hosts = json.instances;
                         this.hosts.sort((a, b) => a.cpu_usage - b.cpu_usage);
                     });
-                // this.autofocus();
             },
             methods: {
                 connectedUsers: function () {
@@ -478,19 +475,16 @@
                         style="width: ` + Math.round(value * 100) + `%"
                         aria-valuenow="` + Math.round(value * 100) + `" aria-valuemin="0" aria-valuemax="100"></div>`
                 },
-                goToRoom: function () {
+                goToRoom: function (e) {
                     if (this.room === "") {
                         this.room = Math.random().toString(36).substring(2, 15) +
                             Math.random().toString(36).substring(2, 15);
                     }
-                    window.open(this.hosts[0].url + "/" + this.room);
+                    let base_url = this.hosts[0].url;
+                    if(base_url.slice(-1) !== '/')
+                        base_url += '/';
+                    window.open(base_url + this.room);
                 },
-                autofocus: function () {
-                    document.getElementById("room-name").focus();
-                },
-                enterTest: function () {
-                    console.log("YUPPI");
-                }
             },
         })
     </script>
