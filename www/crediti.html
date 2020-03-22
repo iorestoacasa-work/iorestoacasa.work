@@ -219,24 +219,38 @@
                         <div class="card">
                             <div class="card-body">
                                 <h2 class="card-title">Nato dall'idea di:</h2>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted">Dawid Węglarz</h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted">Francesco Coppola</h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted">Luca `fero[da]` Ferroni</h3>
-				                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://www.linkedin.com/in/r-serafini/" target="_blank">Riccardo Serafini</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://befair.it" target="_blank">beFair</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://pdp.linux.it" target="_blank">PDP Free Software User Group</a></h3>
+                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
+                                        href="https://www.linkedin.com/in/dawid-w%C4%99glarz-199574100/"
+                                        target="_blank">Dawid Węglarz</a>
+                                </h3>
+                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
+                                        href="https://www.linkedin.com/in/azzeccagarbugli/" target="_blank">Francesco
+                                        Coppola</a>
+                                </h3>
+                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
+                                        href="https://www.linkedin.com/in/lucaferroni/" target="_blank">Luca `fero[da]`
+                                        Ferroni</a></h3>
+                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
+                                        href="https://www.linkedin.com/in/r-serafini/" target="_blank">Riccardo
+                                        Serafini</a></h3>
+                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://befair.it"
+                                        target="_blank">beFair</a></h3>
+                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://pdp.linux.it"
+                                        target="_blank">PDP Free Software User Group</a></h3>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 align-self-center mb-2">
-                            <h1 class="page-title text-dark font-weight-medium mb-1">Server messi a disposizione da:</h1>
+                                <h1 class="page-title text-dark font-weight-medium mb-1">Server messi a disposizione da:
+                                </h1>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-body">
                                 <h2 class="card-title">Istituzioni</h2>
                                 <template v-for="item in credits.INSTITUTION">
-                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">{{ item[0] }}</a></h3>
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]"
+                                            target="_blank">{{ item[0] }}</a></h3>
                                 </template>
                             </div>
                         </div>
@@ -244,7 +258,8 @@
                             <div class="card-body">
                                 <h2 class="card-title">Persone</h2>
                                 <template v-for="item in credits.PERSON">
-                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">{{ item[0] }}</a></h3>
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]"
+                                            target="_blank">{{ item[0] }}</a></h3>
                                 </template>
                             </div>
                         </div>
@@ -252,7 +267,8 @@
                             <div class="card-body">
                                 <h2 class="card-title">Associazioni</h2>
                                 <template v-for="item in credits.ASSOCIATION">
-                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">{{ item[0] }}</a></h3>
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]"
+                                            target="_blank">{{ item[0] }}</a></h3>
                                 </template>
                             </div>
                         </div>
@@ -260,7 +276,8 @@
                             <div class="card-body">
                                 <h2 class="card-title">Aziende</h2>
                                 <template v-for="item in credits.COMPANY">
-                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">{{ item[0] }}</a></h3>
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]"
+                                            target="_blank">{{ item[0] }}</a></h3>
                                 </template>
                             </div>
                         </div>
@@ -306,12 +323,19 @@
             },
             mounted: function () {
                 fetch('https://iorestoacasa.work/hosts.json')
-                .then(r => r.json())
-                .then(json => {
-                    this.credits = json.credits;
-                });
+                    .then(r => r.json())
+                    .then(json => {
+                        this.credits = json.credits;
+                        this.sortCredits();
+                    });
             },
             methods: {
+                sortCredits: function () {
+                    this.credits['INSTITUTION'].sort((a, b) => a[0][0].localeCompare(b[0][0]));
+                    this.credits['PERSON'].sort((a, b) => a[0][0].localeCompare(b[0][0]));
+                    this.credits['COMPANY'].sort((a, b) => a[0][0].localeCompare(b[0][0]));
+                    this.credits['ASSOCIATION'].sort((a, b) => a[0][0].localeCompare(b[0][0]));
+                }
             },
         })
     </script>
