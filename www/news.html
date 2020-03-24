@@ -1,3 +1,6 @@
+---
+layout: page
+---
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -201,159 +204,70 @@
         </aside>
 
         <div class="page-wrapper">
+
+
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 align-self-center">
-                        <h1 class="page-title text-dark font-weight-medium mb-1">Crediti</h1>
+                        <h1 class="page-title text-dark font-weight-medium mb-1">News</h1>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item">
-                                        <i>«Ma il vero modo di essere felici è quello di procurare la felicità agli
-                                            altri.<br>
-                                            Preoccupatevi di lasciare questo mondo un po' migliore di come lo avete
-                                            trovato e, <br>
-                                            quando suonerà la vostra ora di morire, potrete morire felici nella
-                                            coscienza<br>
-                                            di non aver sprecato il vostro tempo, ma di avere fatto "del vostro
-                                            meglio".»<br>
-                                            <div style="margin-top: 6px;">
-                                                <b>Lord Baden Powell</b>
-                                            </div>
-                                        </i>
+                                    <li class="breadcrumb-item">Abbiamo nuove e bellissime novità pronte per la tua
+                                        lettura!
                                     </li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
+
                 </div>
             </div>
-            <div class="container-fluid" style="padding-top: 15px;" id="vue-credits">
+
+            <div class="container-fluid" style="padding-top: 15px;">
+                {% for post in site.posts %}
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">Nato dall'idea di:</h2>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
-                                        href="https://www.linkedin.com/in/dawid-w%C4%99glarz-199574100/"
-                                        target="_blank">Dawid Węglarz</a>
-                                </h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
-                                        href="https://www.linkedin.com/in/azzeccagarbugli/" target="_blank">Francesco
-                                        Coppola</a>
-                                </h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
-                                        href="https://www.linkedin.com/in/lucaferroni/" target="_blank">Luca `fero[da]`
-                                        Ferroni</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
-                                        href="https://www.linkedin.com/in/r-serafini/" target="_blank">Riccardo
-                                        Serafini</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://befair.it"
-                                        target="_blank">beFair</a></h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://pdp.linux.it"
-                                        target="_blank">PDP Free Software User Group</a></h3>
+                    <div class="col-12">
+                        <div class="card border-info">
+                            <div class="card-header bg-info">
+                                <h4 class="mb-0 text-white">{{ post.date | date: "%d %B %Y" }}</h4>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 align-self-center mb-2">
-                                <h1 class="page-title text-dark font-weight-medium mb-1">Server messi a disposizione da:
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title">Istituzioni</h2>
-                                <template v-for="item in credits.INSTITUTION">
-                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]"
-                                            target="_blank">{{ item[0] }}</a></h3>
-                                </template>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">Persone</h2>
-                                <template v-for="item in credits.PERSON">
-                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]"
-                                            target="_blank">{{ item[0] }}</a></h3>
-                                </template>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">Associazioni</h2>
-                                <template v-for="item in credits.ASSOCIATION">
-                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]"
-                                            target="_blank">{{ item[0] }}</a></h3>
-                                </template>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">Aziende</h2>
-                                <template v-for="item in credits.COMPANY">
-                                    <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]"
-                                            target="_blank">{{ item[0] }}</a></h3>
-                                </template>
+                                <h3 class="card-title">{{ post.title }}</h3>
+                                <p class="card-text">{{ post.desc }}</p>
+                                <a href=" ../.{{ post.url }}" class="btn btn-success"> <i data-feather="eye"
+                                        class="feather-icon"></i><b> LEGGI</b></a>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
+            <footer class="footer text-center text-muted">
+                Made with ❤️ in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank">Fabriano</a>.
+            </footer>
+
         </div>
-        <footer class="footer text-center text-muted">
-            Made with ❤️ in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank">Fabriano</a>.
-        </footer>
-    </div>
-    <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- apps -->
-    <!-- apps -->
-    <script src="./dist/js/app-style-switcher.js"></script>
-    <script src="./dist/js/feather.min.js"></script>
-    <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="./dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="./dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <!-- <script src="./assets/extra-libs/c3/d3.min.js"></script>
+
+        <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+        <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- apps -->
+        <!-- apps -->
+        <script src="./dist/js/app-style-switcher.js"></script>
+        <script src="./dist/js/feather.min.js"></script>
+        <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+        <script src="./dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="./dist/js/custom.min.js"></script>
+        <!--This page JavaScript -->
+        <!-- <script src="./assets/extra-libs/c3/d3.min.js"></script>
     <script src="./assets/extra-libs/c3/c3.min.js"></script>
     <script src="./assets/libs/chartist/dist/chartist.min.js"></script>
     <script src="./assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="./assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="./assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="./dist/js/pages/dashboards/dashboard1.min.js"></script> -->
-    <!-- <script src="dist/js/vue.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script>
-        var app = new Vue({
-            el: '#vue-credits',
-            data: {
-                credits: {
-                    'INSTITUTION': [],
-                    'PERSON': [],
-                    'COMPANY': [],
-                    'ASSOCIATION': [],
-                },
-            },
-            mounted: function () {
-                fetch('https://iorestoacasa.work/hosts.json')
-                    .then(r => r.json())
-                    .then(json => {
-                        this.credits = json.credits;
-                        this.sortCredits();
-                    });
-            },
-            methods: {
-                sortCredits: function () {
-                    this.credits['INSTITUTION'].sort((a, b) => a[0][0].localeCompare(b[0][0]));
-                    this.credits['PERSON'].sort((a, b) => a[0][0].localeCompare(b[0][0]));
-                    this.credits['COMPANY'].sort((a, b) => a[0][0].localeCompare(b[0][0]));
-                    this.credits['ASSOCIATION'].sort((a, b) => a[0][0].localeCompare(b[0][0]));
-                }
-            },
-        })
-    </script>
 </body>
 
 </html>
