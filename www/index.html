@@ -480,6 +480,7 @@
                         this.room = Math.random().toString(36).substring(2, 15) +
                             Math.random().toString(36).substring(2, 15);
                     }
+		    this.room = this.room.replace(/([^a-z0-9]+)/gi, '-');
                     let base_url = this.hosts[0].url;
                     if(base_url.slice(-1) !== '/')
                         base_url += '/';
