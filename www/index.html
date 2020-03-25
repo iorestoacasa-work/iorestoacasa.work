@@ -165,14 +165,20 @@
                                 <span class="hide-menu">Crediti</span>
                             </a>
                         </li>
-                        <!-- <li class="list-divider"></li>
-                        <li class="nav-small-cap"><span class="hide-menu">Utilità</span></li>
+                        <li class="list-divider"></li>
+                        <li class="nav-small-cap"><span class="hide-menu">Software Libero</span></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="faq.html" aria-expanded="false"><i
-                                    data-feather="message-square" class="feather-icon"></i><span class="hide-menu">F.A.Q
-                                </span></a>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" aria-expanded="false" href="https://github.com/havfo/multiparty-meeting">
+                                <img class="jitsi-logo img-responsive mr-2" title="Multiparty-Meeting" src="./assets/images/big/mm.png"> Multiparty-Meeting
+                            </a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="contacts.html"
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" aria-expanded="false" href="https://jitsi.org/jitsi-meet/">
+                                <img class="jitsi-logo img-responsive mr-2" title="Jitsi Meet" src="./assets/images/big/jitsi.png"> Jitsi Meet
+                            </a>
+                        </li>
+                        <!-- <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="contacts.html"
                                 aria-expanded="false"><i data-feather="mail" class="feather-icon"></i><span
                                     class="hide-menu">Contatti</span></a></li>
                         <li class="list-divider"></li>
@@ -244,11 +250,20 @@
                             <div class="card-body">
                                 <h3 class="card-title">Crea la tua stanza</h3>
                                 <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Crea</span>
+                                    </div>
                                     <input v-model="room" autofocus="autofocus" v-on:keydown.enter="goToRoom"
                                         class="form-control" id="room-name" placeholder="nome della stanza">
                                     <div class="input-group-append">
                                         <button @click="goToRoom()" class="btn btn-success"
-                                            type="button"><b>CREA</b></button>
+                                            type="button">
+                                                <img class="jitsi-logo img-responsive" title="Jitsi Meet" src="./assets/images/big/jitsi.png">
+                                        <button @click="goToRoom()" class="btn btn-success btn-rounded border-left"
+                                            type="button">
+                                                <img class="jitsi-logo img-responsive" title="Multiparty-Meeting" src="./assets/images/big/mm.png">
+                                                <b>BETA</b>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -283,23 +298,6 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="alert alert-light alert-dismissible fade show" role="alert">
-                                                <img class="jitsi-logo img-responsive mr-2" title="Multiparty-Meeting"
-                                                    src="./assets/images/big/mm.png"><a
-                                                    href="https://github.com/havfo/multiparty-meeting"><b>Multiparty-Meeting</b></a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="alert alert-light alert-dismissible fade show" role="alert">
-                                                <img class="jitsi-logo img-responsive mr-2" title="Multiparty-Meeting"
-                                                    src="./assets/images/big/jitsi.png"><a
-                                                    href="https://jitsi.org/jitsi-meet/"><b>Jitsi
-                                                        Meet</b></a>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     <table class="table-striped table table-sm table-hover no-wrap v-middle mb-0">
                                         <thead>
