@@ -357,11 +357,13 @@
                                                         data-toggle="tooltip" title="Online"></i>
                                                 </td>
                                                 <td class="border-top-0 text-center py-2">
-                                                    <button @click="window.location.replace(host.url);" type="button"
-                                                        class="btn btn-rounded btn-primary">
-                                                        <i class="fa fa-play text-white font-14" data-toggle="tooltip"
-                                                            title="Online"></i>
-                                                    </button>
+                                                    <a :href="host.url">
+                                                        <button type="button"
+                                                            class="btn btn-rounded btn-primary">
+                                                            <i class="fa fa-play text-white font-14" data-toggle="tooltip"
+                                                                title="Online"></i>
+                                                        </button>
+                                                    </a>
                                                 </td>
                                             </tr>
                                         </tbody>
