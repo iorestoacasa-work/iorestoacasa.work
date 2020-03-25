@@ -214,8 +214,9 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
                                     <li class="breadcrumb-item">
-                                        Grazie al software di videochiamate open source <a
-                                            href="https://jitsi.org/jitsi-meet/" target="_blank">Jitsi Meet</a>,
+                                        Grazie ai software di videochiamate open source <a
+                                            href="https://jitsi.org/jitsi-meet/" target="_blank">Jitsi Meet</a> e <a
+                                            href="https://github.com/havfo/multiparty-meeting" target="_blank">Multiparty-Meeting</a>,
                                         possiamo continuare a lavorare, studiare, socializzare.
                                     </li>
                                 </ol>
@@ -306,6 +307,13 @@
                                     </div> -->
                                 </div>
                                 <div class="table-responsive">
+                                    <h4>
+                                        <img class="jitsi-logo img-responsive" title="Multiparty-Meeting" src="./assets/images/big/mm.png">
+                                        = <a href="https://github.com/havfo/multiparty-meeting">Multiparty-Meeting</a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <img class="jitsi-logo img-responsive" title="Jitsi Meet" src="./assets/images/big/jitsi.png">
+                                        = <a href="https://jitsi.org/jitsi-meet/">Jitsi Meet</a>
+                                    </h4>
                                     <table class="table-striped table table-sm table-hover no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
@@ -327,17 +335,17 @@
                                                 <td class="border-top-0 py-2">
                                                     <div class="d-flex no-block align-items-center">
                                                         <div class="mr-2">
-                                                            <template v-if="host.user_count === null">
+                                                            <template v-if="host.software === 'MM'">
 
                                                                 <!-- <b>{{ host.by.substring(0,2).toUpperCase() }}</b> -->
-                                                                <img class="jitsi-logo img-responsive"
+                                                                <img class="jitsi-logo img-responsive" title="Multiparty-Meeting"
                                                                     src="./assets/images/big/mm.png">
 
                                                             </template>
                                                             <template v-else>
 
                                                                 <!-- <b>{{ host.by.substring(0,2).toUpperCase() }}</b> -->
-                                                                <img class="jitsi-logo img-responsive"
+                                                                <img class="jitsi-logo img-responsive" title="Jitsi Meet"
                                                                     src="./assets/images/big/jitsi.png">
 
                                                             </template>
@@ -356,9 +364,8 @@
                                                     </div>
                                                 </td>
                                                 <td class="border-top-0 text-center py-2 font-18">
-                                                    <template
-                                                        v-if="host.user_count === '?' || host.user_count === undefined || host.user_count === null">
-                                                        ❓
+                                                    <template v-if="host.software === 'MM'">
+                                                        <span data-toggle="tooltip" title="ci stiamo lavorando">❓</span>
                                                     </template>
                                                     <template v-else>
                                                         <b>{{ host.user_count }}</b>
@@ -369,7 +376,7 @@
                                                         class="progress" v-html="cpuUsage(host.cpu_usage)">
                                                     </div>
                                                     <div v-else>
-                                                        🔜
+                                                        <span data-toggle="tooltip" title="ci stiamo lavorando">🔜</span>
                                                     </div>
                                                 </td>
                                                 <td class="wrapper border-top-0 text-center py-2">
@@ -444,33 +451,17 @@
             data: {
                 room: "",
                 hosts: [],
-                fixed_hosts: [{
-                        name: "edu.meet.garr.it",
-                        user_count: null,
-                        by: "GARR",
-                        by_url: "https://www.garr.it/",
-                        url: "https://edu.meet.garr.it/",
-                        by_kind: "INSTITUTION",
-                        cpu_usage: null,
-                    },
-                    {
-                        name: "koma.iorestoacasa.work",
-                        user_count: null,
-                        by: "Consiglio Nazionale delle Ricerche - IMAA",
-                        by_url: "https://www.imaa.cnr.it/",
-                        url: "https://edumeet.imaa.cnr.it/",
-                        by_kind: "PERSON",
-                        cpu_usage: null,
-                    },
-                ],
             },
             mounted: function () {
                 fetch('https://iorestoacasa.work/hosts.json')
                     .then(r => r.json())
                     .then(json => {
                         this.hosts = json.instances;
-                        this.hosts.sort((a, b) => a.cpu_usage - b.cpu_usage);
-                        this.hosts = this.fixed_hosts.concat(this.hosts);
+                        this.hosts.sort(function(a, b){
+                            if(a.software === 'MM')
+                                return -1;
+                            return a.cpu_usage - b.cpu_usage
+                        });
                     });
             },
             methods: {
