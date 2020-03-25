@@ -100,25 +100,12 @@
                 </div>
 
                 <div class="navbar-collapse collapse" id="navbarSupportedContent">
-
                     <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
-
-                        <li class="nav-item d-none d-md-block">
-                            <a class="nav-link">
-                                <div class="customize-input">
-                                    <button type="button" class="btn btn-rounded
-                                        btn-secondary"><b>#smartwork</b></button>
-                                </div>
-                            </a>
-                        </li>
-
                         <li class="nav-item d-none d-md-block">
                             <a class="nav-link" href="crediti.html">
                                 <i data-feather="info" class="svg-icon"></i>
                             </a>
                         </li>
-
-
                     </ul>
                     <ul class="navbar-nav float-right">
                         <li class="nav-item d-none d-md-block">
@@ -216,7 +203,8 @@
                                     <li class="breadcrumb-item">
                                         Grazie ai software di videochiamate open source <a
                                             href="https://jitsi.org/jitsi-meet/" target="_blank">Jitsi Meet</a> e <a
-                                            href="https://github.com/havfo/multiparty-meeting" target="_blank">Multiparty-Meeting</a>,
+                                            href="https://github.com/havfo/multiparty-meeting"
+                                            target="_blank">Multiparty-Meeting</a>,
                                         possiamo continuare a lavorare, studiare, socializzare.
                                     </li>
                                 </ol>
@@ -294,30 +282,32 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="d-flex align-items-center mb-2">
-                                    <!-- <h2 class="card-title">
-                                        Collegati ad uno dei server, crea una stanza, condividi il link.
-                                    </h2>
-                                    <div class="ml-auto">
-                                        <button onclick="location.reload()"
-                                            class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i data-feather="refresh-cw"></i>
-                                        </button>
-                                    </div> -->
-                                </div>
                                 <div class="table-responsive">
-                                    <h4>
-                                        <img class="jitsi-logo img-responsive" title="Multiparty-Meeting" src="./assets/images/big/mm.png">
-                                        = <a href="https://github.com/havfo/multiparty-meeting">Multiparty-Meeting</a>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <img class="jitsi-logo img-responsive" title="Jitsi Meet" src="./assets/images/big/jitsi.png">
-                                        = <a href="https://jitsi.org/jitsi-meet/">Jitsi Meet</a>
-                                    </h4>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="alert alert-light alert-dismissible fade show" role="alert">
+                                                <img class="jitsi-logo img-responsive mr-2" title="Multiparty-Meeting"
+                                                    src="./assets/images/big/mm.png"><a
+                                                    href="https://github.com/havfo/multiparty-meeting"><b>Multiparty-Meeting</b></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="alert alert-light alert-dismissible fade show" role="alert">
+                                                <img class="jitsi-logo img-responsive mr-2" title="Multiparty-Meeting"
+                                                    src="./assets/images/big/jitsi.png"><a
+                                                    href="https://jitsi.org/jitsi-meet/"><b>Jitsi
+                                                        Meet</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <table class="table-striped table table-sm table-hover no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Nome server
+                                                </th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
+
                                                 </th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">
                                                     Utenti connessi
@@ -336,18 +326,14 @@
                                                     <div class="d-flex no-block align-items-center">
                                                         <div class="mr-2">
                                                             <template v-if="host.software === 'MM'">
-
-                                                                <!-- <b>{{ host.by.substring(0,2).toUpperCase() }}</b> -->
-                                                                <img class="jitsi-logo img-responsive" title="Multiparty-Meeting"
+                                                                <img class="jitsi-logo img-responsive"
+                                                                    title="Multiparty-Meeting"
                                                                     src="./assets/images/big/mm.png">
-
                                                             </template>
                                                             <template v-else>
-
-                                                                <!-- <b>{{ host.by.substring(0,2).toUpperCase() }}</b> -->
-                                                                <img class="jitsi-logo img-responsive" title="Jitsi Meet"
+                                                                <img class="jitsi-logo img-responsive"
+                                                                    title="Jitsi Meet"
                                                                     src="./assets/images/big/jitsi.png">
-
                                                             </template>
                                                         </div>
                                                         <div class="">
@@ -363,6 +349,12 @@
                                                         </div>
                                                     </div>
                                                 </td>
+                                                <td class="border-top-0 text-center py-2">
+                                                    <template v-if="host.software === 'MM'">
+                                                        <div class="btn btn-success btn-rounded font-12">
+                                                            <b>BETA</b></div>
+                                                    </template>
+                                                </td>
                                                 <td class="border-top-0 text-center py-2 font-18">
                                                     <template v-if="host.software === 'MM'">
                                                         <span data-toggle="tooltip" title="ci stiamo lavorando">❓</span>
@@ -376,7 +368,8 @@
                                                         class="progress" v-html="cpuUsage(host.cpu_usage)">
                                                     </div>
                                                     <div v-else>
-                                                        <span data-toggle="tooltip" title="ci stiamo lavorando">🔜</span>
+                                                        <span data-toggle="tooltip"
+                                                            title="ci stiamo lavorando">🔜</span>
                                                     </div>
                                                 </td>
                                                 <td class="wrapper border-top-0 text-center py-2">
@@ -457,8 +450,8 @@
                     .then(r => r.json())
                     .then(json => {
                         this.hosts = json.instances;
-                        this.hosts.sort(function(a, b){
-                            if(a.software === 'MM')
+                        this.hosts.sort(function (a, b) {
+                            if (a.software === 'MM')
                                 return -1;
                             return a.cpu_usage - b.cpu_usage
                         });
