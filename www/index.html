@@ -60,11 +60,9 @@
         #breadcrumb {
             padding-top: 15px;
         }
+
         .jitsi-logo {
             height: 34px;
-            background-color: #5f76e8;
-            border-radius: 10px;
-            padding: 3px 5px;
         }
     </style>
 </head>
@@ -258,8 +256,7 @@
                                 <h3 class="card-title">Crea la tua stanza</h3>
                                 <div class="input-group">
                                     <input v-model="room" autofocus="autofocus" v-on:keydown.enter="goToRoom"
-                                        class="form-control" id="room-name"
-                                        placeholder="nome della stanza">
+                                        class="form-control" id="room-name" placeholder="nome della stanza">
                                     <div class="input-group-append">
                                         <button @click="goToRoom()" class="btn btn-success"
                                             type="button"><b>CREA</b></button>
@@ -329,15 +326,20 @@
                                             <tr v-for="host in hosts">
                                                 <td class="border-top-0 py-2">
                                                     <div class="d-flex no-block align-items-center">
-                                                        <div class="d-none d-lg-block mr-3">
+                                                        <div class="mr-2">
                                                             <template v-if="host.user_count === null">
-                                                                <a class="btn btn-primary rounded-circle btn-circle font-12 text-white">
-                                                                    <!-- <b>{{ host.by.substring(0,2).toUpperCase() }}</b> -->
-                                                                    <b>MM</b>
-                                                                </a>
+
+                                                                <!-- <b>{{ host.by.substring(0,2).toUpperCase() }}</b> -->
+                                                                <img class="jitsi-logo img-responsive"
+                                                                    src="./assets/images/big/mm.png">
+
                                                             </template>
                                                             <template v-else>
-                                                                <img class="jitsi-logo" src="https://befair1.iorestoacasa.work/images/watermark.png">
+
+                                                                <!-- <b>{{ host.by.substring(0,2).toUpperCase() }}</b> -->
+                                                                <img class="jitsi-logo img-responsive"
+                                                                    src="./assets/images/big/jitsi.png">
+
                                                             </template>
                                                         </div>
                                                         <div class="">
@@ -354,15 +356,20 @@
                                                     </div>
                                                 </td>
                                                 <td class="border-top-0 text-center py-2 font-18">
-                                                    <template v-if="host.user_count === '?'">
-                                                        <b data-toggle="tooltip" title="funzionalità in arrivo!">?</b>
+                                                    <template
+                                                        v-if="host.user_count === '?' || host.user_count === undefined || host.user_count === null">
+                                                        ❓
                                                     </template>
                                                     <template v-else>
                                                         <b>{{ host.user_count }}</b>
                                                     </template>
                                                 </td>
                                                 <td class="border-top-0 text-center py-2">
-                                                    <div class="progress" v-html="cpuUsage(host.cpu_usage)">
+                                                    <div v-if="host.cpu_usage != undefined || host.cpu_usage != null"
+                                                        class="progress" v-html="cpuUsage(host.cpu_usage)">
+                                                    </div>
+                                                    <div v-else>
+                                                        🔜
                                                     </div>
                                                 </td>
                                                 <td class="wrapper border-top-0 text-center py-2">
@@ -371,10 +378,9 @@
                                                 </td>
                                                 <td class="border-top-0 text-center py-2">
                                                     <a :href="host.url">
-                                                        <button type="button"
-                                                            class="btn btn-rounded btn-primary">
-                                                            <i class="fa fa-play text-white font-14" data-toggle="tooltip"
-                                                                title="Online"></i>
+                                                        <button type="button" class="btn btn-rounded btn-primary">
+                                                            <i class="fa fa-play text-white font-14"
+                                                                data-toggle="tooltip" title="Online"></i>
                                                         </button>
                                                     </a>
                                                 </td>
@@ -438,8 +444,7 @@
             data: {
                 room: "",
                 hosts: [],
-                fixed_hosts: [
-                    {
+                fixed_hosts: [{
                         name: "edu.meet.garr.it",
                         user_count: null,
                         by: "GARR",
@@ -473,7 +478,8 @@
                     // Somma degli utenti presenti all'interno del JSON
                     var sum = 0;
                     for (var i in this.hosts) {
-                        if (this.hosts[i].user_count !== "?" && this.hosts[i].user_count !== undefined && this.hosts[i].user_count != null) {
+                        if (this.hosts[i].user_count !== "?" && this.hosts[i].user_count !== undefined &&
+                            this.hosts[i].user_count != null) {
                             // console.log(this.hosts[i].user_count);
                             sum += parseInt(this.hosts[i].user_count);
                         }
@@ -516,9 +522,9 @@
                         this.room = Math.random().toString(36).substring(2, 15) +
                             Math.random().toString(36).substring(2, 15);
                     }
-		    this.room = this.room.replace(/([^a-z0-9]+)/gi, '-');
+                    this.room = this.room.replace(/([^a-z0-9]+)/gi, '-');
                     let base_url = this.hosts[0].url;
-                    if(base_url.slice(-1) !== '/')
+                    if (base_url.slice(-1) !== '/')
                         base_url += '/';
                     window.open(base_url + this.room);
                 },
