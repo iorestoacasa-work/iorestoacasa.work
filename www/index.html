@@ -259,10 +259,13 @@
                                         <button @click="goToRoom()" class="btn btn-success"
                                             type="button">
                                                 <img class="jitsi-logo img-responsive" title="Jitsi Meet" src="./assets/images/big/jitsi.png">
-                                        <button @click="goToRoom()" class="btn btn-success btn-rounded border-left"
+                                                <i class="fa fa-play text-white font-14"
+                                                    data-toggle="tooltip" title="Online">
+                                                </i>
+                                        <button @click="goToRoom()" class="btn btn-warning btn-rounded border-left"
                                             type="button">
                                                 <img class="jitsi-logo img-responsive" title="Multiparty-Meeting" src="./assets/images/big/mm.png">
-                                                <b>BETA</b>
+                                                <span class="text-white font-weight">BETA</span>
                                         </button>
                                     </div>
                                 </div>
@@ -319,18 +322,6 @@
                                             <tr v-for="host in hosts">
                                                 <td class="border-top-0 py-2">
                                                     <div class="d-flex no-block align-items-center">
-                                                        <div class="mr-2">
-                                                            <template v-if="host.software === 'MM'">
-                                                                <img class="jitsi-logo img-responsive"
-                                                                    title="Multiparty-Meeting"
-                                                                    src="./assets/images/big/mm.png">
-                                                            </template>
-                                                            <template v-else>
-                                                                <img class="jitsi-logo img-responsive"
-                                                                    title="Jitsi Meet"
-                                                                    src="./assets/images/big/jitsi.png">
-                                                            </template>
-                                                        </div>
                                                         <div class="">
                                                             <a :href="host.url">
                                                                 <h4 class="text-dark mb-0 font-weight-medium">
@@ -362,19 +353,22 @@
                                                     </div>
                                                 </td>
                                                 <td class="wrapper border-top-0 text-center py-2">
-                                                    <i class="pulsar fa fa-circle text-success font-12"
+                                                    <i class="pulsar fa fa-circle text-success font-14"
                                                         data-toggle="tooltip" title="Online"></i>
                                                 </td>
                                                 <td class="border-top-0 text-center py-2">
                                                     <a :href="host.url">
                                                         <template v-if="host.software === 'MM'">
-                                                            <div class="btn btn-success btn-rounded font-12">
-                                                                <b>BETA</b></div>
+                                                            <div class="btn btn-warning font-14 btn-rounded w-75">
+                                                                <img class="jitsi-logo img-responsive" title="Multiparty-Meeting" src="./assets/images/big/mm.png">
+                                                                <span class="text-white font-weight">BETA</span></div>
                                                         </template>
                                                         <template v-else>
-                                                            <button type="button" class="btn btn-rounded btn-primary">
+                                                            <button type="button" class="btn btn-success btn-rounded w-75">
+                                                                <img class="jitsi-logo img-responsive" title="Jitsi Meet" src="./assets/images/big/jitsi.png">
                                                                 <i class="fa fa-play text-white font-14"
-                                                                    data-toggle="tooltip" title="Online"></i>
+                                                                    data-toggle="tooltip" title="Online">
+                                                                </i>
                                                             </button>
                                                         </template>
                                                     </a>
