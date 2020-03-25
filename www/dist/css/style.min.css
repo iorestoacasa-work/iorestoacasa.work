@@ -8221,6 +8221,19 @@ pre code {
     -webkit-overflow-scrolling: touch
 }
 
+/* MARK: mePy2
+padding laterale destro elementi td della tabella */
+.table tr td:last-child {
+    padding-right: 0.75rem;
+}
+
+/* MARK: mePy2
+padding laterale sinistro elementi td della tabella */
+.table tr td:first-child {
+    padding-left: 0.6rem;
+}
+
+
 .accordion>.card,
 .collapsing,
 .modal-open,
