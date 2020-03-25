@@ -275,7 +275,7 @@
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
                                     data-target="#collapse5" aria-expanded="false" aria-controls="collapse4">
-                                    modificando hostname nel ".env" la configurazione di NGINX non cambia
+                                    Modificando hostname nel ".env" la configurazione di NGINX non cambia
                                 </button>
                             </h5>
                         </div>
@@ -287,6 +287,25 @@
                                 <pre>docker-compose stop</pre>
                                 <pre>rm -rf ~/.jitsi-meet-cfg/</pre>
                                 <pre>docker-compose up -d</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapse6" aria-expanded="false" aria-controls="collapse4">
+                                    Quali porte devo aprire per ospitare Jitsi Meet?
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapse6" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordionWork">
+                            <div class="card-body">
+                                Le porte da aprire sono descritte qui: <a href="https://github.com/jitsi/docker-jitsi-meet#external-ports">https://github.com/jitsi/docker-jitsi-meet#external-ports</a><br>
+                                A quelle dovrai aggiungere una porta TCP (HTTP) a tua scelta dove esporre le metriche.
                             </div>
                         </div>
                     </div>
