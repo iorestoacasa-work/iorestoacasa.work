@@ -307,9 +307,6 @@
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Nome server
                                                 </th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">
-
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
                                                     Utenti connessi
                                                 </th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">
@@ -349,12 +346,6 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="border-top-0 text-center py-2">
-                                                    <template v-if="host.software === 'MM'">
-                                                        <div class="btn btn-success btn-rounded font-12">
-                                                            <b>BETA</b></div>
-                                                    </template>
-                                                </td>
                                                 <td class="border-top-0 text-center py-2 font-18">
                                                     <template v-if="host.software === 'MM'">
                                                         <span data-toggle="tooltip" title="ci stiamo lavorando">❓</span>
@@ -378,10 +369,16 @@
                                                 </td>
                                                 <td class="border-top-0 text-center py-2">
                                                     <a :href="host.url">
-                                                        <button type="button" class="btn btn-rounded btn-primary">
-                                                            <i class="fa fa-play text-white font-14"
-                                                                data-toggle="tooltip" title="Online"></i>
-                                                        </button>
+                                                        <template v-if="host.software === 'MM'">
+                                                            <div class="btn btn-success btn-rounded font-12">
+                                                                <b>BETA</b></div>
+                                                        </template>
+                                                        <template v-else>
+                                                            <button type="button" class="btn btn-rounded btn-primary">
+                                                                <i class="fa fa-play text-white font-14"
+                                                                    data-toggle="tooltip" title="Online"></i>
+                                                            </button>
+                                                        </template>
                                                     </a>
                                                 </td>
                                             </tr>
