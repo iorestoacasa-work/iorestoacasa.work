@@ -8217,7 +8217,7 @@ pre code {
 .table-responsive {
     display: block;
     width: 100%;
-    overflow-x: auto;
+    /*overflow-x: auto; MARK: mePy2*/
     -webkit-overflow-scrolling: touch
 }
 
@@ -18173,11 +18173,6 @@ strong {
     border-color: #fff
 }
 
-.no-wrap td,
-.no-wrap th {
-    white-space: nowrap
-}
-
 .nowrap {
     white-space: nowrap
 }
@@ -18930,6 +18925,23 @@ ul.list-style-none li a:hover {
 
     .feature-img {
         width: 100%
+    }
+    
+    /* MARK: mePy2
+        no-wrap solo per schermi inferiori a 768px di larghezza.
+    td e th table lista server index.
+    */
+    .no-wrap td,
+    .no-wrap th {
+        white-space: nowrap
+    }
+    
+    /* MARK: mePy2
+        overflow orizzontale solo per schermi inferiori a 768px di larghezza.
+    .table-responsive lista dei server index.
+    */
+    .table-responsive {
+        overflow-x: auto;
     }
 }
 
