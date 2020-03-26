@@ -466,8 +466,12 @@
                         this.hosts.sort(function (a, b) {
                             if (a.software === 'MM')
                                 return -1;
-                            return a.cpu_usage - b.cpu_usage
+                            if (a.cpu_usage <= b.cpu_usage) {
+                                return 0;
+                            } else
+                                return 1;
                         });
+
                     });
             },
             methods: {
