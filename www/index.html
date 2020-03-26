@@ -64,6 +64,12 @@
         .jitsi-logo {
             height: 34px;
         }
+
+        .btn-image {
+            display: inline-block;
+
+            width: 22px;
+        }
     </style>
 </head>
 
@@ -218,8 +224,8 @@
 
             <div class="container-fluid" style="padding-top: 15px;">
 
-                <div class="row" style="align-items: center;">
-                    <div class="col-md-3">
+                <div class="row" style="align-items: center; margin-bottom: -18px;">
+                    <div class="d-none d-md-block col-md-3">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex d-lg-flex d-md-block align-items-center">
@@ -240,52 +246,34 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md">
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">Avvia la videoconferenza</h3>
-                                <h5 class="card-subtitle my-3">Premi il pulsante <b>JITSI</b> per collegarti ad una
+                                <!-- <h5 class="card-subtitle my-3">Premi il pulsante <b>JITSI</b> per collegarti ad una
                                     stanza Jitsi Meet o clicca il pulsante <b>MM</b> per una stanza Multiparty Meeting
-                                </h5>
+                                </h5> -->
                                 <div class="input-group">
-                                    <div class="input-group-prepend">
+                                    <div class="d-none d-lg-block input-group-prepend">
                                         <span class="input-group-text"><b>CREA</b></span>
                                     </div>
                                     <input v-model="room" autofocus="autofocus" v-on:keydown.enter="goToRoom"
                                         class="form-control" id="room-name" placeholder="Nome della stanza">
                                     <div class="input-group-append">
-                                        <button @click="goToRoom('JITSI')" class="btn btn-primary"
-                                            type="button"><b>JITSI</b></button>
+                                        <button @click="goToRoom('JITSI')" class="btn btn-light" type="button"><img
+                                                class="btn-image img-responsive" title="Jitsi Meet"
+                                                src="./assets/images/big/jitsi.png"></button>
                                     </div>
                                     <div class="input-group-append">
                                         <button @click="goToRoom('MM')" class="text-white btn btn-warning"
-                                            type="button"><b>MM BETA</b></button>
+                                            type="button"><img class="btn-image img-responsive"
+                                                title="Multiparty-Meeting" src="./assets/images/big/mm.png"></button>
                                     </div>
                                 </div>
-                                <!-- <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Crea</span>
-                                    </div>
-                                    <input v-model="room" autofocus="autofocus" v-on:keydown.enter="goToRoom"
-                                        class="form-control" id="room-name" placeholder="nome della stanza">
-                                    <div class="input-group-append">
-                                        <button @click="goToRoom()" class="btn btn-success"
-                                            type="button">
-                                                <img class="jitsi-logo img-responsive" title="Jitsi Meet" src="./assets/images/big/jitsi.png">
-                                                <i class="fa fa-play text-white font-14"
-                                                    data-toggle="tooltip" title="Online">
-                                                </i>
-                                        <button @click="goToRoom()" class="btn btn-warning btn-rounded border-left"
-                                            type="button">
-                                                <img class="jitsi-logo img-responsive" title="Multiparty-Meeting" src="./assets/images/big/mm.png">
-                                                <span class="text-white font-weight">BETA</span>
-                                        </button>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="d-none d-md-block col-md-3">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex d-lg-flex d-md-block align-items-center">
