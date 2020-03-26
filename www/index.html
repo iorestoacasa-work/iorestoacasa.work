@@ -463,16 +463,14 @@
                     .then(r => r.json())
                     .then(json => {
                         this.hosts = json.instances;
-                        this.hosts.sort(function (a, b) {
-                            if (a.software === 'MM')
-                                return -1;
-                            if (a.cpu_usage <= b.cpu_usage) {
-                                return 0;
-                            } else
-                                return 1;
+                        this.hosts.sort(function(a, b){
+                          return a.software === 'MM' ? -1 : 1;
                         });
 
-                    });
+                        this.hosts.sort(function (a, b) {
+                            return a.cpu_usage - b.cpu_usage;
+                        });
+                    })
             },
             methods: {
                 connectedUsers: function () {
