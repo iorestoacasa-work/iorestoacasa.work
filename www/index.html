@@ -165,31 +165,26 @@
                                 <span class="hide-menu">Crediti</span>
                             </a>
                         </li>
+
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Software Libero</span></li>
 
                         <li class="sidebar-item">
-                            <a class="sidebar-link" aria-expanded="false" href="https://github.com/havfo/multiparty-meeting" target="_blank">
-                                <img class="jitsi-logo img-responsive mr-2" title="Multiparty-Meeting" src="./assets/images/big/mm.png"> Multiparty-Meeting
+                            <a class="sidebar-link sidebar-link" href="https://github.com/havfo/multiparty-meeting"
+                                aria-expanded="false">
+                                <img class="jitsi-logo img-responsive mx-1" title="Jitsi Meet"
+                                    src="./assets/images/big/mm.png" style="filter: grayscale(100%); height: 24px;">
+                                <span class="hide-menu">Multiparty-Meeting</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" aria-expanded="false" href="https://jitsi.org/jitsi-meet/" target="_blank">
-                                <img class="jitsi-logo img-responsive mr-2" title="Jitsi Meet" src="./assets/images/big/jitsi.png"> Jitsi Meet
+                            <a class="sidebar-link sidebar-link" href="https://jitsi.org/jitsi-meet/"
+                                aria-expanded="false">
+                                <img class="jitsi-logo img-responsive mx-1" title="Jitsi Meet"
+                                    src="./assets/images/big/jitsi.png" style="filter: grayscale(100%); height: 24px;">
+                                <span class="hide-menu">Jitsi Meet</span>
                             </a>
                         </li>
-                        <!-- <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="contacts.html"
-                                aria-expanded="false"><i data-feather="mail" class="feather-icon"></i><span
-                                    class="hide-menu">Contatti</span></a></li>
-                        <li class="list-divider"></li>
-
-                        <li class="nav-small-cap"><span class="hide-menu">Informazioni</span></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="https://befair.it"
-                                aria-expanded="false"><i data-feather="briefcase" class="feather-icon"></i><span
-                                    class="hide-menu">beFair</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i
-                                    data-feather="share-2" class="feather-icon"></i><span
-                                    class="hide-menu">Condividi!</span></a></li> -->
                     </ul>
                 </nav>
             </div>
@@ -248,8 +243,26 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="card-title">Crea la tua stanza</h3>
+                                <h3 class="card-title">Avvia la videoconferenza</h3>
+                                <h5 class="card-subtitle my-3">Premi il pulsante <b>JITSI</b> per collegarti ad una
+                                    stanza Jitsi Meet o clicca il pulsante <b>MM</b> per una stanza Multiparty Meeting
+                                </h5>
                                 <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><b>CREA</b></span>
+                                    </div>
+                                    <input v-model="room" autofocus="autofocus" v-on:keydown.enter="goToRoom"
+                                        class="form-control" id="room-name" placeholder="Nome della stanza">
+                                    <div class="input-group-append">
+                                        <button @click="goToRoom('JITSI')" class="btn btn-primary"
+                                            type="button"><b>JITSI</b></button>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button @click="goToRoom('MM')" class="text-white btn btn-warning"
+                                            type="button"><b>MM BETA</b></button>
+                                    </div>
+                                </div>
+                                <!-- <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Crea</span>
                                     </div>
@@ -268,7 +281,7 @@
                                                 <span class="text-white font-weight">BETA</span>
                                         </button>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -322,7 +335,19 @@
                                             <tr v-for="host in hosts">
                                                 <td class="border-top-0 py-2">
                                                     <div class="d-flex no-block align-items-center">
-                                                        <div class="">
+                                                        <div class="mr-2">
+                                                            <template v-if="host.software === 'MM'">
+                                                                <img class="jitsi-logo img-responsive"
+                                                                    title="Multiparty-Meeting"
+                                                                    src="./assets/images/big/mm.png">
+                                                            </template>
+                                                            <template v-else>
+                                                                <img class="jitsi-logo img-responsive"
+                                                                    title="Jitsi Meet"
+                                                                    src="./assets/images/big/jitsi.png">
+                                                            </template>
+                                                        </div>
+                                                        <div>
                                                             <a :href="host.url">
                                                                 <h4 class="text-dark mb-0 font-weight-medium">
                                                                     {{ host.name }}
@@ -359,16 +384,15 @@
                                                 <td class="border-top-0 text-center py-2">
                                                     <a :href="host.url">
                                                         <template v-if="host.software === 'MM'">
-                                                            <div class="btn btn-warning font-14 btn-rounded w-75">
-                                                                <img class="jitsi-logo img-responsive" title="Multiparty-Meeting" src="./assets/images/big/mm.png">
-                                                                <span class="text-white font-weight">BETA</span></div>
+                                                            <div class="btn btn-warning btn-rounded font-12 text-white">
+                                                                <b>BETA</b><i class="ml-1 fa fa-play text-white
+                                                                    font-14" data-toggle="tooltip" title="Online"></i>
+                                                            </div>
                                                         </template>
                                                         <template v-else>
-                                                            <button type="button" class="btn btn-success btn-rounded w-75">
-                                                                <img class="jitsi-logo img-responsive" title="Jitsi Meet" src="./assets/images/big/jitsi.png">
+                                                            <button type="button" class="btn btn-rounded btn-primary">
                                                                 <i class="fa fa-play text-white font-14"
-                                                                    data-toggle="tooltip" title="Online">
-                                                                </i>
+                                                                    data-toggle="tooltip" title="Online"></i>
                                                             </button>
                                                         </template>
                                                     </a>
@@ -496,7 +520,8 @@
                             Math.random().toString(36).substring(2, 15);
                     }
                     this.room = this.room.replace(/([^a-z0-9]+)/gi, '-');
-                    let base_url = this.hosts[0].url;
+
+                    let base_url = this.hosts.find(u => u.software === e).url;
                     if (base_url.slice(-1) !== '/')
                         base_url += '/';
                     window.open(base_url + this.room);
