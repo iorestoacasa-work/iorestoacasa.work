@@ -355,7 +355,12 @@
                                                 </td>
                                                 <td class="border-top-0 text-center py-2 font-18">
                                                     <template v-if="host.software === 'MM'">
-                                                        <span data-toggle="tooltip" title="ci stiamo lavorando">❓</span>
+                                                        <template v-if="'user_count' in host">
+                                                            {{ host.user_count }}
+                                                        </template>
+                                                        <template v-else>
+                                                            <span data-toggle="tooltip" title="ci stiamo lavorando">❓</span>
+                                                        </template>
                                                     </template>
                                                     <template v-else>
                                                         <b>{{ host.user_count }}</b>
