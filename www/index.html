@@ -205,7 +205,10 @@ layout: page
                                                     Carico
                                                 </th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                    Stato
+                                                    Banda<br>disponibile
+                                                </th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
+                                                    CPU<br>core
                                                 </th>
                                             </tr>
                                         </thead>
@@ -214,16 +217,18 @@ layout: page
                                                 <td class="border-top-0 py-2">
                                                     <div class="d-flex no-block align-items-center">
                                                         <div class="mr-2">
-                                                            <template v-if="host.software === 'MM'">
-                                                                <img class="jitsi-logo img-responsive"
-                                                                    title="Multiparty-Meeting"
-                                                                    src="./assets/images/big/mm.png">
-                                                            </template>
-                                                            <template v-else>
-                                                                <img class="jitsi-logo img-responsive"
-                                                                    title="Jitsi Meet"
-                                                                    src="./assets/images/big/jitsi.png">
-                                                            </template>
+                                                            <a :href="host.url">
+                                                                <template v-if="host.software === 'MM'">
+                                                                    <img class="jitsi-logo img-responsive"
+                                                                        title="Multiparty-Meeting"
+                                                                        src="./assets/images/big/mm.png">
+                                                                </template>
+                                                                <template v-else>
+                                                                    <img class="jitsi-logo img-responsive"
+                                                                        title="Jitsi Meet"
+                                                                        src="./assets/images/big/jitsi.png">
+                                                                </template>
+                                                            </a>
                                                         </div>
                                                         <div>
                                                             <a :href="host.url">
@@ -231,7 +236,7 @@ layout: page
                                                                     [[ host.name ]]
                                                                 </h4>
                                                             </a>
-                                                            <span class="font-16">messo a disposizione da
+                                                            <span class="font-16">da
                                                             </span>
                                                             <span v-html="unicorniMagici(host)">
                                                             </span>
@@ -255,9 +260,11 @@ layout: page
                                                             title="ci stiamo lavorando">🔜</span>
                                                     </div>
                                                 </td>
-                                                <td class="wrapper border-top-0 text-center py-2">
-                                                    <i class="pulsar fa fa-circle text-success font-14"
-                                                        data-toggle="tooltip" title="Online"></i>
+                                                <td class="border-top-0 text-center py-2">
+                                                    <div v-html="availableBandwidthHuman(host)"></div>
+                                                </td>
+                                                <td class="border-top-0 text-center py-2">
+                                                    {{ host.core_count }}
                                                 </td>
                                                 <td class="border-top-0 text-center py-2">
                                                     <a :href="host.url">
@@ -377,6 +384,16 @@ layout: page
                         role="progressbar"
                         style="width: ` + Math.round(value * 100) + `%"
                         aria-valuenow="` + Math.round(value * 100) + `" aria-valuemin="0" aria-valuemax="100"></div>`
+                },
+                availableBandwidthHuman: function(host) {
+                    if(!'available_bandwidth_mbps' in host || host.available_bandwidth_mbps === null || host.available_bandwidth_mbps === undefined || isNaN(parseInt(host.available_bandwidth_mbps)) || host.available_bandwidth_mbps === '?' ) {
+                        return `<span data-toggle="tooltip" title="ci stiamo lavorando">?</span>`;
+                    } else {
+                        let mbps = parseInt(host.available_bandwidth_mbps);
+                        if(mbps > 999)
+                            return String(mbps / 1000) + ' Gbps';
+                        return String(mbps) + ' Mbps';
+                    }
                 },
                 goToRoom: function (e) {
                     if (this.room === "") {
