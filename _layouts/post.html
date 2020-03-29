@@ -36,22 +36,7 @@ layout: page
     <link href="../../../www/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="../../../www/dist/css/style.min.css" rel="stylesheet">
     <link href="../../../www/dist/css/background.css" rel="stylesheet">
-    <style>
-        .footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            justify-content: center;
-            align-items: center;
-            height: 40px;
-            line-height: 30px;
-            padding: 4px;
-            background-color: #f9fbfd;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -162,9 +147,8 @@ layout: page
                                 <span class="hide-menu">Rassegna stampa</span>
                             </a>
                         </li>
-                        <li class="sidebar-item selected">
-                            <a class="sidebar-link sidebar-link active" href="../../../www/news.html"
-                                aria-expanded="false">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link sidebar-link" href="../../../www/news.html" aria-expanded="false">
                                 <i data-feather="tv" class="feather-icon"></i>
                                 <span class="hide-menu">News</span>
                             </a>
@@ -185,25 +169,28 @@ layout: page
                                 <span class="hide-menu">Crediti</span>
                             </a>
                         </li>
-                        <!-- <li class="list-divider"></li>
-                        <li class="nav-small-cap"><span class="hide-menu">Utilità</span></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="faq.html" aria-expanded="false"><i
-                                    data-feather="message-square" class="feather-icon"></i><span class="hide-menu">F.A.Q
-                                </span></a>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="contacts.html"
-                                aria-expanded="false"><i data-feather="mail" class="feather-icon"></i><span
-                                    class="hide-menu">Contatti</span></a></li>
                         <li class="list-divider"></li>
+                        <li class="nav-small-cap"><span class="hide-menu">Software Libero</span></li>
 
-                        <li class="nav-small-cap"><span class="hide-menu">Informazioni</span></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="https://befair.it"
-                                aria-expanded="false"><i data-feather="briefcase" class="feather-icon"></i><span
-                                    class="hide-menu">beFair</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i
-                                    data-feather="share-2" class="feather-icon"></i><span
-                                    class="hide-menu">Condividi!</span></a></li> -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link sidebar-link" href="https://github.com/havfo/multiparty-meeting"
+                                aria-expanded="false">
+                                <img class="jitsi-logo img-responsive mx-1" title="Multiparty-Meeting"
+                                    src="../../../www/assets/images/big/mm.png" style="filter: grayscale(100%); height:
+                                    24px;">
+                                <span class="hide-menu">Multiparty-Meeting</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link sidebar-link" href="https://jitsi.org/jitsi-meet/"
+                                aria-expanded="false">
+                                <img class="jitsi-logo img-responsive mx-1" title="Jitsi Meet"
+                                    src="../../../www/assets/images/big/jitsi.png" style="filter: grayscale(100%);
+                                    height: 24px;">
+                                <span class="hide-menu">Jitsi Meet</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -245,9 +232,7 @@ layout: page
                 </div>
 
             </div>
-            <footer class="footer text-center text-muted">
-                Made with ❤️ in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank">Fabriano</a>.
-            </footer>
+            {%include footer.html%}
 
         </div>
 
