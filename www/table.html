@@ -124,7 +124,12 @@
                                             </td>
                                             <td class="border-top-0 text-center py-2 font-18">
                                                 <template v-if="host.software === 'MM'">
-                                                    <span data-toggle="tooltip" title="ci stiamo lavorando">❓</span>
+                                                    <template v-if="'user_count' in host">
+                                                        <b>[[ host.user_count ]]</b>
+                                                    </template>
+                                                    <template v-else>
+                                                        <span data-toggle="tooltip" title="ci stiamo lavorando">❓</span>
+                                                    </template>
                                                 </template>
                                                 <template v-else>
                                                     <b>[[ host.user_count ]]</b>
@@ -142,7 +147,14 @@
                                                 <div v-html="availableBandwidthHuman(host)"></div>
                                             </td>
                                             <td class="border-top-0 text-center py-2">
-                                                [[ host.core_count == '?' ? "❓" : host.core_count ]]
+                                                <span class="font-16 badge badge-pill badge-secondary">
+                                                    <i v-if="host.core_count > 4" class="fas fa-bolt"
+                                                        style="color: rgb(252, 224, 68);"></i>
+                                                    <b>
+                                                        [[ host.core_count == '?' ? "❓" :
+                                                        host.core_count]]
+                                                    </b>
+                                                </span>
                                             </td>
                                             <td class="border-top-0 text-center py-2">
                                                 <a :href="host.url">
@@ -290,8 +302,10 @@
                         } else {
                             let mbps = parseInt(host.available_bandwidth_mbps);
                             if (mbps > 999)
-                                return String(mbps / 1000) + ' Gbps';
-                            return String(mbps) + ' Mbps';
+                                return '<span class="pulsar font-14 badge badge-pill badge-success"><b>' +
+                                    String(mbps / 1000) + ' Gbps </b></span>';
+                            return '<span class="font-14 badge badge-pill badge-light"><b>' +
+                                String(mbps) + ' Mbps </b></span>';
                         }
                     },
                 },

@@ -91,8 +91,10 @@ layout: page
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
+                            <div class="card-header bg-info">
+                                <h2 class="mb-0 text-white"><b>Nato dall'idea di</b></h2>
+                            </div>
                             <div class="card-body">
-                                <h2 class="card-title">Nato dall'idea di:</h2>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
                                         href="https://www.linkedin.com/in/dawid-w%C4%99glarz-199574100/"
                                         target="_blank">Dawid Węglarz</a>
@@ -115,14 +117,17 @@ layout: page
                         </div>
                         <div class="row">
                             <div class="col-12 align-self-center mb-2">
-                                <h1 class="page-title text-dark font-weight-medium ml-2 mb-1">Server messi a
-                                    disposizione
-                                    da:</h1>
+                                <div class="alert alert-secondary font-18" role="alert">
+                                    <strong>Server messi a disposizione</strong>
+                                </div>
+
                             </div>
                         </div>
                         <div class="card">
+                            <div class="card-header bg-info">
+                                <h2 class="mb-0 text-white"><b>Istituzioni</b></h2>
+                            </div>
                             <div class="card-body">
-                                <h2 class="card-title">Istituzioni</h2>
                                 <template v-for="item in credits.INSTITUTION">
                                     <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">[[
                                             item[0] ]]</a></h3>
@@ -130,8 +135,10 @@ layout: page
                             </div>
                         </div>
                         <div class="card">
+                            <div class="card-header bg-info">
+                                <h2 class="mb-0 text-white"><b>Persone</b></h2>
+                            </div>
                             <div class="card-body">
-                                <h2 class="card-title">Persone</h2>
                                 <template v-for="item in credits.PERSON">
                                     <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">[[
                                             item[0] ]]</a></h3>
@@ -139,8 +146,11 @@ layout: page
                             </div>
                         </div>
                         <div class="card">
+                            <div class="card-header bg-info">
+                                <h2 class="mb-0 text-white"><b>Associazioni</b></h2>
+                            </div>
                             <div class="card-body">
-                                <h2 class="card-title">Associazioni</h2>
+
                                 <template v-for="item in credits.ASSOCIATION">
                                     <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">[[
                                             item[0] ]]</a></h3>
@@ -148,8 +158,10 @@ layout: page
                             </div>
                         </div>
                         <div class="card">
+                            <div class="card-header bg-info">
+                                <h2 class="mb-0 text-white"><b>Aziende</b></h2>
+                            </div>
                             <div class="card-body">
-                                <h2 class="card-title">Aziende</h2>
                                 <template v-for="item in credits.COMPANY">
                                     <h3 class="card-subtitle mt-2 mb-2 text-muted"><a :href="item[1]" target="_blank">[[
                                             item[0] ]]</a></h3>
