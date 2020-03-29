@@ -264,7 +264,7 @@ layout: page
                                                     <div v-html="availableBandwidthHuman(host)"></div>
                                                 </td>
                                                 <td class="border-top-0 text-center py-2">
-                                                    {{ host.core_count }}
+                                                    [[ host.core_count == '?' ? "❓" : host.core_count ]]
                                                 </td>
                                                 <td class="border-top-0 text-center py-2">
                                                     <a :href="host.url">
@@ -385,12 +385,14 @@ layout: page
                         style="width: ` + Math.round(value * 100) + `%"
                         aria-valuenow="` + Math.round(value * 100) + `" aria-valuemin="0" aria-valuemax="100"></div>`
                 },
-                availableBandwidthHuman: function(host) {
-                    if(!'available_bandwidth_mbps' in host || host.available_bandwidth_mbps === null || host.available_bandwidth_mbps === undefined || isNaN(parseInt(host.available_bandwidth_mbps)) || host.available_bandwidth_mbps === '?' ) {
-                        return `<span data-toggle="tooltip" title="ci stiamo lavorando">?</span>`;
+                availableBandwidthHuman: function (host) {
+                    if (!'available_bandwidth_mbps' in host || host.available_bandwidth_mbps === null ||
+                        host.available_bandwidth_mbps === undefined || isNaN(parseInt(host
+                            .available_bandwidth_mbps)) || host.available_bandwidth_mbps === '?') {
+                        return `<span data-toggle="tooltip" title="Ci stiamo lavorando">❓</span>`;
                     } else {
                         let mbps = parseInt(host.available_bandwidth_mbps);
-                        if(mbps > 999)
+                        if (mbps > 999)
                             return String(mbps / 1000) + ' Gbps';
                         return String(mbps) + ' Mbps';
                     }
