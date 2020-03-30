@@ -25,7 +25,8 @@ layout: page
 
         .btn-image {
             display: inline-block;
-            width: 22px;
+            width: 42px;
+            padding: 4px;
         }
     </style>
 </head>
@@ -114,78 +115,153 @@ layout: page
 
             <div class="container-fluid" style="padding-top: 15px;">
 
+
+
                 <div class="row" style="align-items: center; margin-bottom: -18px;">
                     <div class="d-none d-md-block col-md-3">
-                        <div class="card">
-                            <div class="card-body">
+                        <div class="card bg-primary">
+                            <div class="card-body ">
                                 <div class="d-flex d-lg-flex d-md-block align-items-center">
                                     <div>
                                         <div class="d-inline-flex align-items-center">
-                                            <h2 class="text-dark mb-1 font-weight-medium">[[ hosts.length]]</h2>
+                                            <h1 class="text-white mb-1 font-weight-medium">[[ hosts.length]]</h1>
                                             <!-- <span
                                                 class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span> -->
                                         </div>
-                                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Server
-                                            disponibili
+                                        <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate"><b>Server
+                                                disponibili</b>
                                         </h6>
                                     </div>
                                     <div class="ml-auto mt-md-3 mt-lg-0">
-                                        <span class="opacity-7 text-muted"><i data-feather="server"></i></span>
+                                        <span class="opacity-7 text-muted"><i style="color: white;"
+                                                data-feather="server"></i></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md">
-                        <div class="card">
+                        <div class="card bg-primary">
                             <div class="card-body">
-                                <h3 class="card-title">Avvia la videoconferenza</h3>
+                                <h3 class="text-white card-title">Avvia la videoconferenza</h3>
                                 <!-- <h5 class="card-subtitle my-3">Premi il pulsante <b>JITSI</b> per collegarti ad una
                                     stanza Jitsi Meet o clicca il pulsante <b>MM</b> per una stanza Multiparty Meeting
                                 </h5> -->
                                 <div class="input-group">
-                                    <div class="d-none d-lg-block input-group-prepend">
+                                    <!-- <div class="d-none d-lg-block input-group-prepend">
                                         <span class="input-group-text"><b>CREA</b></span>
-                                    </div>
+                                    </div> -->
                                     <input v-model="room" autofocus="autofocus" v-on:keydown.enter="goToRoom"
-                                        class="form-control" id="room-name" placeholder="Nome della stanza">
+                                        class="form-control" id="room-name"
+                                        placeholder="Inserisci un nome per la stanza">
                                     <div class="input-group-append">
-                                        <button @click="goToRoom('JITSI')" class="btn btn-light" type="button"><img
+                                        <button data-toggle="modal" data-target="#exampleModalLong"
+                                            class="btn btn-success" type="button">
+                                            <!-- <img
                                                 class="btn-image img-responsive" title="Jitsi Meet"
-                                                src="./assets/images/big/jitsi.png"></button>
+                                                src="./assets/images/big/jitsi.png"> -->
+                                            <b>CREA</b>
+                                        </button>
                                     </div>
-                                    <div class="input-group-append">
+                                    <!-- <div class="input-group-append">
                                         <button @click="goToRoom('MM')" class="text-white btn btn-warning"
                                             type="button"><img class="btn-image img-responsive"
                                                 title="Multiparty-Meeting" src="./assets/images/big/mm.png"></button>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="d-none d-md-block col-md-3">
-                        <div class="card">
+                        <div class="card bg-primary">
                             <div class="card-body">
                                 <div class="d-flex d-lg-flex d-md-block align-items-center">
                                     <div>
                                         <div class="d-inline-flex align-items-center">
-                                            <h2 class="text-dark mb-1 font-weight-medium">[[ connectedUsers() ]]
-                                            </h2>
+                                            <h1 class="text-white mb-1 font-weight-medium">[[ connectedUsers()
+                                                ]]
+                                            </h1>
                                             <!-- <span
                                                 class="badge bg-success font-12 text-white font-weight-medium badge-pill ml-2 d-md-none d-lg-block">+48.83%</span> -->
                                         </div>
-                                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Persone
-                                            collegate
+                                        <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate"><b>Persone
+                                                collegate</b>
                                         </h6>
                                     </div>
                                     <div class="ml-auto mt-md-3 mt-lg-0">
-                                        <span class="opacity-7 text-muted"><i data-feather="users"></i></span>
+                                        <span class="opacity-7 text-muted"><i style="color: white;"
+                                                data-feather="users"></i></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content"
+                            style="border: 0px !important; border-radius: 10px 10px 8px 8px !important;">
+                            <div class="modal-header modal-colored-header bg-light"
+                                style="border-radius:8px 8px 0px 0px;">
+                                <h3 class="modal-title text-dark" id="exampleModalLongTitle"><b>Connettiti subito!</b>
+                                </h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span><i style="color: rgb(32, 32, 32);" data-feather="x"></i></span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="shadow card bg-primary" style="border-radius:12px !important">
+                                            <div class="card-body">
+                                                <h3 class="text-white card-title d-flex align-items-center">
+                                                    <div class="rounded-circle mr-2"
+                                                        style="background-color: white; width: 42px;">
+                                                        <img class="btn-image img-responsive" title="Jitsi"
+                                                            src="./assets/images/big/jitsi.png">
+                                                    </div>
+                                                    <b> Jitsi</b>
+                                                </h3>
+                                                <p class="card-text text-white">Zombie ipsum reversus ab viral inferno,
+                                                    nam rick grimes malum cerebro. De carne lumbering animata corpora
+                                                    quaeritis. </p>
+                                                <button @click="goToRoom('JITSI')"
+                                                    class="btn btn-rounded btn-dark float-right"><b>COLLEGATI</b></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: -5px; margin-bottom: -25px;">
+                                    <div class="col-12">
+                                        <div class="shadow card  bg-warning" style="border-radius:12px !important">
+                                            <span class="font-18 badge badge-pill badge-success float-right"
+                                                style="margin-left: 80%; margin-top: -10px;"><b>BETA</b></span>
+                                            <div class="card-body">
+                                                <h3 class="text-white card-title d-flex align-items-center">
+                                                    <div class="rounded-circle mr-2"
+                                                        style="background-color: white; width: 42px;">
+                                                        <img class="btn-image img-responsive" title="Jitsi"
+                                                            src="./assets/images/big/mm.png">
+                                                    </div>
+                                                    <b> Multiparty Meeting</b>
+                                                </h3>
+                                                <p class="card-text text-white">Zombie ipsum reversus ab viral inferno,
+                                                    nam rick grimes malum cerebro. De carne lumbering animata corpora
+                                                    quaeritis. </p>
+                                                <button @click="goToRoom('MM')"
+                                                    class="btn btn-rounded btn-dark float-right"><b>COLLEGATI</b></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="row">
                     <div class="col-12">

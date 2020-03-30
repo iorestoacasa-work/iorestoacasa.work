@@ -6460,7 +6460,7 @@ a {
 }
 
 a:hover {
-  color: #1f3fdb;
+  color: #0062c4;
 }
 
 a:not([href]):not([tabindex]):focus {
