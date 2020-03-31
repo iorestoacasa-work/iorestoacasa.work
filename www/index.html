@@ -40,51 +40,8 @@ layout: page
     </div>
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
-        <header class="topbar" data-navbarbg="skin6">
-            <nav class="navbar top-navbar navbar-expand-md">
-                <div class="navbar-header" data-logobg="skin6">
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                            class="ti-menu ti-close"></i></a>
-                    <div class="navbar-brand">
-                        <a href="index.html">
-                            <b class="logo-icon">
-                                <img src="./assets/images/logo-icon.png" alt="homepage" class="dark-logo"
-                                    style="width: 50px;" />
-                            </b>
 
-                            <span class="logo-text">
-                                <span
-                                    style="margin-left: 6px; color: #272727; font-size: 22px;"><b>io</b>restoacasa</span>
-                            </span>
-                        </a>
-                    </div>
-
-                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="come-si-usa.html"><i
-                            class="fas fa-question-circle"></i></a>
-                </div>
-
-                <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
-                        <li class="nav-item d-none d-md-block">
-                            <a class="nav-link" href="crediti.html">
-                                <i data-feather="info" class="svg-icon"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav float-right">
-                        <li class="nav-item d-none d-md-block">
-                            <a class="nav-link dropdown-toggle" href="come-si-usa.html">
-                                <i class="fas fa-question-circle"></i>
-                                <span class="ml-2 d-none d-lg-inline-block"><span>Hey,</span> <span
-                                        class="text-dark">serve aiuto?</span></span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
+        {% include header.html %}
         {% include sidebar.html %}
 
         <div class="page-wrapper" id="vue-table">
@@ -125,8 +82,6 @@ layout: page
                                     <div>
                                         <div class="d-inline-flex align-items-center">
                                             <h1 class="text-white mb-1 font-weight-medium">[[ hosts.length]]</h1>
-                                            <!-- <span
-                                                class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span> -->
                                         </div>
                                         <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate"><b>Server
                                                 disponibili</b>
@@ -144,30 +99,16 @@ layout: page
                         <div class="card bg-primary">
                             <div class="card-body">
                                 <h3 class="text-white card-title">Avvia la videoconferenza</h3>
-                                <!-- <h5 class="card-subtitle my-3">Premi il pulsante <b>JITSI</b> per collegarti ad una
-                                    stanza Jitsi Meet o clicca il pulsante <b>MM</b> per una stanza Multiparty Meeting
-                                </h5> -->
                                 <div class="input-group">
-                                    <!-- <div class="d-none d-lg-block input-group-prepend">
-                                        <span class="input-group-text"><b>CREA</b></span>
-                                    </div> -->
                                     <input v-model="room" autofocus="autofocus" v-on:keydown.enter="goToRoom"
                                         class="form-control" id="room-name"
                                         placeholder="Inserisci un nome per la stanza">
                                     <div class="input-group-append">
                                         <button data-toggle="modal" data-target="#exampleModalLong"
                                             class="btn btn-success" type="button">
-                                            <!-- <img
-                                                class="btn-image img-responsive" title="Jitsi Meet"
-                                                src="./assets/images/big/jitsi.png"> -->
                                             <b>CREA</b>
                                         </button>
                                     </div>
-                                    <!-- <div class="input-group-append">
-                                        <button @click="goToRoom('MM')" class="text-white btn btn-warning"
-                                            type="button"><img class="btn-image img-responsive"
-                                                title="Multiparty-Meeting" src="./assets/images/big/mm.png"></button>
-                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -181,8 +122,6 @@ layout: page
                                             <h1 class="text-white mb-1 font-weight-medium">[[ connectedUsers()
                                                 ]]
                                             </h1>
-                                            <!-- <span
-                                                class="badge bg-success font-12 text-white font-weight-medium badge-pill ml-2 d-md-none d-lg-block">+48.83%</span> -->
                                         </div>
                                         <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate"><b>Persone
                                                 collegate</b>
@@ -225,11 +164,12 @@ layout: page
                                                     </div>
                                                     <b> Jitsi</b>
                                                 </h3>
-                                                <p class="card-text text-white">Zombie ipsum reversus ab viral inferno,
-                                                    nam rick grimes malum cerebro. De carne lumbering animata corpora
-                                                    quaeritis. </p>
+                                                <p class="card-text text-white"><b>Stabile, concreto e solido. Richiede
+                                                        una buona connessione e l'app ufficiale disponibile nei vari
+                                                        store</b></p>
                                                 <button @click="goToRoom('JITSI')"
-                                                    class="btn btn-rounded btn-dark float-right"><b>COLLEGATI</b></button>
+                                                    class="btn btn-rounded btn-dark float-right"><i
+                                                        class="mr-2 fas fa-rocket"></i><b>COLLEGATI</b></button>
                                             </div>
                                         </div>
                                     </div>
@@ -237,8 +177,11 @@ layout: page
                                 <div class="row" style="margin-top: -5px; margin-bottom: -25px;">
                                     <div class="col-12">
                                         <div class="shadow card  bg-warning" style="border-radius:12px !important">
-                                            <span class="font-18 badge badge-pill badge-success float-right"
-                                                style="margin-left: 80%; margin-top: -10px;"><b>BETA</b></span>
+                                            <div>
+                                                <img class="img-responsive"
+                                                    style="width: 60px; float: right; margin-bottom: -70px;"
+                                                    src="./assets/images/beta-label.png">
+                                            </div>
                                             <div class="card-body">
                                                 <h3 class="text-white card-title d-flex align-items-center">
                                                     <div class="rounded-circle mr-2"
@@ -248,11 +191,11 @@ layout: page
                                                     </div>
                                                     <b> Multiparty Meeting</b>
                                                 </h3>
-                                                <p class="card-text text-white">Zombie ipsum reversus ab viral inferno,
-                                                    nam rick grimes malum cerebro. De carne lumbering animata corpora
-                                                    quaeritis. </p>
+                                                <p class="card-text text-white"><b>Leggero, veloce e sperimentale. Non
+                                                        richiede alcuna applicazione installata!</b></p>
                                                 <button @click="goToRoom('MM')"
-                                                    class="btn btn-rounded btn-dark float-right"><b>COLLEGATI</b></button>
+                                                    class="btn btn-rounded btn-dark float-right"><i
+                                                        class="mr-2 fas fa-rocket"></i><b>COLLEGATI</b></button>
                                             </div>
                                         </div>
                                     </div>
@@ -265,133 +208,7 @@ layout: page
 
                 <div class="row">
                     <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="table-responsive">
-
-                                    <table class="table-striped table table-sm table-hover no-wrap v-middle mb-0">
-                                        <thead>
-                                            <tr class="border-0">
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Nome server
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                    Utenti connessi
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                    Carico
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                    Banda<br>disponibile
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                    CPU<br>core
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="host in hosts">
-                                                <td class="border-top-0 py-2">
-                                                    <div class="d-flex no-block align-items-center">
-                                                        <div class="mr-2">
-                                                            <a :href="host.url">
-                                                                <template v-if="host.software === 'MM'">
-                                                                    <img class="jitsi-logo img-responsive"
-                                                                        title="Multiparty-Meeting"
-                                                                        src="./assets/images/big/mm.png">
-                                                                </template>
-                                                                <template v-else>
-                                                                    <img class="jitsi-logo img-responsive"
-                                                                        title="Jitsi Meet"
-                                                                        src="./assets/images/big/jitsi.png">
-                                                                </template>
-                                                            </a>
-                                                        </div>
-                                                        <div>
-                                                            <a :href="host.url">
-                                                                <h4 class="text-dark mb-0 font-weight-medium">
-                                                                    [[ host.name ]]
-                                                                </h4>
-                                                            </a>
-                                                            <span class="font-16">da
-                                                            </span>
-                                                            <span v-html="unicorniMagici(host)">
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="border-top-0 text-center py-2 font-18">
-                                                    <template v-if="host.software === 'MM'">
-                                                        <template v-if="'user_count' in host">
-                                                            <b>[[ host.user_count ]]</b>
-                                                        </template>
-                                                        <template v-else>
-                                                            <span data-toggle="tooltip"
-                                                                title="ci stiamo lavorando">❓</span>
-                                                        </template>
-                                                    </template>
-                                                    <template v-else>
-                                                        <b>[[ host.user_count ]]</b>
-                                                    </template>
-                                                </td>
-                                                <td class="border-top-0 text-center py-2">
-                                                    <div v-if="host.cpu_usage != undefined || host.cpu_usage != null"
-                                                        class="progress" v-html="cpuUsage(host.cpu_usage)">
-                                                    </div>
-                                                    <div v-else>
-                                                        <span data-toggle="tooltip"
-                                                            title="ci stiamo lavorando">🔜</span>
-                                                    </div>
-                                                </td>
-                                                <td class="border-top-0 text-center py-2">
-                                                    <div v-html="availableBandwidthHuman(host)"></div>
-                                                </td>
-                                                <td class="border-top-0 text-center py-2">
-                                                    <span class="font-16 badge badge-pill badge-secondary">
-                                                        <i v-if="host.core_count > 4" class="fas fa-bolt"
-                                                            style="color: rgb(252, 224, 68);"></i>
-                                                        <b>
-                                                            [[ host.core_count == '?' ? "❓" :
-                                                            host.core_count]]
-                                                        </b>
-                                                    </span>
-                                                </td>
-                                                <td class="border-top-0 text-center py-2">
-                                                    <a :href="host.url">
-                                                        <template v-if="host.software === 'MM'">
-                                                            <div class="btn btn-warning btn-rounded font-12 text-white">
-                                                                <b>BETA</b><i class="ml-1 fa fa-play text-white
-                                                                    font-14" data-toggle="tooltip" title="Online"></i>
-                                                            </div>
-                                                        </template>
-                                                        <template v-else>
-                                                            <button style="padding: 12px" type="button"
-                                                                class="btn btn-rounded btn-primary">
-                                                                <i class="fa fa-play text-white font-14"
-                                                                    data-toggle="tooltip" title="Online"></i>
-                                                            </button>
-                                                        </template>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td>
-                                                    <div style="margin-top: 12px;">
-                                                        <a href="voglio-contribuire.html">
-                                                            Aggiungi il tuo server a questa lista!
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                        {% include table.html %}
                     </div>
                 </div>
             </div>
@@ -407,103 +224,7 @@ layout: page
     <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
     <script src="./dist/js/sidebarmenu.js"></script>
     <script src="./dist/js/custom.min.js"></script>
-    <script src="dist/js/vue.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
-    <script>
-        var app = new Vue({
-            el: '#vue-table',
-            delimiters: ['[[', ']]'],
-            data: {
-                room: "",
-                hosts: [],
-            },
-            mounted: function () {
-                fetch('https://iorestoacasa.work/hosts.json')
-                    .then(r => r.json())
-                    .then(json => {
-                        this.hosts = json.instances;
-                        this.hosts.sort(function (a, b) {
-                            return a.software === 'MM' ? -1 : 1;
-                        });
 
-                        this.hosts.sort(function (a, b) {
-                            return a.cpu_usage - b.cpu_usage;
-                        });
-                    })
-            },
-            methods: {
-                connectedUsers: function () {
-                    // Somma degli utenti presenti all'interno del JSON
-                    var sum = 0;
-                    for (var i in this.hosts) {
-                        if (this.hosts[i].user_count !== "?" && this.hosts[i].user_count !== undefined &&
-                            this.hosts[i].user_count != null) {
-                            // console.log(this.hosts[i].user_count);
-                            sum += parseInt(this.hosts[i].user_count);
-                        }
-                    }
-                    return sum;
-                },
-                average: function () {
-                    if (this.connectedUsers() === 0) {
-                        return "Just you 🤗"
-                    }
-                    return Math.round((this.connectedUsers() / this.hosts.lenght) * 100) / 100;
-                },
-                goToPage: function (url) {
-                    window.open(url);
-                },
-                unicorniMagici: function (host) {
-                    if (host.by === "\ud83e\udd84") {
-                        return `<a href="https://unicorni.team/"><b>\ud83e\udd84</b></a> e <a
-                            href="https://www.shellrent.com/"><b>Shellrent</b></a>`;
-                    } else {
-                        return `<a href=` + host.by_url + `><b>` + host.by + `</b></a>`;
-                    }
-                },
-                cpuUsage: function (value) {
-                    var color;
-                    if (Math.round(value * 100) <= 60) {
-                        color = "bg-success"
-                    } else if (Math.round(value * 100) > 60 && Math.round(value * 100) <= 80) {
-                        color = "bg-warning"
-                    } else {
-                        color = "bg-danger"
-                    }
-                    return `<div class="progress-bar ` + color + ` progress-bar-striped progress-bar-animated"
-                        role="progressbar"
-                        style="width: ` + Math.round(value * 100) + `%"
-                        aria-valuenow="` + Math.round(value * 100) + `" aria-valuemin="0" aria-valuemax="100"></div>`
-                },
-                availableBandwidthHuman: function (host) {
-                    if (!'available_bandwidth_mbps' in host || host.available_bandwidth_mbps === null ||
-                        host.available_bandwidth_mbps === undefined || isNaN(parseInt(host
-                            .available_bandwidth_mbps)) || host.available_bandwidth_mbps === '?') {
-                        return `<span data-toggle="tooltip" title="Ci stiamo lavorando">❓</span>`;
-                    } else {
-                        let mbps = parseInt(host.available_bandwidth_mbps);
-                        if (mbps > 999)
-                            return '<span class="pulsar font-14 badge badge-pill badge-success"><b>' +
-                                String(mbps / 1000) + ' Gbps </b></span>';
-                        return '<span class="font-14 badge badge-pill badge-light"><b>' +
-                            String(mbps) + ' Mbps </b></span>';
-                    }
-                },
-                goToRoom: function (e) {
-                    if (this.room === "") {
-                        this.room = Math.random().toString(36).substring(2, 15) +
-                            Math.random().toString(36).substring(2, 15);
-                    }
-                    this.room = this.room.replace(/([^a-z0-9]+)/gi, '-');
-
-                    let base_url = this.hosts.find(u => u.software === e).url;
-                    if (base_url.slice(-1) !== '/')
-                        base_url += '/';
-                    window.open(base_url + this.room);
-                },
-            },
-        })
-    </script>
 </body>
 
 </html>

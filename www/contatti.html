@@ -24,54 +24,11 @@ layout: page
     </div>
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
-        <header class="topbar" data-navbarbg="skin6">
-            <nav class="navbar top-navbar navbar-expand-md">
-                <div class="navbar-header" data-logobg="skin6">
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                            class="ti-menu ti-close"></i></a>
-                    <div class="navbar-brand">
-                        <a href="index.html">
-                            <b class="logo-icon">
-                                <img src="./assets/images/logo-icon.png" alt="homepage" class="dark-logo"
-                                    style="width: 50px;" />
-                            </b>
+        {% include header.html %}
 
-                            <span class="logo-text">
-                                <span
-                                    style="margin-left: 6px; color: #272727; font-size: 22px;"><b>io</b>restoacasa</span>
-                            </span>
-                        </a>
-                    </div>
-
-                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="come-si-usa.html"><i
-                            class="fas fa-question-circle"></i></a>
-                </div>
-
-                <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
-                        <li class="nav-item d-none d-md-block">
-                            <a class="nav-link" href="crediti.html">
-                                <i data-feather="info" class="svg-icon"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav float-right">
-                        <li class="nav-item d-none d-md-block">
-                            <a class="nav-link dropdown-toggle" href="come-si-usa.html">
-                                <i class="fas fa-question-circle"></i>
-                                <span class="ml-2 d-none d-lg-inline-block"><span>Hey,</span> <span
-                                        class="text-dark">serve aiuto?</span></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
         {%include sidebar.html%}
 
         <div class="page-wrapper">
-
-
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 align-self-center">
@@ -85,12 +42,10 @@ layout: page
                             </nav>
                         </div>
                     </div>
-
                 </div>
             </div>
 
             <div class="container-fluid" style="padding-top: 15px;">
-
                 <div class="row">
                     <div class="col-12">
                         <div class="card-deck">
@@ -155,7 +110,6 @@ layout: page
 
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
