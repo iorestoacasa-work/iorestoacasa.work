@@ -32,7 +32,7 @@ input {
   font-weight: 300;
   font-display: swap;
   src: local("Rubik Light"), local("Rubik-Light"),
-    url("/www/dist/fonts/Rubik-Light.ttf") format("truetype");
+    url("/dist/fonts/Rubik-Light.ttf") format("truetype");
 }
 
 @font-face {
@@ -41,7 +41,7 @@ input {
   font-weight: 400;
   font-display: swap;
   src: local("Rubik"), local("Rubik-Regular"),
-    url("/www/dist/fonts/Rubik-Regular.ttf") format("truetype");
+    url("/dist/fonts/Rubik-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -50,7 +50,7 @@ input {
   font-weight: 500;
   font-display: swap;
   src: local("Rubik Medium"), local("Rubik-Medium"),
-    url("/www/dist/fonts/Rubik-Medium.ttf") format("truetype");
+    url("/dist/fonts/Rubik-Medium.ttf") format("truetype");
 }
 
 @font-face {
@@ -59,7 +59,7 @@ input {
   font-weight: 700;
   font-display: swap;
   src: local("Rubik Bold"), local("Rubik-Bold"),
-    url("/www/dist/fonts/Rubik-Bold.ttf") format("truetype");
+    url("/dist/fonts/Rubik-Bold.ttf") format("truetype");
 
 }
 
