@@ -26,7 +26,7 @@ layout: page
 
         {% include header.html %}
 
-        {%include sidebar.html%}
+        {% include sidebar.html %}
 
         <div class="page-wrapper">
 
@@ -55,7 +55,10 @@ layout: page
                             <h5 class="mb-0 text-center-mob">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
                                     data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                    È gratuito?
+                                    <b>È gratuito?</b>
+                                </button>
+                                <button class="btn btn-link float-right">
+                                    <i class="fas fa-link"></i>
                                 </button>
                             </h5>
                         </div>
@@ -73,7 +76,10 @@ layout: page
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
                                     data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                    Quante persone possono partecipare alla stessa videochiamata?
+                                    <b>Quante persone possono partecipare alla stessa videochiamata?</b>
+                                </button>
+                                <button class="btn btn-link float-right">
+                                    <i class="fas fa-link"></i>
                                 </button>
                             </h5>
                         </div>
@@ -92,8 +98,11 @@ layout: page
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
                                     data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                    Abbiamo problemi audio / video: non ci ci sentiamo, si scollega, si sente "a
-                                    scatti".
+                                    <b>Abbiamo problemi audio / video: non ci ci sentiamo, si scollega, si sente "a
+                                        scatti".</b>
+                                </button>
+                                <button class="btn btn-link float-right">
+                                    <i class="fas fa-link"></i>
                                 </button>
                             </h5>
                         </div>
@@ -120,7 +129,10 @@ layout: page
                             <h5 class="mb-0 text-center-mob">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
                                     data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                    Quale server devo scegliere?
+                                    <b>Quale server devo scegliere?</b>
+                                </button>
+                                <button class="btn btn-link float-right">
+                                    <i class="fas fa-link"></i>
                                 </button>
                             </h5>
                         </div>
@@ -130,7 +142,8 @@ layout: page
                                 Il primo della tabella va bene: sono tutti in grado di ospitare almeno una conferenza da
                                 30-40 persone.
                                 <br>
-                                Puoi anche utilizzare il bottone <span class="btn btn-success"><b>CREA</b></span> che
+                                <br>
+                                Puoi anche utilizzare il bottone <b>CREA</b> che
                                 trovi in alto nella homepage: verrà automaticamente scelto il server migliore in quel
                                 momento.
                             </div>
@@ -142,7 +155,12 @@ layout: page
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
                                     data-target="#collapse5" aria-expanded="false" aria-controls="collapse4">
-                                    Modificando hostname nel <code>.env</code> la configurazione di NGINX non cambia
+                                    <b>
+                                        Modificando hostname nel <code>.env</code> la configurazione di NGINX non cambia
+                                    </b>
+                                </button>
+                                <button class="btn btn-link float-right">
+                                    <i class="fas fa-link"></i>
                                 </button>
                             </h5>
                         </div>
@@ -164,7 +182,10 @@ layout: page
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
                                     data-target="#collapse6" aria-expanded="false" aria-controls="collapse4">
-                                    Quali porte devo aprire per ospitare Jitsi Meet?
+                                    <b>Quali porte devo aprire per ospitare Jitsi Meet?</b>
+                                </button>
+                                <button class="btn btn-link float-right">
+                                    <i class="fas fa-link"></i>
                                 </button>
                             </h5>
                         </div>
@@ -173,7 +194,8 @@ layout: page
                             <div class="card-body">
                                 Le porte da aprire sono descritte qui: <a
                                     href="https://github.com/jitsi/docker-jitsi-meet#external-ports">https://github.com/jitsi/docker-jitsi-meet#external-ports</a><br>
-                                A quelle dovrai aggiungere una porta TCP (HTTP) a tua scelta dove esporre le metriche.
+                                <br>A quelle dovrai aggiungere una porta TCP (HTTP) a tua scelta dove esporre le
+                                metriche.
                             </div>
                         </div>
                     </div>

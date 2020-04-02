@@ -75,7 +75,7 @@
                          </td>
                          <td class="border-top-0 text-center py-2">
                              <span class="font-16 badge badge-pill badge-secondary">
-                                 <i v-if="host.core_count > 4" class="fas fa-bolt"
+                                 <i v-if="host.core_count >= 8" class="fas fa-bolt"
                                      style="color: rgb(252, 224, 68);"></i>
                                  <b>
                                      [[ host.core_count == '?' ? "❓" :
@@ -143,13 +143,36 @@
                  .then(r => r.json())
                  .then(json => {
                      this.hosts = json.instances;
+
+                     // Order instances by type
                      this.hosts.sort(function (a, b) {
                          return a.software === 'MM' ? -1 : 1;
                      });
 
+                     // Count MM instances
+                     var counter = 0;
+                     for (var i = 0; i < this.hosts.length; ++i) {
+                         if (this.hosts[i]['software'] == "MM")
+                             counter++;
+                         else
+                             break;
+                     }
+
+                     // Extract MM instances
+                     let mm = this.hosts.splice(0, counter);
+
+                     // Order MM by usage
+                     mm.sort(function (a, b) {
+                         return a.cpu_usage - b.cpu_usage;
+                     });
+
+                     // Order Jitsi by usage
                      this.hosts.sort(function (a, b) {
                          return a.cpu_usage - b.cpu_usage;
                      });
+
+                     // Merge results
+                     this.hosts = mm.concat(this.hosts);
                  })
          },
          methods: {
