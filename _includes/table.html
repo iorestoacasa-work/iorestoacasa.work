@@ -229,17 +229,17 @@
                     return `<span data-toggle="tooltip" title="Ci stiamo lavorando">❓</span>`;
                 } else {
                     let mbps = parseInt(host.available_bandwidth_mbps);
-                    if(mbps > 10000) {
+                    if(mbps > 9999) {
                         var speed = String(mbps / 1000) + ' Gbps';
-                        var color = '#81ea51';
+                        var color = '#47d008';
                     } else if (mbps > 999) {
                         var speed = String(mbps / 1000) + ' Gbps';
-                        var color = '#6eb74d';
+                        var color = '#7cd553';
                     } else {
                         var speed = String(mbps) + ' Mbps';
-                        var color = '#889b7f';
+                        var color = '#939b8f';
                     }
-                    return '<span style="background-color: '+ color +';" class="pulsar font-14 badge badge-pill badge-success"><b>' + speed +'</b></span>';
+                    return '<span style="background-color: '+ color +';" class="font-14 badge badge-pill badge-success"><b>' + speed +'</b></span>';
                 }
             },
             goToRoom: function (e) {
