@@ -1,0 +1,178 @@
+---
+layout: page
+---
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <link href="./dist/css/pulsar.css" rel="stylesheet">
+    <style>
+        .jitsi-mm-logo {
+            height: 34px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+
+        {% include header.html %}
+        {% include sidebar.html %}
+
+        <div class="page-wrapper" id="vue-table">
+
+
+            <div class="page-breadcrumb" id="breadcrumb">
+                <div class="row">
+                    <div class="col-12 align-self-center">
+                        <h1 class="page-title text-dark font-weight-medium mb-1">La lista dei server a disposizione per
+                            te!</h1>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb m-0 p-0">
+                                    <li class="breadcrumb-item">
+                                        Grazie ai software di videochiamate open source <a
+                                            href="https://jitsi.org/jitsi-meet/" target="_blank">Jitsi Meet</a> e <a
+                                            href="https://github.com/havfo/multiparty-meeting"
+                                            target="_blank">Multiparty Meeting</a>,
+                                        possiamo continuare a lavorare, studiare, socializzare.
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-fluid" style="padding-top: 15px;">
+
+
+
+
+                <!-- <div class="d-none d-md-block col-md-3">
+                        <div class="card bg-primary">
+                            <div class="card-body ">
+                                <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                    <div>
+                                        <div class="d-inline-flex align-items-center">
+                                            <h1 class="text-white mb-1 font-weight-medium">[[ hosts.length]]</h1>
+                                        </div>
+                                        <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate"><b>Server
+                                                disponibili</b>
+                                        </h6>
+                                    </div>
+                                    <div class="ml-auto mt-md-3 mt-lg-0">
+                                        <span class="opacity-7 text-muted"><i style="color: white;"
+                                                data-feather="server"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-none d-md-block col-md-3">
+                        <div class="card bg-primary">
+                            <div class="card-body">
+                                <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                    <div>
+                                        <div class="d-inline-flex align-items-center">
+                                            <h1 class="text-white mb-1 font-weight-medium">[[ connectedUsers()
+                                                ]]
+                                            </h1>
+                                        </div>
+                                        <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate"><b>Persone
+                                                collegate</b>
+                                        </h6>
+                                    </div>
+                                    <div class="ml-auto mt-md-3 mt-lg-0">
+                                        <span class="opacity-7 text-muted"><i style="color: white;"
+                                                data-feather="users"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="card-group">
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">[[ hosts.length]]</h2>
+                                        <!-- <span
+                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span> -->
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Server
+                                        disponibili</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="archive"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <h2 class="text-dark mb-1 font-weight-medium">[[
+                                        connectedUsers()
+                                        ]]</h2>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">
+                                        Persone connesse
+                                    </h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="users"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <h2 class="text-dark mb-1 font-weight-medium">[[ average() ]]</h2>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Media di core per
+                                        server</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row" style="margin-top: -15px;">
+                    <div class="col-12">
+                        {% include table.html %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include footer.html %}
+    </div>
+
+    <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./dist/js/app-style-switcher.js"></script>
+    <script src="./dist/js/feather.min.js"></script>
+    <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="./dist/js/sidebarmenu.js"></script>
+    <script src="./dist/js/custom.min.js"></script>
+
+</body>
+
+</html>

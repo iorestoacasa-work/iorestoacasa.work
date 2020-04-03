@@ -5,28 +5,10 @@ layout: page
 <html dir="ltr" lang="en">
 
 <head>
-    <link href="./dist/css/pulsar.css" rel="stylesheet">
+    <link href="./dist/css/animated-bg.css" rel="stylesheet">
     <style>
-        #total-info .card-body {
-            padding: 10px 20px;
-        }
-
-        #total-info {
-            margin-bottom: 12px;
-        }
-
-        #breadcrumb {
-            padding-top: 15px;
-        }
-
-        .jitsi-logo {
-            height: 34px;
-        }
-
-        .btn-image {
-            display: inline-block;
-            width: 42px;
-            padding: 4px;
+        body {
+            overflow-y: hidden;
         }
     </style>
 </head>
@@ -38,182 +20,39 @@ layout: page
             <div class="lds-pos"></div>
         </div>
     </div>
+
+
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
 
-        {% include header.html %}
+
+        {% include header-homepage.html %}
         {% include sidebar.html %}
 
+
+
         <div class="page-wrapper" id="vue-table">
-
-
-            <div class="page-breadcrumb" id="breadcrumb">
-                <div class="row">
-                    <div class="col-12 align-self-center">
-                        <h1 class="page-title text-dark font-weight-medium mb-1">Restiamo a casa, ma continuiamo a
-                            vederci!</h1>
-                        <div class="d-flex align-items-center">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item">
-                                        Grazie ai software di videochiamate open source <a
-                                            href="https://jitsi.org/jitsi-meet/" target="_blank">Jitsi Meet</a> e <a
-                                            href="https://github.com/havfo/multiparty-meeting"
-                                            target="_blank">Multiparty-Meeting</a>,
-                                        possiamo continuare a lavorare, studiare, socializzare.
-                                    </li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="container-fluid" style="padding-top: 15px;">
-
-
-
-                <div class="row" style="align-items: center; margin-bottom: -18px;">
-                    <div class="d-none d-md-block col-md-3">
-                        <div class="card bg-primary">
-                            <div class="card-body ">
-                                <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                    <div>
-                                        <div class="d-inline-flex align-items-center">
-                                            <h1 class="text-white mb-1 font-weight-medium">[[ hosts.length]]</h1>
-                                        </div>
-                                        <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate"><b>Server
-                                                disponibili</b>
-                                        </h6>
-                                    </div>
-                                    <div class="ml-auto mt-md-3 mt-lg-0">
-                                        <span class="opacity-7 text-muted"><i style="color: white;"
-                                                data-feather="server"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md">
-                        <div class="card bg-primary">
-                            <div class="card-body">
-                                <h3 class="text-white card-title">Avvia la videoconferenza</h3>
-                                <div class="input-group">
-                                    <input v-model="room" autofocus="autofocus" v-on:keydown.enter="goToRoom"
-                                        class="form-control" id="room-name"
-                                        placeholder="Inserisci un nome per la stanza">
-                                    <div class="input-group-append">
-                                        <button data-toggle="modal" data-target="#exampleModalLong"
-                                            class="btn btn-success" type="button">
-                                            <b>CREA</b>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-none d-md-block col-md-3">
-                        <div class="card bg-primary">
-                            <div class="card-body">
-                                <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                    <div>
-                                        <div class="d-inline-flex align-items-center">
-                                            <h1 class="text-white mb-1 font-weight-medium">[[ connectedUsers()
-                                                ]]
-                                            </h1>
-                                        </div>
-                                        <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate"><b>Persone
-                                                collegate</b>
-                                        </h6>
-                                    </div>
-                                    <div class="ml-auto mt-md-3 mt-lg-0">
-                                        <span class="opacity-7 text-muted"><i style="color: white;"
-                                                data-feather="users"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="container-fluid min-vh-100">
+                <div class="row justify-content-center bg-blue flex-grow-1">
+                    <div class="area">
+                        <ul class="circles">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
                     </div>
                 </div>
 
 
-                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content"
-                            style="border: 0px !important; border-radius: 10px 10px 8px 8px !important;">
-                            <div class="modal-header modal-colored-header bg-light"
-                                style="border-radius:8px 8px 0px 0px;">
-                                <h3 class="modal-title text-dark" id="exampleModalLongTitle"><b>Connettiti subito!</b>
-                                </h3>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span><i style="color: rgb(32, 32, 32);" data-feather="x"></i></span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="shadow card bg-primary" style="border-radius:12px !important">
-                                            <div class="card-body">
-                                                <h3 class="text-white card-title d-flex align-items-center">
-                                                    <div class="rounded-circle mr-2"
-                                                        style="background-color: white; width: 42px;">
-                                                        <img class="btn-image img-responsive" title="Jitsi"
-                                                            src="./assets/images/big/jitsi.png">
-                                                    </div>
-                                                    <b> Jitsi</b>
-                                                </h3>
-                                                <p class="card-text text-white"><b>Stabile, concreto e solido. Richiede
-                                                        una buona connessione e l'app ufficiale disponibile nei vari
-                                                        store</b></p>
-                                                <button @click="goToRoom('JITSI')"
-                                                    class="btn btn-rounded btn-dark float-right"><i
-                                                        class="mr-2 fas fa-rocket"></i><b>COLLEGATI</b></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" style="margin-top: -5px; margin-bottom: -25px;">
-                                    <div class="col-12">
-                                        <div class="shadow card  bg-warning" style="border-radius:12px !important">
-                                            <div>
-                                                <img class="img-responsive"
-                                                    style="width: 60px; float: right; margin-bottom: -70px;"
-                                                    src="./assets/images/beta-label.png">
-                                            </div>
-                                            <div class="card-body">
-                                                <h3 class="text-white card-title d-flex align-items-center">
-                                                    <div class="rounded-circle mr-2"
-                                                        style="background-color: white; width: 42px;">
-                                                        <img class="btn-image img-responsive" title="Jitsi"
-                                                            src="./assets/images/big/mm.png">
-                                                    </div>
-                                                    <b> Multiparty Meeting</b>
-                                                </h3>
-                                                <p class="card-text text-white"><b>Leggero, veloce e sperimentale. Non
-                                                        richiede alcuna applicazione installata!</b></p>
-                                                <button @click="goToRoom('MM')"
-                                                    class="btn btn-rounded btn-dark float-right"><i
-                                                        class="mr-2 fas fa-rocket"></i><b>COLLEGATI</b></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-12">
-                        {% include table.html %}
-                    </div>
-                </div>
             </div>
         </div>
-        {% include footer.html %}
     </div>
 
     <script src="./assets/libs/jquery/dist/jquery.min.js"></script>

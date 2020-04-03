@@ -1,11 +1,25 @@
+<head>
+    <style>
+        .logo {
+            height: 24px;
+        }
+    </style>
+</head>
+
 <aside class="left-sidebar" data-sidebarbg="skin6">
     <div class="scroll-sidebar" data-sidebarbg="skin6">
-        <nav class="sidebar-nav">
+        <nav class="sidebar-nav" id="vue-sidebar">
             <ul id="sidebarnav">
-                <li class="sidebar-item">
+                <li class="sidebar-item" v-bind:class="[ checkHomePage() ]">
                     <a class="sidebar-link sidebar-link" href="/index.html" aria-expanded="false">
                         <i data-feather="home" class="feather-icon"></i>
                         <span class="hide-menu">Homepage</span>
+                    </a>
+                </li>
+                <li class="sidebar-item ">
+                    <a class="sidebar-link sidebar-link" href="/tabella-server.html" aria-expanded="false">
+                        <i data-feather="server" class="feather-icon"></i>
+                        <span class="hide-menu">Server</span>
                     </a>
                 </li>
                 <li class="list-divider"></li>
@@ -65,17 +79,15 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="https://github.com/havfo/multiparty-meeting"
                         aria-expanded="false">
-                        <img class="jitsi-logo img-responsive mx-1" title="Multiparty Meeting"
-                            src="/assets/images/big/mm.png" style="filter: grayscale(100%); filter:
-                            brightness(0%); height: 24px;">
+                        <img class="logo img-responsive mx-1" title="Multiparty Meeting" src="/assets/images/big/mm.png"
+                            style="filter: grayscale(100%) brightness(20%);">
                         <span class="hide-menu">Multiparty Meeting</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="https://jitsi.org/jitsi-meet/" aria-expanded="false">
-                        <img class="jitsi-logo img-responsive mx-1" title="Jitsi Meet"
-                            src="/assets/images/big/jitsi.png" style="filter: grayscale(100%); filter:
-                            brightness(0%); height: 24px;">
+                        <img class="logo img-responsive mx-1" title="Jitsi Meet" src="/assets/images/big/jitsi.png"
+                            style="filter: grayscale(100%) brightness(0%);">
                         <span class="hide-menu">Jitsi Meet</span>
                     </a>
                 </li>
@@ -83,3 +95,19 @@
         </nav>
     </div>
 </aside>
+
+<script src="./dist/js/vue.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+<script>
+    var app = new Vue({
+        el: '#vue-sidebar',
+        delimiters: ['[[', ']]'],
+        methods: {
+            checkHomePage: function () {
+                if (window.location.href == "https://iorestoacasa.work/") {
+                    return "selected"
+                }
+            }
+        },
+    })
+</script>
