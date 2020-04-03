@@ -3870,6 +3870,7 @@ label {
   font-family: "Font Awesome 5 Brands";
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url(icons/font-awesome/webfonts/fa-brands-400.eot);
   src: url(icons/font-awesome/webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"),
     url(icons/font-awesome/webfonts/fa-brands-400.woff2) format("woff2"),
@@ -3892,6 +3893,7 @@ label {
   font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url(icons/font-awesome/webfonts/fa-regular-400.eot);
   src: url(icons/font-awesome/webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"),
     url(icons/font-awesome/webfonts/fa-regular-400.woff2) format("woff2"),
@@ -3908,6 +3910,7 @@ label {
   font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: 900;
+  font-display: swap;
   src: url(icons/font-awesome/webfonts/fa-solid-900.eot);
   src: url(icons/font-awesome/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),
     url(icons/font-awesome/webfonts/fa-solid-900.woff2) format("woff2"),
@@ -3923,6 +3926,7 @@ label {
 
 @font-face {
   font-family: simple-line-icons;
+  font-display: swap;
   src: url(icons/simple-line-icons/fonts/Simple-Line-Icons.eot?-i3a2kk);
   src: url(icons/simple-line-icons/fonts/Simple-Line-Icons.eot?#iefix-i3a2kk) format("embedded-opentype"),
     url(icons/simple-line-icons/fonts/Simple-Line-Icons.ttf?-i3a2kk) format("truetype"),
@@ -4866,6 +4870,7 @@ legend {
 
 @font-face {
   font-family: themify;
+  font-display: swap;
   src: url(icons/themify-icons/fonts/themify.eot?-fvbane);
   src: url(icons/themify-icons/fonts/themify.eot?#iefix-fvbane) format("embedded-opentype"),
     url(icons/themify-icons/fonts/themify.woff) format("woff"),
@@ -19414,6 +19419,7 @@ ul.list-style-none li a:hover {
 
 @font-face {
   font-family: TofinoPersonal-Medium;
+  font-display: swap;
   src: url(fonts/TofinoPersonal-Medium.eot?#iefix) format("embedded-opentype"),
     url(fonts/TofinoPersonal-Medium.otf) format("opentype"),
     url(fonts/TofinoPersonal-Medium.woff) format("woff"),
@@ -19425,6 +19431,7 @@ ul.list-style-none li a:hover {
 
 @font-face {
   font-family: TofinoPersonal-Regular;
+  font-display: swap;
   src: url(fonts/TofinoPersonal-Regular.eot?#iefix) format("embedded-opentype"),
     url(fonts/TofinoPersonal-Regular.otf) format("opentype"),
     url(fonts/TofinoPersonal-Regular.woff) format("woff"),
@@ -19436,6 +19443,7 @@ ul.list-style-none li a:hover {
 
 @font-face {
   font-family: TofinoPersonal-Book;
+  font-display: swap;
   src: url(fonts/TofinoPersonal-Book.eot?#iefix) format("embedded-opentype"),
     url(fonts/TofinoPersonal-Book.otf) format("opentype"),
     url(fonts/TofinoPersonal-Book.woff) format("woff"),
@@ -19447,6 +19455,7 @@ ul.list-style-none li a:hover {
 
 @font-face {
   font-family: Gilmer-Heavy;
+  font-display: swap;
   src: url(fonts/Gilmer-Heavy.eot?#iefix) format("embedded-opentype"),
     url(fonts/Gilmer-Heavy.otf) format("opentype"),
     url(fonts/Gilmer-Heavy.woff) format("woff"),
@@ -19458,6 +19467,7 @@ ul.list-style-none li a:hover {
 
 @font-face {
   font-family: Gilmer-Regular;
+  font-display: swap;
   src: url(fonts/Gilmer-Regular.eot?#iefix) format("embedded-opentype"),
     url(fonts/Gilmer-Regular.otf) format("opentype"),
     url(fonts/Gilmer-Regular.woff) format("woff"),
@@ -19469,6 +19479,7 @@ ul.list-style-none li a:hover {
 
 @font-face {
   font-family: Gilmer-Medium;
+  font-display: swap;
   src: url(fonts/Gilmer-Medium.eot?#iefix) format("embedded-opentype"),
     url(fonts/Gilmer-Medium.otf) format("opentype"),
     url(fonts/Gilmer-Medium.woff) format("woff"),
@@ -19480,6 +19491,7 @@ ul.list-style-none li a:hover {
 
 @font-face {
   font-family: Gilmer-Bold;
+  font-display: swap;
   src: url(fonts/Gilmer-Bold.eot?#iefix) format("embedded-opentype"),
     url(fonts/Gilmer-Bold.otf) format("opentype"),
     url(fonts/Gilmer-Bold.woff) format("woff"),
