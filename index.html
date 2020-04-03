@@ -97,9 +97,11 @@ layout: page
                     <div class="col-md">
                         <div class="card bg-primary">
                             <div class="card-body">
-                                <h3 class="text-white card-title">Avvia la videoconferenza</h3>
+                                <h3 class="text-white card-title">
+                                    <label for="auto-room" style="margin-bottom: 0px;">Avvia la videoconferenza</label>
+                                </h3>
                                 <div class="input-group">
-                                    <input v-model="room" autofocus="autofocus" v-on:keydown.enter="goToRoom"
+                                    <input id="auto-room" v-model="room" autofocus="autofocus" v-on:keydown.enter="goToRoom"
                                         class="form-control" id="room-name"
                                         placeholder="Inserisci un nome per la stanza">
                                     <div class="input-group-append">
