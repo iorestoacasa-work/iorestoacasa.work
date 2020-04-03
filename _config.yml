@@ -2,3 +2,9 @@ exclude:
   - build.sh
   - LICENSE
   - README.md
+
+collections:
+  news:
+    output: true
+  rassegnastampa:
+    output: true

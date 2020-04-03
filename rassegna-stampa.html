@@ -52,114 +52,48 @@ layout: page
 
 
             <div class="container-fluid" style="padding-top: 15px;">
-
                 <div class="row">
                     <div class="col-12">
-                        <div class="card-deck">
+                        <div class="card-columns">
+                            {% for post in site.rassegnastampa reversed %}
                             <div class="card">
                                 <div class="card-header">
-                                    <p class="card-text"><small class="text-muted">28 Marzo 2020</small></p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            {{ post.author | append: ', ' }}
+                                            {% assign m = post.date | date: "%-m" %}
+                                            {{ post.date | date: "%-d" }}
+                                            {% case m %}
+                                            {% when '1' %}Gennaio
+                                            {% when '2' %}Febbraio
+                                            {% when '3' %}Marzo
+                                            {% when '4' %}Aprile
+                                            {% when '5' %}Maggio
+                                            {% when '6' %}Giugno
+                                            {% when '7' %}Luglio
+                                            {% when '8' %}Agosto
+                                            {% when '9' %}Settempre
+                                            {% when '10' %}Ottobre
+                                            {% when '11' %}Novembre
+                                            {% when '12' %}Dicembre
+                                            {% endcase %}
+                                            {{ post.date | date: "%Y" }}
+                                        </small>
+                                    </p>
                                 </div>
-                                <img class="card-img-top img-fluid"
-                                    src="https://cdn.cronachemaceratesi.it/wp-content/uploads/2019/09/notte-dei-ricercatori-unicam-camerino-rettore-claudio-pettinari-2019-foto-ap-1-650x433.jpg">
+                                <img class="card-img-top img-fluid" src="{{ post.img }}">
                                 <div class="card-body">
-                                    <h4 class="card-title">Croncache Maceratesi</h4>
-                                    <p class="card-text">Anche L'Università di Camerino aderisce in pieno al progetto
-                                        Open Source</p>
+                                    <h4 class="card-title">{{ post.title }}</h4>
+                                    <p class="card-text">{{ post.desc }}</p>
                                     <br>
-                                    <a href="https://www.cronachemaceratesi.it/2020/03/28/iorestoacasa-work-unicam-aderisce-al-progetto/1381806/"
-                                        class="mt-4 bottom-button btn btn-primary"><b>ARTICOLO</b></a>
+                                    <a href="{{ post.link }}"
+                                        class="mt-4 bottom-button btn btn-primary"><b>SCOPRI</b></a>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <p class="card-text"><small class="text-muted">Manfredi Mangano, 27 Marzo
-                                            2020</small></p>
-                                </div>
-                                <img class="card-img-top img-fluid"
-                                    src="https://img.huffingtonpost.com/asset/5e7caf8c2400004b0ccea574.jpeg?ops=scalefit_630_noupscale">
-                                <div class="card-body">
-                                    <h4 class="card-title">Huffington Post</h4>
-                                    <p class="card-text">#restiamoaccanto con l’iniziativa solidale di PDP Free User
-                                        Software</p>
-                                    <br>
-                                    <a href="https://www.huffingtonpost.it/entry/restiamoaccanto-con-liniziativa-solidale-di-pdp-free-user-software_it_5e7cab4ec5b6cb08a928e56a"
-                                        class="bottom-button btn btn-primary"><b>ARTICOLO</b></a>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <p class="card-text"><small class="text-muted">Edizione delle 19:30, 26 Marzo
-                                            2020</small></p>
-                                </div>
-                                <img class="card-img-top img-fluid"
-                                    src="https://www.rainews.it/cropgd/540x300/dl/rai24/assets/images/tgr/social-tgr.png">
-                                <div class="card-body">
-                                    <h4 class="card-title">TGR Basilicata</h4>
-                                    <p class="card-text">Servizio che illustra il software realizzato dal team di
-                                        svilluppatori fabrianesi</p>
-                                    <br>
-                                    <a href="https://www.rainews.it/tgr/basilicata/notiziari/index.html?/tgr/video/2020/03/ContentItem-6eddfa55-e3af-4173-8631-431a96f87bcc.html"
-                                        class="bottom-button btn btn-primary"><b>VIDEO</b></a>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
-                <div class="row my-4">
-                    <div class="col-12">
-                        <div class="card-deck">
-                            <div class="card">
-                                <div class="card-header">
-                                    <p class="card-text"><small class="text-muted">Arturo di Corinto, 24 Marzo
-                                            2020</small></p>
-                                </div>
-                                <img class="card-img-top img-fluid"
-                                    src="https://www.repstatic.it/content/nazionale/img/2020/03/24/184125757-b4846566-fb0f-4802-8b45-c907952218c7.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">La Repubblica</h4>
-                                    <p class="card-text">Progetto solidale e partecipativo che ha
-                                        chiamato a raccolta le comunità del software libero. Aderiscono gli alfieri
-                                        dell’Internet italiana, Garr e Cnr</p>
-                                    <br>
-                                    <a href="https://www.repubblica.it/tecnologia/2020/03/24/news/videoconferenze_parte_la_gara_di_solidarieta_per_offrirle_gratis_a_tutti-252205749/"
-                                        class="bottom-button btn btn-primary"><b>ARTICOLO</b></a>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <p class="card-text"><small class="text-muted">Claudio Curti, 16 Marzo
-                                            2020</small></p>
-                                </div>
-                                <img class="card-img-top img-fluid" src="https://i.imgur.com/wCxetIG.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Centro Pagina</h4>
-                                    <p class="card-text">Progetto made in Fabriano per lo smart e remote working</p>
-                                    <br>
-                                    <a href="https://www.centropagina.it/fabriano/progetto-made-fabriano-smart-working/"
-                                        class="bottom-button btn btn-primary"><b>ARTICOLO</b></a>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <p class="card-text"><small class="text-muted">Manfredi Mangano, 16 Marzo
-                                            2020</small></p>
-                                </div>
-                                <img class="card-img-top img-fluid"
-                                    src="https://www.qdmnotizie.it/wordpress/wp-content/uploads/2018/01/personal-computer.jpeg">
-                                <div class="card-body">
-                                    <h4 class="card-title">QMD Notizie</h4>
-                                    <p class="card-text"> Il COVID19 blocca a casa, ma non attraverso le nuove
-                                        tecnologie è possibile continuare a lavorare, studiare e socializzare</p>
-                                    <br>
-                                    <a href="https://www.qdmnotizie.it/fabriano-io-resto-a-casa-work-il-lavoro-agile-parla-fabrianese/"
-                                        class="bottom-button btn btn-primary"><b>ARTICOLO</b></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
             {%include footer.html%}
 
