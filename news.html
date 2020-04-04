@@ -3,7 +3,9 @@ layout: page
 ---
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-
+<head>
+    {% include head.html %}
+</head>
 <body>
     <div class="preloader">
         <div class="lds-ripple">
@@ -27,7 +29,8 @@ layout: page
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
                                     <li class="breadcrumb-item">
-                                        Ricordati di iscriverti al <a href="https://t.me/iorestoacasaworknews">canale Telegram</a> per rimanere aggiornato sul progetto.
+                                        Ricordati di iscriverti al <a href="https://t.me/iorestoacasaworknews">canale
+                                            Telegram</a> per rimanere aggiornato sul progetto.
                                         lettura!
                                     </li>
                                 </ol>
@@ -38,13 +41,13 @@ layout: page
             </div>
 
             <div class="container-fluid" style="padding-top: 15px;">
-                {% assign psize = site.posts | size %}
+                {% assign psize = site.news | size %}
                 {% if psize == 0 %}
                 <div class="alert alert-primary" role="alert">
                     <strong>Nessun articolo - </strong> Al momento non sono disponibili articoli da visualizzare 🥺
                 </div>
                 {% else %}
-                {% for post in site.posts %}
+                {% for post in site.news reversed %}
                 <div class="row">
                     <div class="col-12">
                         <div class="card border-info">
@@ -89,9 +92,9 @@ layout: page
         <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="./dist/js/app-style-switcher.js"></script>
         <script src="./dist/js/feather.min.js"></script>
-        <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+        <!-- <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script> -->
         <script src="./dist/js/sidebarmenu.js"></script>
-        <script src="./dist/js/custom.min.js"></script>
+        <script src="./dist/js/custom.js"></script>
 </body>
 
 </html>

@@ -5,6 +5,7 @@ layout: page
 <html dir="ltr" lang="en">
 
 <head>
+    {% include head.html %}
     <link href="./dist/css/animated-bg.css" rel="stylesheet">
     <style>
         body {
@@ -25,14 +26,12 @@ layout: page
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
 
-
         {% include header-homepage.html %}
         {% include sidebar.html %}
 
-
-
-        <div class="page-wrapper" id="vue-table">
+        <div class="page-wrapper" id="vue-date">
             <div class="container-fluid min-vh-100">
+
                 <div class="row justify-content-center bg-blue flex-grow-1">
                     <div class="area">
                         <ul class="circles">
@@ -50,6 +49,70 @@ layout: page
                     </div>
                 </div>
 
+                <div class="row align-items-center">
+                    <div class="col col-lg-3 d-none d-md-block">
+                        <div class="card">
+                            <div class="card-body ">
+                                <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                    <div>
+                                        <div class="d-inline-flex align-items-center">
+                                            <h1 class="mb-1 font-weight-medium display-4">35</h1>
+                                        </div>
+                                        <h6 class="font-weight-normal mb-0 w-100 text-truncate">Nodi
+                                            disponibili
+                                        </h6>
+                                    </div>
+                                    <div class="ml-auto mt-md-3 mt-lg-0">
+                                        <span class="opacity-7 text-muted"><i data-feather="heart"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3 d-none d-md-block">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                    <div>
+                                        <div class="d-inline-flex align-items-center">
+                                            <h1 class="mb-1 font-weight-medium display-4">45
+                                            </h1>
+                                        </div>
+                                        <h6 class="font-weight-normal mb-0 w-100 text-truncate">Persone
+                                            collegate
+                                        </h6>
+                                    </div>
+                                    <div class="ml-auto mt-md-3 mt-lg-0">
+                                        <span class="opacity-7 text-muted"><i data-feather="users"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-none d-md-block">
+                        <div class="text-right">
+                            <h1 class="display-2 font-weight-bold">[[ getTime() ]]</h1>
+                            <h2 class="font-weight-light" style="margin-top: -15px;">[[ getDay() ]]</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-end align-self-center" style="margin-top: 5%;">
+                    <div class="col-8">
+                        {% include slider-homepage.html %}
+                    </div>
+                </div>
+
+                <div class="row" style="position: fixed; bottom: 0;">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Non sai come procedere?</h4>
+                                <p class="card-text">Contattaci al seguente link e chiedi pure!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -60,10 +123,38 @@ layout: page
     <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./dist/js/app-style-switcher.js"></script>
     <script src="./dist/js/feather.min.js"></script>
-    <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <!-- <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script> -->
     <script src="./dist/js/sidebarmenu.js"></script>
-    <script src="./dist/js/custom.min.js"></script>
+    <script src="./dist/js/custom.js"></script>
 
+    <script src="dist/js/vue.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script>
+        var app = new Vue({
+            el: '#vue-date',
+            delimiters: ['[[', ']]'],
+            data: {
+                date: new Date(),
+            },
+            methods: {
+                getTime: function () {
+                    let options = {
+                        hour: "2-digit",
+                        minute: "2-digit"
+                    };
+                    return this.date.toLocaleTimeString("it-it", options);
+                },
+                getDay: function () {
+                    let options = {
+                        weekday: "long",
+                        month: "long",
+                        day: "numeric",
+                    };
+                    return this.date.toLocaleString("it-it", options);
+                }
+            },
+        })
+    </script>
 </body>
 
 </html>

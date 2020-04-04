@@ -3,7 +3,9 @@ layout: page
 ---
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-
+<head>
+    {% include head.html %}
+</head>
 <body>
     <div class="preloader">
         <div class="lds-ripple">
@@ -56,22 +58,22 @@ layout: page
                             <div class="card-body">
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
                                         href="https://www.linkedin.com/in/dawid-w%C4%99glarz-199574100/"
-                                        target="_blank">Dawid Węglarz</a>
+                                        target="_blank" rel="noreferrer">Dawid Węglarz</a>
                                 </h3>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
-                                        href="https://www.linkedin.com/in/azzeccagarbugli/" target="_blank">Francesco
+                                        href="https://www.linkedin.com/in/azzeccagarbugli/" target="_blank" rel="noreferrer">Francesco
                                         Coppola</a>
                                 </h3>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
-                                        href="https://www.linkedin.com/in/lucaferroni/" target="_blank">Luca `fero[da]`
+                                        href="https://www.linkedin.com/in/lucaferroni/" target="_blank" rel="noreferrer">Luca `fero[da]`
                                         Ferroni</a></h3>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted"><a
-                                        href="https://www.linkedin.com/in/r-serafini/" target="_blank">Riccardo
+                                        href="https://www.linkedin.com/in/r-serafini/" target="_blank" rel="noreferrer">Riccardo
                                         Serafini</a></h3>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://befair.it"
-                                        target="_blank">beFair</a></h3>
+                                        target="_blank" rel="noreferrer">beFair</a></h3>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted"><a href="https://pdp.linux.it"
-                                        target="_blank">PDP Free Software User Group</a></h3>
+                                        target="_blank" rel="noreferrer">PDP Free Software User Group</a></h3>
                             </div>
                         </div>
                         <div class="row">
@@ -138,12 +140,12 @@ layout: page
     <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./dist/js/app-style-switcher.js"></script>
     <script src="./dist/js/feather.min.js"></script>
-    <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <!-- <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script> -->
     <script src="./dist/js/sidebarmenu.js"></script>
-    <script src="./dist/js/custom.min.js"></script>
+    <script src="./dist/js/custom.js"></script>
 
-    <!-- <script src="dist/js/vue.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="dist/js/vue.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
     <script>
         var app = new Vue({
             el: '#vue-credits',

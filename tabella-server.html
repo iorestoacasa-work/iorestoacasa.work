@@ -5,6 +5,7 @@ layout: page
 <html dir="ltr" lang="en">
 
 <head>
+    {% include head.html %}
     <link href="./dist/css/pulsar.css" rel="stylesheet">
     <style>
         .jitsi-mm-logo {
@@ -24,11 +25,10 @@ layout: page
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
 
         {% include header.html %}
+
         {% include sidebar.html %}
 
         <div class="page-wrapper" id="vue-table">
-
-
             <div class="page-breadcrumb" id="breadcrumb">
                 <div class="row">
                     <div class="col-12 align-self-center">
@@ -48,58 +48,10 @@ layout: page
                             </nav>
                         </div>
                     </div>
-
                 </div>
             </div>
 
             <div class="container-fluid" style="padding-top: 15px;">
-
-
-
-
-                <!-- <div class="d-none d-md-block col-md-3">
-                        <div class="card bg-primary">
-                            <div class="card-body ">
-                                <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                    <div>
-                                        <div class="d-inline-flex align-items-center">
-                                            <h1 class="text-white mb-1 font-weight-medium">[[ hosts.length]]</h1>
-                                        </div>
-                                        <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate"><b>Server
-                                                disponibili</b>
-                                        </h6>
-                                    </div>
-                                    <div class="ml-auto mt-md-3 mt-lg-0">
-                                        <span class="opacity-7 text-muted"><i style="color: white;"
-                                                data-feather="server"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-none d-md-block col-md-3">
-                        <div class="card bg-primary">
-                            <div class="card-body">
-                                <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                    <div>
-                                        <div class="d-inline-flex align-items-center">
-                                            <h1 class="text-white mb-1 font-weight-medium">[[ connectedUsers()
-                                                ]]
-                                            </h1>
-                                        </div>
-                                        <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate"><b>Persone
-                                                collegate</b>
-                                        </h6>
-                                    </div>
-                                    <div class="ml-auto mt-md-3 mt-lg-0">
-                                        <span class="opacity-7 text-muted"><i style="color: white;"
-                                                data-feather="users"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="card-group">
                     <div class="card border-right">
                         <div class="card-body">

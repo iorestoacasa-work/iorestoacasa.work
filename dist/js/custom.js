@@ -41,9 +41,9 @@ $(function () {
     // ==============================================================
     // Perfact scrollbar
     // ==============================================================
-    $('.message-center, .customizer-body, .scrollable, .scroll-sidebar').perfectScrollbar({
-        wheelPropagation: !0
-    });
+    // $('.message-center, .customizer-body, .scrollable, .scroll-sidebar').perfectScrollbar({
+    //     wheelPropagation: !0
+    // });
 
     // ==============================================================
     // Resize all elements
