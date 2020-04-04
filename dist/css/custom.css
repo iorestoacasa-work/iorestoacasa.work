@@ -3,3 +3,8 @@
         display: none;
     }
 }
+
+/* Workaround for slider */
+.page-wrapper {
+  display: block !important;
+}

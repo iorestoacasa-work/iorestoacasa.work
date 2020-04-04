@@ -147,6 +147,8 @@ layout: page
     <script src="./dist/js/sidebarmenu.js"></script>
     <script src="./dist/js/custom.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+
     <script src="dist/js/vue.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
     <script>
@@ -174,6 +176,20 @@ layout: page
                 }
             },
         })
+
+        var swiper = new Swiper('.blog-slider', {
+            spaceBetween: 30,
+            effect: 'fade',
+            loop: true,
+            mousewheel: {
+                invert: false,
+            },
+            // autoHeight: true,
+            pagination: {
+                el: '.blog-slider__pagination',
+                clickable: true,
+            }
+        });
     </script>
 </body>
 
