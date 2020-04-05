@@ -17,6 +17,12 @@ layout: page
             overflow-y: hidden;
         }
 
+        @media (min-width: 768px) {
+            .blog-slider__content {
+                max-width: 75%;
+            }
+        }
+        
         @media (max-width: 768px) {
             .center-slider {
                 justify-content: center !important;
@@ -182,7 +188,10 @@ layout: page
             delimiters: ['[[', ']]'],
             data: {
                 date: new Date(),
-                swiper: new Swiper('.blog-slider', {
+                swiper: null,
+            },
+            mounted: function() {
+                this.swiper = new Swiper('.blog-slider', {
                     spaceBetween: 30,
                     effect: 'fade',
                     loop: true,
@@ -195,10 +204,7 @@ layout: page
                     },
                     observer: true,
                     observeParents: true,
-                }),
-            },
-            mounted() {
-                this.swiper.update()
+                });
             },
             methods: {
                 getTime: function () {
@@ -218,19 +224,6 @@ layout: page
                 }
             },
         })
-
-        // var swiper = new Swiper('.blog-slider', {
-        //     spaceBetween: 30,
-        //     effect: 'fade',
-        //     loop: true,
-        //     mousewheel: {
-        //         invert: false,
-        //     },
-        //     pagination: {
-        //         el: '.blog-slider__pagination',
-        //         clickable: true,
-        //     },
-        // });
     </script>
 </body>
 
