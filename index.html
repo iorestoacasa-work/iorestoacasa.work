@@ -71,7 +71,7 @@ layout: page
                 <div class="row align-items-center">
                     <div class="col col-lg-7 d-none d-xl-block">
                         <div class="card-deck">
-                            <div class="card text-center">
+                            <div class="card text-center" style="border-radius: 25px;">
                                 <div class="card-body ">
                                     <i data-feather="smile" class="mb-2 feather-icon"></i>
                                     <div class="d-flex d-lg-flex d-md-block align-items-center">
@@ -86,7 +86,7 @@ layout: page
                                     </div>
                                 </div>
                             </div>
-                            <div class="card text-center">
+                            <div class="card text-center" style="border-radius: 25px;">
                                 <div class="card-body ">
                                     <i data-feather="key" class="mb-2 feather-icon"></i>
                                     <div class="d-flex d-lg-flex d-md-block align-items-center">
@@ -101,7 +101,7 @@ layout: page
                                     </div>
                                 </div>
                             </div>
-                            <div class="card text-center">
+                            <div class="card text-center" style="border-radius: 25px;">
                                 <div class="card-body ">
                                     <i data-feather="check" class="mb-2 feather-icon"></i>
                                     <div class="d-flex d-lg-flex d-md-block align-items-center">
@@ -182,6 +182,20 @@ layout: page
             delimiters: ['[[', ']]'],
             data: {
                 date: new Date(),
+                swiper: new Swiper('.blog-slider', {
+                    spaceBetween: 30,
+                    effect: 'fade',
+                    loop: true,
+                    mousewheel: {
+                        invert: false,
+                    },
+                    pagination: {
+                        el: '.blog-slider__pagination',
+                        clickable: true,
+                    },
+                    observer: true,
+                    observeParents: true,
+                }),
             },
             methods: {
                 getTime: function () {
@@ -201,20 +215,6 @@ layout: page
                 }
             },
         })
-
-        var swiper = new Swiper('.blog-slider', {
-            spaceBetween: 30,
-            effect: 'fade',
-            loop: true,
-            mousewheel: {
-                invert: false,
-            },
-            // autoHeight: true,
-            pagination: {
-                el: '.blog-slider__pagination',
-                clickable: true,
-            }
-        });
     </script>
 </body>
 
