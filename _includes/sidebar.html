@@ -22,8 +22,8 @@
                         <span class="hide-menu">Server</span>
                     </a>
                 </li>
-                <li class="list-divider"></li>
-                <li class="nav-small-cap"><span class="hide-menu">Il progetto</span></li>
+                <!-- <li class="list-divider"></li> -->
+                <!-- <li class="nav-small-cap"><span class="hide-menu">Il progetto</span></li> -->
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="/come-si-usa.html" aria-expanded="false">
                         <i data-feather="help-circle" class="feather-icon"></i>
@@ -43,8 +43,8 @@
                     </a>
                 </li>
 
-                <li class="list-divider"></li>
-                <li class="nav-small-cap"><span class="hide-menu">Articoli</span></li>
+                <!-- <li class="list-divider"></li> -->
+                <!-- <li class="nav-small-cap"><span class="hide-menu">Articoli</span></li> -->
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="/rassegna-stampa.html" aria-expanded="false">
                         <i data-feather="book-open" class="feather-icon"></i>
@@ -58,8 +58,8 @@
                     </a>
                 </li> -->
 
-                <li class="list-divider"></li>
-                <li class="nav-small-cap"><span class="hide-menu">Informazioni</span></li>
+                <!-- <li class="list-divider"></li> -->
+                <!-- <li class="nav-small-cap"><span class="hide-menu">Informazioni</span></li> -->
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="/contatti.html" aria-expanded="false">
                         <i data-feather="send" class="feather-icon"></i>
@@ -79,41 +79,27 @@
                     </a>
                 </li>
 
-                <li class="list-divider"></li>
-                <li class="nav-small-cap"><span class="hide-menu">Software Libero</span></li>
+                <!-- <li class="list-divider"></li> -->
+                <!-- <li class="nav-small-cap"><span class="hide-menu">Software Libero</span></li> -->
 
-                <li class="sidebar-item">
+                <!-- <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="https://github.com/havfo/multiparty-meeting"
                         aria-expanded="false">
-                        <img class="logo img-responsive mx-1" title="Multiparty Meeting" src="/assets/images/big/mm.png"
-                            style="filter: grayscale(100%) brightness(20%);">
+                        <img class="jitsi-logo img-responsive mx-1" title="Multiparty Meeting"
+                            src="/assets/images/big/mm.png" style="filter: grayscale(100%); filter:
+                            brightness(0%); height: 24px;">
                         <span class="hide-menu">Multiparty Meeting</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="https://jitsi.org/jitsi-meet/" aria-expanded="false">
-                        <img class="logo img-responsive mx-1" title="Jitsi Meet" src="/assets/images/big/jitsi.png"
-                            style="filter: grayscale(100%) brightness(0%);">
+                        <img class="jitsi-logo img-responsive mx-1" title="Jitsi Meet"
+                            src="/assets/images/big/jitsi.png" style="filter: grayscale(100%); filter:
+                            brightness(0%); height: 24px;">
                         <span class="hide-menu">Jitsi Meet</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
     </div>
 </aside>
-
-<script src="./dist/js/vue.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
-<script>
-    var app = new Vue({
-        el: '#vue-sidebar',
-        delimiters: ['[[', ']]'],
-        methods: {
-            checkHomePage: function () {
-                if (window.location.href == "https://iorestoacasa.work/") {
-                    return "selected"
-                }
-            }
-        },
-    })
-</script>
