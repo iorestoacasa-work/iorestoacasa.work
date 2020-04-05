@@ -182,20 +182,6 @@ layout: page
             delimiters: ['[[', ']]'],
             data: {
                 date: new Date(),
-                swiper: new Swiper('.blog-slider', {
-                    spaceBetween: 30,
-                    effect: 'fade',
-                    loop: true,
-                    mousewheel: {
-                        invert: false,
-                    },
-                    pagination: {
-                        el: '.blog-slider__pagination',
-                        clickable: true,
-                    },
-                    observer: true,
-                    observeParents: true,
-                }),
             },
             methods: {
                 getTime: function () {
@@ -215,6 +201,19 @@ layout: page
                 }
             },
         })
+
+        var swiper = new Swiper('.blog-slider', {
+            spaceBetween: 30,
+            effect: 'fade',
+            loop: true,
+            mousewheel: {
+                invert: false,
+            },
+            pagination: {
+                el: '.blog-slider__pagination',
+                clickable: true,
+            },
+        });
     </script>
 </body>
 </html>
