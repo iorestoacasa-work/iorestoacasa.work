@@ -17,20 +17,36 @@ layout: page
             overflow-y: hidden;
         }
 
+        @media (min-width: 768px) and (max-width: 1199.98px) {
+            .margin-top-slider {
+                margin-top: 22% !important;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 992px) {
+            .margin-top-slider {
+                margin-top: 6% !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .margin-top-slider {
+                margin-top: 4% !important;
+            }
+        }
+
         @media (min-width: 768px) {
             .blog-slider__content {
                 max-width: 75%;
             }
-        }
-        
-        @media (max-width: 768px) {
-            .center-slider {
-                justify-content: center !important;
-            }
 
-            .center-fabriano {
-                text-align: center !important;
+            .left-desktop {
+                left: 6%;
             }
+        }
+
+        .center-slider {
+            justify-content: center !important;
         }
     </style>
 </head>
@@ -51,9 +67,9 @@ layout: page
         {% include sidebar.html %}
 
         <div class="page-wrapper" id="vue-date">
-            <div class="container-fluid min-vh-100">
+            <div class="container-fluid min-vh-100 bg-primary">
 
-                <div class="row justify-content-center bg-blue flex-grow-1">
+                <div class="row justify-content-center flex-grow-1">
                     <div class="area">
                         <ul class="circles">
                             <li></li>
@@ -75,7 +91,7 @@ layout: page
                 - Crea stanza e condividi link! -->
 
                 <div class="row align-items-center">
-                    <div class="col col-lg-7 d-none d-xl-block">
+                    <!-- <div class="col col-lg-7 d-none d-xl-block">
                         <div class="card-deck">
                             <div class="card text-center" style="border-radius: 25px;">
                                 <div class="card-body ">
@@ -124,8 +140,8 @@ layout: page
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col d-none d-md-block">
+                    </div> -->
+                    <div class="col d-none d-xl-block text-white">
                         <div class="text-right">
                             <h1 class="display-2 font-weight-bold">[[ getTime() ]]</h1>
                             <h2 class="font-weight-light" style="margin-top: -15px;">[[ getDay() ]]</h2>
@@ -133,35 +149,32 @@ layout: page
                     </div>
                 </div>
 
-                <div class="row justify-content-end align-self-center center-slider" style="margin-top: 5%;">
-                    <div class="col-md-auto">
-                        {% include slider-homepage.html %}
-                    </div>
+                <div class="h-100 d-flex justify-content-center align-items-center margin-top-slider">
+                    {% include slider-homepage.html %}
                 </div>
 
-                <div class="row align-items-center justify-content-between"
-                    style="position: fixed; bottom: 15px; width: 100%;">
-                    <div class="col d-none d-md-block">
+                <div class="row align-items-center left-desktop" style="position: fixed; bottom: 15px; width: 100%;">
+                    <!-- <div class="col d-none d-md-block">
                         <button type="button" onclick="location.href='./come-si-usa.html';"
                             class="btn btn-footer btn-rounded font-16"><i class="fas fa-question-circle mr-2"></i><b>
                                 Aiuto
                             </b>
                         </button>
-                    </div>
-                    <div class="col center-fabriano">
+                    </div> -->
+                    <div class="col text-center">
                         <button type="button" class="btn btn-footer btn-rounded font-16"><b>
                                 Made with ❤️ in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank"
                                     rel="noreferrer">Fabriano</a>
                             </b>
                         </button>
                     </div>
-                    <div class="col d-none d-md-block" style="text-align: center; margin-right: 5%;">
+                    <!-- <div class="col d-none d-md-block" style="text-align: center; margin-right: 5%;">
                         <button onclick="location.href='./crediti.html';" type="button"
                             class="btn btn-footer btn-rounded font-16"><i class="fas fa-info-circle mr-2"></i><b>
                                 Informazioni
                             </b>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -190,7 +203,7 @@ layout: page
                 date: new Date(),
                 swiper: null,
             },
-            mounted: function() {
+            mounted: function () {
                 this.swiper = new Swiper('.blog-slider', {
                     spaceBetween: 30,
                     effect: 'fade',
@@ -198,9 +211,11 @@ layout: page
                     mousewheel: {
                         invert: false,
                     },
+                    // allowSwipeToNext: false,
+                    // allowSwipeToPrev: false,
                     pagination: {
                         el: '.blog-slider__pagination',
-                        clickable: true,
+
                     },
                     observer: true,
                     observeParents: true,
@@ -221,6 +236,9 @@ layout: page
                         day: "numeric",
                     };
                     return this.date.toLocaleString("it-it", options);
+                },
+                goNextSlide: function () {
+                    this.swiper.slideNext();
                 }
             },
         })
