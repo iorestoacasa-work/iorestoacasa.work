@@ -85,62 +85,7 @@ layout: page
                         </ul>
                     </div>
                 </div>
-
-                <!-- - Servizio gratuito
-                - Nessuna registrazione
-                - Crea stanza e condividi link! -->
-
                 <div class="row align-items-center">
-                    <!-- <div class="col col-lg-7 d-none d-xl-block">
-                        <div class="card-deck">
-                            <div class="card text-center" style="border-radius: 25px;">
-                                <div class="card-body ">
-                                    <i data-feather="smile" class="mb-2 feather-icon"></i>
-                                    <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                        <div>
-                                            <div class="d-inline-flex align-items-center">
-                                                <h3 class="mb-2 font-weight-medium">Gratuito</h3>
-                                            </div>
-                                            <h6 class="font-14 font-weight-normal mb-0 w-100">Effettua le
-                                                videochiamate senza spendere nulla
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card text-center" style="border-radius: 25px;">
-                                <div class="card-body ">
-                                    <i data-feather="key" class="mb-2 feather-icon"></i>
-                                    <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                        <div>
-                                            <div class="d-inline-flex align-items-center">
-                                                <h3 class="mb-2 font-weight-medium"><del>Login</del></h3>
-                                            </div>
-                                            <h6 class="font-14 font-weight-normal mb-0 w-100">Non c'è bisogna di alcuna
-                                                registrazione!
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card text-center" style="border-radius: 25px;">
-                                <div class="card-body ">
-                                    <i data-feather="check" class="mb-2 feather-icon"></i>
-                                    <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                        <div>
-                                            <div class="d-inline-flex align-items-center">
-                                                <h3 class="mb-2 font-weight-medium">Immediato</h3>
-                                            </div>
-                                            <h6 class="font-14 font-weight-normal mb-0 w-100">Dai un nome alla tua
-                                                stanza e
-                                                condividi il link
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="col d-none d-xl-block text-white">
                         <div class="text-right">
                             <h1 class="display-2 font-weight-bold">[[ getTime() ]]</h1>
@@ -152,35 +97,12 @@ layout: page
                 <div class="h-100 d-flex justify-content-center align-items-center margin-top-slider">
                     {% include slider-homepage.html %}
                 </div>
-
-                <div class="row align-items-center left-desktop" style="position: fixed; bottom: 15px; width: 100%;">
-                    <!-- <div class="col d-none d-md-block">
-                        <button type="button" onclick="location.href='./come-si-usa.html';"
-                            class="btn btn-footer btn-rounded font-16"><i class="fas fa-question-circle mr-2"></i><b>
-                                Aiuto
-                            </b>
-                        </button>
-                    </div> -->
-                    <div class="col text-center">
-                        <button type="button" class="btn btn-footer btn-rounded font-16"><b>
-                                Made with ❤️ in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank"
-                                    rel="noreferrer">Fabriano</a>
-                            </b>
-                        </button>
-                    </div>
-                    <!-- <div class="col d-none d-md-block" style="text-align: center; margin-right: 5%;">
-                        <button onclick="location.href='./crediti.html';" type="button"
-                            class="btn btn-footer btn-rounded font-16"><i class="fas fa-info-circle mr-2"></i><b>
-                                Informazioni
-                            </b>
-                        </button>
-                    </div> -->
-                </div>
             </div>
-
         </div>
     </div>
     </div>
+
+    {% include footer.html %}
 
     <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
@@ -239,6 +161,68 @@ layout: page
                 },
                 goNextSlide: function () {
                     this.swiper.slideNext();
+                },
+                isMobile: function () {
+                    return (/iphone|ipod|android|ie|blackberry|fennec/).test(navigator.userAgent
+                        .toLowerCase());
+                },
+                betterSolution: function (val) {
+                    if (val === false) {
+                        return `<div class="row">
+                            <div class="col-md-6">
+                         <div class="margin-left-desktop card shadow" style="border-radius: 25px;">
+                             <div class="card-body">
+                                 <h3 class="card-title">Jitsi<span
+                                         class="ml-2 badge badge-pill badge-primary"><b>Consigliato</b></span></h3>
+                                 <p class="card-text">Stabile, concreto e solido. Richiede una buona connessione e l'app
+                                     ufficiale disponibile nei vari store</p>
+                                 <button v-on:click="goNextSlide()"
+                                     class="btn btn-success btn-rounded float-right"><b>UTILIZZA</b></button>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-6">
+                         <div class="card shadow-none" style="border-radius: 25px;">
+                             <div class="card-body">
+                                 <h3 class="card-title">Multiparty Meeting</h3>
+                                 <p class="card-text">Leggero, veloce e sperimentale. Non richiede alcuna applicazione
+                                     installata!</p>
+                                 <button v-on:click="goNextSlide()"
+                                     class="btn btn-rounded waves-effect waves-light btn-outline-primary
+                                     float-right">UTILIZZA</button>
+                             </div>
+                         </div>
+                     </div>
+                     </div>`
+                    } else {
+                        return `<div class="row">
+                            <div class="col-md-6">
+                            <div class="margin-left-desktop card shadow" style="border-radius: 25px;">
+                                <div class="card-body">
+                                    <h3 class="card-title">Multiparty Meeting<span
+                                            class="ml-2 badge badge-pill badge-primary"><b>Consigliato</b></span></h3>
+                                    <p class="card-text">Leggero, veloce e sperimentale. Non richiede alcuna
+                                        applicazione
+                                        installata!</p>
+                                     <button v-on:click="goNextSlide()"
+                                         class="btn btn-success btn-rounded float-right"><b>UTILIZZA</b></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card shadow-none" style="border-radius: 25px;">
+                                 <div class="card-body">
+                                     <h3 class="card-title">Jitsi</h3>
+                                     <p class="card-text">Stabile, concreto e solido. Richiede una buona connessione e
+                                         l'app
+                                         ufficiale disponibile nei vari store</p>
+                                    <button v-on:click="goNextSlide()" class="btn btn-rounded waves-effect waves-light btn-outline-primary
+                                     float-right">UTILIZZA</button>
+                                 </div>
+                            </div>
+                        </div>
+                        </div>`
+                    }
                 }
             },
         })

@@ -6,14 +6,18 @@
 <div class="blog-slider shadow-lg">
     <div class="blog-slider__wrp swiper-wrapper">
         <div class="blog-slider__item swiper-slide slider-element">
-            <div class="shadow blog-slider__img rounded-circle">
+            <div class="d-none d-md-block shadow blog-slider__img rounded-circle">
                 <img style="padding: 0px !important;" src="./assets/images/big/selfie.svg">
             </div>
             <div class="blog-slider__content">
-                <span class="blog-slider__code">Perfetto se sei al PC!</span>
-                <div class="blog-slider__title">Jitsi</div>
-                <div class="blog-slider__text">Stabile, concreto e solido. Richiede una buona connessione e l'app
-                    ufficiale disponibile nei vari store</div>
+                <span class="blog-slider__code">Dai un nome alla tua stanza</span>
+                <div class="blog-slider__title">#iorestoacasa</div>
+                <div class="blog-slider__text font-18">Videochiamate di gruppo <b>libere</b>, <b>anonime</b> e
+                    <b>gratuite</b>,
+                    messe a disposizione da <b>volontari</b> in questo periodo di emergenza!</div>
+                <div class="blog-slider__text font-18">Inzia la tua videochiamata adesso inserendo il nome della stanza
+                    e
+                    poi cliccando il tasto di conferma!</div>
                 <div class="input-group">
                     <input id="auto-room" autofocus="autofocus" class="form-control" id="room-name"
                         placeholder="Inserisci un nome per la stanza">
@@ -26,48 +30,50 @@
             </div>
         </div>
         <div class="blog-slider__item swiper-slide slider-element">
-            <div class="shadow blog-slider__img rounded-circle">
+            <div class="d-none d-md-block shadow blog-slider__img rounded-circle">
                 <img style="padding: 0px !important;" src="./assets/images/big/sw.svg">
             </div>
             <div class="blog-slider__content">
-                <span class="blog-slider__code">Ottimo se stai utilizzando il cellulare!</span>
-                <div class="blog-slider__title">Multiparty Meeting</div>
-                <div class="blog-slider__text">Leggero, veloce e sperimentale. Non richiede alcuna applicazione
-                    installata!</div>
-                <div class="input-group">
-                    <input id="auto-room" autofocus="autofocus" class="form-control" id="room-name"
-                        placeholder="Inserisci un nome per la stanza">
-                    <div class="input-group-append">
-                        <button data-toggle="modal" data-target="#exampleModalLong" class="btn btn-primary"
-                            type="button">
-                            <b>CREA</b>
-                        </button>
-                    </div>
+                <span class="blog-slider__code">Scegli la piattaforma!</span>
+                <div v-html="betterSolution(isMobile())">
                 </div>
             </div>
         </div>
         <div class="blog-slider__item swiper-slide slider-element">
-            <div class="shadow blog-slider__img rounded-circle">
+            <div class="d-none d-md-block shadow blog-slider__img rounded-circle">
                 <img style="padding: 0px !important;" src="./assets/images/big/love.svg">
             </div>
             <div class="blog-slider__content">
-                <span class="blog-slider__code">Ottimo se stai utilizzando il cellulare!</span>
-                <div class="blog-slider__title">Multiparty Meeting</div>
-                <div class="blog-slider__text">Leggero, veloce e sperimentale. Non richiede alcuna applicazione
-                    installata!</div>
-                <div class="input-group">
-                    <input id="auto-room" autofocus="autofocus" class="form-control" id="room-name"
-                        placeholder="Inserisci un nome per la stanza">
-                    <div class="input-group-append">
-                        <button data-toggle="modal" data-target="#exampleModalLong" class="btn btn-primary"
-                            type="button">
-                            <b>CREA</b>
-                        </button>
+                <span class="blog-slider__code">Connettiti e condividi!</span>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="margin-left-desktop card shadow" style="border-radius: 25px;">
+                            <div class="card-body">
+                                <h3 class="card-title">Go!</h3>
+                                <p class="card-text">Collegati subito alla stanza creata, potrai comuque
+                                    condividere il link</p>
+                                <button v-on:click="goNextSlide()"
+                                    class="btn btn-lg btn-success btn-rounded float-right"><i
+                                        class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="margin-left-desktop card shadow" style="border-radius: 25px;">
+                            <div class="card-body">
+                                <h3 class="card-title">Share is caring</h3>
+                                <p class="card-text">Utilizza il pulsante qui sotto per condividere il link con chi vuoi
+                                    tu e poi collegati alla chiamata</p>
+                                <button v-on:click="goNextSlide()"
+                                    class="btn btn-lg btn-primary btn-rounded float-right"><i
+                                        class="fas fa-share"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
-    <div class="blog-slider__pagination"></div>
+    <div class="d-none d-md-block blog-slider__pagination"></div>
 </div>
