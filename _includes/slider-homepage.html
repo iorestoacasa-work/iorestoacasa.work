@@ -1,6 +1,14 @@
 <head>
     <link rel="stylesheet" href="./dist/css/swiper.min.css">
     <link href="./dist/css/slider-homepage.css" rel="stylesheet">
+    <style>
+        @media (min-width: 575.98px) {
+            .bottom-button {
+                position: absolute;
+                bottom: 16px;
+            }
+        }
+    </style>
 </head>
 
 <div class="blog-slider shadow-lg">
@@ -19,8 +27,8 @@
                     e
                     poi cliccando il tasto di conferma!</div>
                 <div class="input-group">
-                    <input id="auto-room" autofocus="autofocus" class="form-control" id="room-name"
-                        placeholder="Inserisci un nome per la stanza">
+                    <input v-model="room" v-on:keydown.enter="goNextSlide()" id="auto-room" autofocus="autofocus"
+                        class="form-control" id="room-name" placeholder="Inserisci un nome per la stanza">
                     <div class="input-group-append">
                         <button v-on:click="goNextSlide()" class="btn btn-primary" type="button">
                             <b>CREA</b>
@@ -46,27 +54,28 @@
             <div class="blog-slider__content">
                 <span class="blog-slider__code">Connettiti e condividi!</span>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="margin-left-desktop card shadow" style="border-radius: 25px;">
-                            <div class="card-body">
-                                <h3 class="card-title">Go!</h3>
-                                <p class="card-text">Collegati subito alla stanza creata, potrai comuque
-                                    condividere il link</p>
-                                <button v-on:click="goNextSlide()"
-                                    class="btn btn-lg btn-success btn-rounded float-right"><i
-                                        class="fas fa-play"></i></button>
+                    <div class="col-md-12">
+                        <div class="card-deck">
+                            <div class="margin-left-desktop card shadow" style="border-radius: 25px;">
+                                <div class="card-body">
+                                    <h3 class="card-title">Go!</h3>
+                                    <p class="card-text">Collegati subito alla stanza creata, potrai comuque
+                                        condividere il link</p>
+                                    <button v-on:click="goToRoom(prefSw)"
+                                        class="btn btn-lg btn-success btn-rounded float-right"><i
+                                            class="fas fa-play"></i></button>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="margin-left-desktop card shadow" style="border-radius: 25px;">
-                            <div class="card-body">
-                                <h3 class="card-title">Share is caring</h3>
-                                <p class="card-text">Utilizza il pulsante qui sotto per condividere il link con chi vuoi
-                                    tu e poi collegati alla chiamata</p>
-                                <button v-on:click="goNextSlide()"
-                                    class="btn btn-lg btn-primary btn-rounded float-right"><i
-                                        class="fas fa-share"></i></button>
+                            <div class="margin-left-desktop card shadow" style="border-radius: 25px;">
+                                <div class="card-body">
+                                    <h3 class="card-title">Sharing is caring</h3>
+                                    <p class="card-text">Utilizza il pulsante qui sotto per condividere il link con chi
+                                        vuoi
+                                        tu e poi collegati alla chiamata</p>
+                                    <button v-on:click="goNextSlide()"
+                                        class="btn btn-lg btn-primary btn-rounded float-right"><i
+                                            class="fas fa-share"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
