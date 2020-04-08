@@ -119,10 +119,11 @@ layout: page
 
     <script src="dist/js/vue.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
-
+    <script src="dist/js/app.js"></script>
     <script>
         var app = new Vue({
             el: '#vue-date',
+            mixins: [hostsMixin],
             delimiters: ['[[', ']]'],
             data: {
                 date: new Date(),
@@ -132,36 +133,7 @@ layout: page
                 prefSw: String,
             },
             mounted: function () {
-                fetch('https://iorestoacasa.work/hosts.json')
-                    .then(r => r.json())
-                    .then(json => {
-                        this.hosts = json.instances;
-
-                        this.hosts.sort(function (a, b) {
-                            return a.software === 'MM' ? -1 : 1;
-                        });
-
-                        var counter = 0;
-                        for (var i = 0; i < this.hosts.length; ++i) {
-                            if (this.hosts[i]['software'] == "MM")
-                                counter++;
-                            else
-                                break;
-                        }
-
-                        let mm = this.hosts.splice(0, counter);
-
-                        mm.sort(function (a, b) {
-                            return a.cpu_usage - b.cpu_usage;
-                        });
-
-                        this.hosts.sort(function (a, b) {
-                            return a.cpu_usage - b.cpu_usage;
-                        });
-
-                        this.hosts = mm.concat(this.hosts);
-                    })
-
+                this.loadHosts();
                 this.swiper = new Swiper('.blog-slider', {
                     spaceBetween: 30,
                     effect: 'fade',

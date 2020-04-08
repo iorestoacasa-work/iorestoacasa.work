@@ -130,50 +130,18 @@
 <script src="./dist/js/custom.min.js"></script>
 <script src="./dist/js/vue.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+<script src="dist/js/app.js"></script>
 <script>
     var app = new Vue({
         el: '#vue-table',
+        mixins: [hostsMixin],
         delimiters: ['[[', ']]'],
         data: {
             room: "",
             hosts: [],
         },
         mounted: function () {
-            fetch('https://iorestoacasa.work/hosts.json')
-                .then(r => r.json())
-                .then(json => {
-                    this.hosts = json.instances;
-
-                    // Order instances by type
-                    this.hosts.sort(function (a, b) {
-                        return a.software === 'MM' ? -1 : 1;
-                    });
-
-                    // Count MM instances
-                    var counter = 0;
-                    for (var i = 0; i < this.hosts.length; ++i) {
-                        if (this.hosts[i]['software'] == "MM")
-                            counter++;
-                        else
-                            break;
-                    }
-
-                    // Extract MM instances
-                    let mm = this.hosts.splice(0, counter);
-
-                    // Order MM by usage
-                    mm.sort(function (a, b) {
-                        return a.cpu_usage - b.cpu_usage;
-                    });
-
-                    // Order Jitsi by usage
-                    this.hosts.sort(function (a, b) {
-                        return a.cpu_usage - b.cpu_usage;
-                    });
-
-                    // Merge results
-                    this.hosts = mm.concat(this.hosts);
-                })
+            this.loadHosts();
         },
         methods: {
             connectedUsers: function () {
