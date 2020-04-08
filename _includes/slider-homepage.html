@@ -18,14 +18,10 @@
                 <img style="padding: 0px !important;" src="./assets/images/big/selfie.svg">
             </div>
             <div class="blog-slider__content">
-                <span class="blog-slider__code">Dai un nome alla tua stanza</span>
-                <div class="blog-slider__title">#iorestoacasa</div>
-                <div class="blog-slider__text font-18">Videochiamate di gruppo <b>libere</b>, <b>anonime</b> e
-                    <b>gratuite</b>,
-                    messe a disposizione da <b>volontari</b> in questo periodo di emergenza!</div>
-                <div class="blog-slider__text font-18">Inzia la tua videochiamata adesso inserendo il nome della stanza
-                    e
-                    poi cliccando il tasto di conferma!</div>
+                <span class="blog-slider__code"></span>
+                <div class="blog-slider__title">iorestoacasa.work</div>
+                <div class="blog-slider__text font-18"><b>Videochiamate di gruppo</b>, <b>libere</b>, <b>private</b> e <b>gratuite</b>, messe a disposizione da <b>volontari</b> per continuare a studiare, lavorare, socializzare in questo periodo di emergenza!</div>
+                <div class="blog-slider__text font-18"></div>
                 <div class="input-group">
                     <input v-model="room" v-on:keydown.enter="goNextSlide()" id="auto-room" autofocus="autofocus"
                         class="form-control" id="room-name" placeholder="Inserisci un nome per la stanza">
@@ -42,7 +38,7 @@
                 <img style="padding: 0px !important;" src="./assets/images/big/sw.svg">
             </div>
             <div class="blog-slider__content">
-                <span class="blog-slider__code">Scegli la piattaforma!</span>
+                <span class="blog-slider__code"><h2>Scegli la piattaforma!</h2></span>
                 <div v-if="!isMobile()">
                     <div class="row">
                         <div class="col-md-12">
@@ -53,9 +49,7 @@
                                                 class="ml-2 badge badge-pill badge-warning font-12"><i
                                                     class="fas fa-star mr-2"></i><b>CONSIGLIATO</b></span>
                                         </h3>
-                                        <p class="card-text">Stabile, concreto e solido. Richiede una buona connessione
-                                            e l'app
-                                            ufficiale disponibile nei vari store</p>
+                                        <p class="card-text">Richiede una connessione veloce e stabile ma offre più funzionalità. Si può usare da smartphone installando la app.</p>
                                         <button @click="savePrefSw('MM')" class="btn btn-success btn-rounded mt-auto"><i
                                                 class="fas fa-desktop mr-2"></i><b>UTILIZZA</b></button>
                                     </div>
@@ -63,9 +57,7 @@
                                 <div class="card shadow-none" style="border-radius: 25px;">
                                     <div class="card-body card-body d-flex flex-column">
                                         <h3 class="card-title">Multiparty Meeting</h3>
-                                        <p class="card-text">Leggero, veloce e sperimentale. Non richiede alcuna
-                                            applicazione
-                                            installata!</p>
+                                        <p class="card-text">Moderno e leggero, funziona bene anche su connessioni lente. Si può usare da smartphone senza installare nulla.</p>
                                         <button @click="savePrefSw('JITSI')" class="mt-auto btn btn-rounded waves-effect waves-light btn-outline-primary
                                      float-right"><i class="fas fa-mobile-alt mr-2"></i><b>UTILIZZA</b></button>
                                     </div>
@@ -84,9 +76,7 @@
                                                 class="ml-2 badge badge-pill badge-light"><i
                                                     class="fas fa-star mr-2"></i><b>CONSIGLIATO</b></span>
                                         </h3>
-                                        <p class="card-text">Leggero, veloce e sperimentale. Non richiede alcuna
-                                            applicazione
-                                            installata!</p>
+                                        <p class="card-text">Moderno e leggero, funziona bene anche su connessioni lente. Si può usare da smartphone senza installare nulla.</p>
                                         <button @click="savePrefSw('MM')"
                                             class="mt-auto btn btn-success btn-rounded"><b>UTILIZZA</b></button>
                                     </div>
@@ -94,10 +84,7 @@
                                 <div class="card shadow-none" style="border-radius: 25px;">
                                     <div class="card-body card-body d-flex flex-column">
                                         <h3 class="card-title">Jitsi</h3>
-                                        <p class="card-text">Stabile, concreto e solido. Richiede una buona connessione
-                                            e
-                                            l'app
-                                            ufficiale disponibile nei vari store</p>
+                                        <p class="card-text">Richiede una connessione veloce e stabile ma offre più funzionalità. Si può usare da smartphone installando la app.</p>
                                         <button @click="savePrefSw('JITSI')"
                                             class="mt-auto btn btn-rounded waves-effect waves-light btn-outline-primary">UTILIZZA</button>
                                     </div>
