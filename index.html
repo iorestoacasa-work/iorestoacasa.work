@@ -31,7 +31,7 @@ layout: page
 
         @media (min-width: 1200px) {
             .margin-top-slider {
-                margin-top: 4% !important;
+                margin-top: 6% !important;
             }
         }
 
@@ -104,6 +104,8 @@ layout: page
 
     {% include footer.html %}
 
+    <!-- #Smartworking #smartlearning #isolatimanonsoli #hopeaftercovid -->
+
     <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -122,14 +124,6 @@ layout: page
     <script src="https://unpkg.com/@linusborg/vue-simple-portal"></script>
 
     <script>
-        window.EventBus = new Vue({
-            methods: {
-                emit(payload) {
-                    this.$emit('$EventBusEvent', payload);
-                }
-            }
-        });
-
         var app = new Vue({
             el: '#vue-date',
             delimiters: ['[[', ']]'],
@@ -187,8 +181,6 @@ layout: page
                     observer: true,
                     observeParents: true,
                 });
-
-                EventBus.$on('$EventBusEvent', this.savePrefSw);
             },
             methods: {
                 getTime: function () {
@@ -213,9 +205,6 @@ layout: page
                 goNextSlide: function () {
                     this.swiper.slideNext();
                 },
-                print: function (i) {
-                    console.log(i + " BELLA")
-                },
                 isMobile: function () {
                     return (/iphone|ipod|android|ie|blackberry|fennec/).test(navigator.userAgent
                         .toLowerCase());
@@ -236,67 +225,7 @@ layout: page
                     window.open(base_url + this.room);
                     this.swiper.slideTo(0);
                 },
-                betterSolution: function (val) {
-                    if (val === false) {
-                        return `<div class="row">
-                            <div class="col-md-12">
-                            <div class=card-deck>
-                                <div class="margin-left-desktop card shadow" style="border-radius: 25px;">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Jitsi<span
-                                                class="ml-2 badge badge-pill badge-primary"><b>Consigliato</b></span></h3>
-                                        <p class="card-text">Stabile, concreto e solido. Richiede una buona connessione e l'app
-                                            ufficiale disponibile nei vari store</p>
-                                        <button onclick="EventBus.emit('JITSI')"
-                                            class="btn btn-success btn-rounded float-right"><b>UTILIZZA</b></button>
-                                    </div>
-                                </div>
-                                <div class="card shadow-none" style="border-radius: 25px;">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Multiparty Meeting</h3>
-                                        <p class="card-text">Leggero, veloce e sperimentale. Non richiede alcuna
-                                            applicazione
-                                            installata!</p>
-                                        <button onclick="EventBus.emit('MM')"
-                                            class="btn btn-rounded waves-effect waves-light btn-outline-primary
-                                     float-right">UTILIZZA</button>
-                                    </div>
-                                </div>
-                         </div>
-                     </div>
-                     </div>`
-                    } else {
-                        return `<div class="row">
-                            <div class="col-md-12">
-                            <div class=card-deck>
-                                <div class="margin-left-desktop card shadow" style="border-radius: 25px;">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Multiparty Meeting<span
-                                                class="ml-2 badge badge-pill badge-primary"><b>Consigliato</b></span></h3>
-                                        <p class="card-text">Leggero, veloce e sperimentale. Non richiede alcuna
-                                            applicazione
-                                            installata!</p>
-                                        <button onclick="EventBus.emit('MM')"
-                                            class="btn btn-success btn-rounded float-right"><b>UTILIZZA</b></button>
-                                    </div>
-                                </div>
-                                <div class="card shadow-none" style="border-radius: 25px;">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Jitsi</h3>
-                                        <p class="card-text">Stabile, concreto e solido. Richiede una buona connessione
-                                            e
-                                            l'app
-                                            ufficiale disponibile nei vari store</p>
-                                        <button onclick="EventBus.emit('JITSI')"
-                                            class="btn btn-rounded waves-effect waves-light btn-outline-primary
-                                     float-right">UTILIZZA</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>`
-                    }
-                }
+
             },
         })
     </script>

@@ -138,7 +138,7 @@
   background: white;
   border-radius: 100px;
   /* box-shadow: 0px 14px 80px rgba(22, 25, 90, 0.041); */
-  transform: translateX(-80px);
+  transform: translateX(-90px);
   overflow: hidden;
 }
 
@@ -158,7 +158,8 @@
 .blog-slider__img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 20px;
   display: block;
   opacity: 0;
   border-radius: 100px;
