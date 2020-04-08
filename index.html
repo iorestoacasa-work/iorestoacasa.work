@@ -7,6 +7,7 @@ layout: page
 <head>
     {% include head.html %}
     <link href="./dist/css/animated-bg.css" rel="stylesheet">
+    <link href="./dist/css/scrolling-text.css" rel="stylesheet">
     <style>
         .btn-footer {
             background-color: white !important;
@@ -31,7 +32,7 @@ layout: page
 
         @media (min-width: 1200px) {
             .margin-top-slider {
-                margin-top: 6% !important;
+                margin-top: 4% !important;
             }
         }
 
@@ -89,7 +90,15 @@ layout: page
                     <div class="col d-none d-xl-block text-white">
                         <div class="text-right">
                             <h1 class="display-2 font-weight-bold">[[ getTime() ]]</h1>
-                            <h2 class="font-weight-light" style="margin-top: -15px;">[[ getDay() ]]</h2>
+                            <span class="badge badge-pill badge-light font-18" style="color: #064e98;">
+                                <div class="hideoverflow">
+                                    <div class="scrolling">
+                                        <div class="text">[[ getDay() ]]</div>
+                                        <div class="text">[[ connectedUsers() ]]<i class="fas fa-users ml-2"></i></div>
+                                        <div class="text">[[ getHashtag() ]]</div>
+                                    </div>
+                                </div>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -103,8 +112,6 @@ layout: page
     </div>
 
     {% include footer.html %}
-
-    <!-- #Smartworking #smartlearning #isolatimanonsoli #hopeaftercovid -->
 
     <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
@@ -139,10 +146,19 @@ layout: page
                     month: "long",
                     day: "numeric",
                 },
+                hashtags: [
+                    "#smartworking",
+                    "#remoteworking",
+                    "#isolatimanonsoli",
+                    "#hopeaftercovid",
+                    "#neveralone",
+                    "#andràtuttobene",
+                ],
                 prefSw: String,
             },
             mounted: function () {
                 this.loadHosts();
+                this.connectedUsers();
                 this.swiper = new Swiper('.blog-slider', {
                     spaceBetween: 30,
                     effect: 'fade',
@@ -190,7 +206,9 @@ layout: page
                     window.open(base_url + this.room);
                     this.swiper.slideTo(0);
                 },
-
+                getHashtag: function () {
+                    return this.hashtags[Math.floor(Math.random() * this.hashtags.length)]
+                }
             },
         })
     </script>

@@ -142,21 +142,9 @@
         },
         mounted: function () {
             this.loadHosts();
+            this.connectedUsers();
         },
         methods: {
-            connectedUsers: function () {
-                // Somma degli utenti presenti all'interno del JSON
-                var sum = 0;
-                for (var i in this.hosts) {
-                    if (this.hosts[i].user_count !== "?" && this.hosts[i].user_count !==
-                        undefined &&
-                        this.hosts[i].user_count != null) {
-                        // console.log(this.hosts[i].user_count);
-                        sum += parseInt(this.hosts[i].user_count);
-                    }
-                }
-                return sum;
-            },
             totalBandwidth: function () {
                 var sum = 0;
                 for (var i in this.hosts) {
