@@ -164,7 +164,7 @@
                         sum += parseInt(this.hosts[i].available_bandwidth_mbps);
                     }
                 }
-                if(sum > 1000)
+                if (sum > 1000)
                     return (sum / 1000) + ' Gbps';
                 return sum + ' Mbps';
             },
@@ -218,18 +218,6 @@
                         ';" class="font-14 badge badge-pill badge-success ' + pulsar + '"><b>' + speed +
                         '</b></span>';
                 }
-            },
-            goToRoom: function (e) {
-                if (this.room === "") {
-                    this.room = Math.random().toString(36).substring(2, 15) +
-                        Math.random().toString(36).substring(2, 15);
-                }
-                this.room = this.room.replace(/([^a-z0-9]+)/gi, '-');
-
-                let base_url = this.hosts.find(u => u.software === e).url;
-                if (base_url.slice(-1) !== '/')
-                    base_url += '/';
-                window.open(base_url + this.room);
             },
         },
     })

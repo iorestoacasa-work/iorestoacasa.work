@@ -130,6 +130,15 @@ layout: page
                 swiper: null,
                 hosts: [],
                 room: "",
+                options_time: {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                },
+                options_day: {
+                    weekday: "long",
+                    month: "long",
+                    day: "numeric",
+                },
                 prefSw: String,
             },
             mounted: function () {
@@ -153,19 +162,10 @@ layout: page
             },
             methods: {
                 getTime: function () {
-                    let options = {
-                        hour: "2-digit",
-                        minute: "2-digit"
-                    };
-                    return this.date.toLocaleTimeString("it-it", options);
+                    return this.date.toLocaleTimeString("it-it", this.options_time);
                 },
                 getDay: function () {
-                    let options = {
-                        weekday: "long",
-                        month: "long",
-                        day: "numeric",
-                    };
-                    return this.date.toLocaleString("it-it", options);
+                    return this.date.toLocaleString("it-it", this.options_day);
                 },
                 savePrefSw: function (sw) {
                     this.prefSw = sw
@@ -173,10 +173,6 @@ layout: page
                 },
                 goNextSlide: function () {
                     this.swiper.slideNext();
-                },
-                isMobile: function () {
-                    return (/iphone|ipod|android|ie|blackberry|fennec/).test(navigator.userAgent
-                        .toLowerCase());
                 },
                 restartSlider: function () {
                     this.swiper.slideTo(1);
