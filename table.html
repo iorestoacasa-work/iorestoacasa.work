@@ -3,30 +3,17 @@ layout: page
 ---
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
     {% include head.html %}
     <link href="./dist/css/pulsar.css" rel="stylesheet">
     <style>
-        .jitsi-logo {
+        .jitsi-mm-logo {
             height: 34px;
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            justify-content: center;
-            align-items: center;
-            height: 40px;
-            line-height: 30px;
-            padding: 4px;
-            background-color: #f9fbfd;
         }
     </style>
 </head>
+
 <body>
     <div class="preloader">
         <div class="lds-ripple">
@@ -37,21 +24,17 @@ layout: page
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
         <div class="container-fluid" id="vue-table">
-
             <div class="row mt-4">
                 <div class="col-12">
                     {% include table.html %}
                 </div>
             </div>
-
-            <footer class="footer text-center text-muted">
-                <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank" rel="noreferrer"><b>iorestoacasa.work</b></a> is made
-                with
-                ❤️
-                in <a href="https://it.wikipedia.org/wiki/Fabriano" target="_blank" rel="noreferrer">Fabriano</a>.
-            </footer>
-
         </div>
+    </div>
+
+    {% include footer.html %}
+
+
 </body>
 
 </html>

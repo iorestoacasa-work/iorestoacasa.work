@@ -51,5 +51,16 @@ var hostsMixin = {
             }
             return sum;
         },
+        totalBandwidth: function () {
+            var sum = 0;
+            for (var i in this.hosts) {
+                if (Number.isInteger(parseInt(this.hosts[i].available_bandwidth_mbps))) {
+                    sum += parseInt(this.hosts[i].available_bandwidth_mbps);
+                }
+            }
+            if (sum > 1000)
+                return (sum / 1000) + ' Gbps';
+            return sum + ' Mbps';
+        },
     }
 }

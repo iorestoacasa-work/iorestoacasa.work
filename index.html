@@ -7,13 +7,7 @@ layout: page
 <head>
     {% include head.html %}
     <link href="./dist/css/animated-bg.css" rel="stylesheet">
-    <link href="./dist/css/scrolling-text.css" rel="stylesheet">
     <style>
-        .btn-footer {
-            background-color: white !important;
-            box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-        }
-
         body {
             overflow-y: hidden;
         }
@@ -90,14 +84,9 @@ layout: page
                     <div class="col d-none d-xl-block text-white">
                         <div class="text-right">
                             <h1 class="display-2 font-weight-bold">[[ getTime() ]]</h1>
-                            <span class="badge badge-pill badge-light font-18" style="color: #064e98;">
-                                <div class="hideoverflow">
-                                    <div class="scrolling">
-                                        <div class="text">[[ getDay() ]]</div>
-                                        <div class="text">[[ connectedUsers() ]]<i class="fas fa-users ml-2"></i></div>
-                                        <div class="text">[[ getHashtag() ]]</div>
-                                    </div>
-                                </div>
+                            <span class="badge badge-pill font-18 p-3 font-weight-bold"
+                                style="color: #064e98; background-color: white; margin-top: -15px;">
+                                [[ getDay()]]
                             </span>
                         </div>
                     </div>
@@ -146,19 +135,12 @@ layout: page
                     month: "long",
                     day: "numeric",
                 },
-                hashtags: [
-                    "#smartworking",
-                    "#remoteworking",
-                    "#isolatimanonsoli",
-                    "#hopeaftercovid",
-                    "#neveralone",
-                    "#andràtuttobene",
-                ],
                 prefSw: String,
             },
             mounted: function () {
                 this.loadHosts();
                 this.connectedUsers();
+                this.totalBandwidth();
                 this.swiper = new Swiper('.blog-slider', {
                     spaceBetween: 30,
                     effect: 'fade',

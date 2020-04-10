@@ -1,6 +1,6 @@
 @keyframes scroll {
     25% {
-        transform: translateY(-37.5px);
+        transform: translateY(-34.0px);
     }
 
     50% {
@@ -8,7 +8,7 @@
     }
 
     75% {
-        transform: translateY(37.5px);
+        transform: translateY(34.0px);
     }
 
     100% {
@@ -18,16 +18,18 @@
 
 .scrolling {
     position: relative;
-    top: -37.5px;
+    top: -34.0px;
     animation: scroll 20s infinite cubic-bezier(0.8, 0, 0.2, 1);
 }
 
 .text {
-    font-weight: 700;
-    line-height: 37.5px;
+    font-weight: 600;
+    margin-right: 3px;
+    margin-left: 3px;
+    line-height: 34.0px;
 }
 
 .hideoverflow {
     overflow-y: hidden;
-    height: 37.5px;
+    height: 34.0px;
 }

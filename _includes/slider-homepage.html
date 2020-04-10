@@ -20,10 +20,26 @@
             <div class="blog-slider__content">
                 <span class="blog-slider__code"></span>
                 <div class="blog-slider__title">iorestoacasa.work</div>
+                <div class="blog-slider__text d-none d-sm-block">
+                    <span class="badge badge-pill badge-primary shadow-sm font-16 margin-bottom"
+                        style="font-weight: 500;">
+                        <span class="badge badge-pill font-16 mr-1 font-weight-bold text-primary"
+                            style="background-color: white;">[[
+                            connectedUsers()
+                            ]]</span>
+                        Utenti connessi
+                    </span>
+                    <span>•</span>
+                    <span class="badge badge-pill badge-primary shadow-sm font-16" style="font-weight: 500;">
+                        <span class="badge badge-pill font-16 mr-1 font-weight-bold text-primary"
+                            style="background-color: white;">[[
+                            hosts.length ]]</span>
+                        Server disponibili
+                    </span>
+                </div>
                 <div class="blog-slider__text font-18"><b>Videochiamate di gruppo</b>, <b>libere</b>, <b>private</b> e
                     <b>gratuite</b>, messe a disposizione da <b>volontari</b> per continuare a studiare, lavorare,
                     socializzare in questo periodo di emergenza!</div>
-                <div class="blog-slider__text font-18"></div>
                 <div class="input-group">
                     <input v-model="room" v-on:keydown.enter="goNextSlide()" id="auto-room" autofocus="autofocus"
                         class="form-control" id="room-name" placeholder="Inserisci un nome per la stanza">
