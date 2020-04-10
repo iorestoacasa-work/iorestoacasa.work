@@ -6,7 +6,7 @@ layout: page
 
 <head>
     {% include head.html %}
-    <link href="./dist/css/animated-bg.css" rel="stylesheet">
+    <!-- <link href="./dist/css/animated-bg.css" rel="stylesheet"> -->
     <style>
         body {
             overflow-y: hidden;
@@ -62,9 +62,9 @@ layout: page
         {% include sidebar.html %}
 
         <div class="page-wrapper" id="vue-date">
-            <div class="container-fluid min-vh-100 bg-primary">
+            <div class="container-fluid min-vh-100">
 
-                <div class="row justify-content-center flex-grow-1">
+                <!-- <div class="row justify-content-center flex-grow-1">
                     <div class="area">
                         <ul class="circles">
                             <li></li>
@@ -79,13 +79,13 @@ layout: page
                             <li></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 <div class="row align-items-center">
                     <div class="col d-none d-xl-block text-white">
                         <div class="text-right">
-                            <h1 class="display-2 font-weight-bold">[[ getTime() ]]</h1>
-                            <span class="badge badge-pill font-18 p-3 font-weight-bold"
-                                style="color: #064e98; background-color: white; margin-top: -15px;">
+                            <h1 class="display-2 font-weight-bold text-primary">[[ getTime() ]]</h1>
+                            <span class="shadow-lg text-primary badge badge-pill font-18 p-3 font-weight-bold"
+                                style="background-color:#ffffff; margin-top: -15px;">
                                 [[ getDay()]]
                             </span>
                         </div>
@@ -150,9 +150,9 @@ layout: page
                     // },
                     allowSwipeToNext: false,
                     allowSwipeToPrev: false,
+                    allowTouchMove: false,
                     pagination: {
                         el: '.blog-slider__pagination',
-
                     },
                     observer: true,
                     observeParents: true,
