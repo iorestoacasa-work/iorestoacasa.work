@@ -61,19 +61,19 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class=card-deck>
-                            <div @click="savePrefSw('MM')" class="card shadow-sm" style="border-radius: 25px;">
+                            <div class="card shadow-sm" style="border-radius: 25px;">
                                 <div class="margin-left-desktop card-body card-body d-flex flex-column">
                                     <h3 class="card-title">Multiparty Meeting</h3>
                                     <!-- <span class="mt-1 mb-2 badge badge-pill badge-warning font-12"><i
                                             class="fas fa-users mr-2"></i><b>MOLTE PERSONE</b></span> -->
                                     <p class="card-text">Moderno e leggero, funziona bene anche su connessioni lente. Si
                                         può usare da smartphone senza installare nulla.</p>
-                                    <button @click="savePrefSw('MM')"
+                                    <button v-on:click="goToRoom('MM')"
                                         class="btn waves-effect waves-light btn-outline-success btn-rounded mt-auto"><i
                                             class="fas fa-check mr-2"></i><b>UTILIZZA</b></button>
                                 </div>
                             </div>
-                            <div @click="savePrefSw('JITSI')" class="card shadow-sm" style="border-radius: 25px;">
+                            <div class="card shadow-sm" style="border-radius: 25px;">
                                 <div class="card-body card-body d-flex flex-column">
                                     <h3 class="card-title">Jitsi
                                     </h3>
@@ -81,7 +81,7 @@
                                             class="fas fa-user-plus mr-2"></i><b>POCHE PERSONE</b></span> -->
                                     <p class="card-text">Richiede una connessione veloce e stabile ma offre più
                                         funzionalità. Si può usare da smartphone installando la app.</p>
-                                    <button @click="savePrefSw('JITSI')"
+                                    <button v-on:click="goToRoom('JITSI')"
                                         class="btn btn-outline-success waves-effect waves-light btn-rounded mt-auto"><i
                                             class="fas fa-check mr-2"></i><b>UTILIZZA</b></button>
                                 </div>
@@ -90,42 +90,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="blog-slider__item swiper-slide slider-element">
-            <div class="d-none d-md-block shadow blog-slider__img rounded-circle">
-                <img style="padding: 0px !important;" src="./assets/images/big/love.svg">
-            </div>
-            <div class="blog-slider__content">
-                <span class="blog-slider__code">Connettiti e condividi!</span>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card-deck">
-                            <div class="margin-left-desktop card shadow-none" style="border-radius: 25px;">
-                                <div class="card-body d-flex flex-column">
-                                    <h3 class="card-title">Go!</h3>
-                                    <p class="card-text">Collegati subito alla stanza creata! Potrai comunque
-                                        condividere il link</p>
-                                    <br>
-                                    <button v-on:click="goToRoom(prefSw)" class="mt-auto btn btn-success btn-rounded
-                                        float-right"><b>CONNETTITI</b><i class="ml-2 fas fa-play"></i></button>
-                                </div>
-                            </div>
-                            <div class="margin-left-desktop card shadow-none" style="border-radius: 25px;">
-                                <div class="card-body d-flex flex-column">
-                                    <h3 class="card-title">Sharing is caring</h3>
-                                    <p class="card-text">Condividi rapidamente il link con chi
-                                        vuoi e poi collegati alla chiamata</p>
-                                    <br>
-                                    <button v-on:click="goNextSlide()" class="mt-auto btn btn-primary btn-rounded
-                                        float-right"><b>CONDIVIDI</b><i class="fas fa-share ml-2"></i></button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
         <div class="d-none d-md-block blog-slider__pagination"></div>
     </div>

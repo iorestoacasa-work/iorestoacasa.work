@@ -166,6 +166,7 @@ layout: page
                     if (base_url.slice(-1) !== '/')
                         base_url += '/';
                     window.open(base_url + this.room);
+                    this.room='';
                     this.swiper.slideTo(0);
                 },
                 getHashtag: function () {
