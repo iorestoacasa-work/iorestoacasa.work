@@ -6,27 +6,33 @@ layout: page
 
 <head>
     {% include head.html %}
-    <!-- <link href="./dist/css/animated-bg.css" rel="stylesheet"> -->
+    <link href="./dist/css/animated-bg.min.css" rel="stylesheet">
     <style>
         body {
             overflow-y: hidden;
         }
 
-        @media (min-width: 768px) and (max-width: 1199.98px) {
+        @media (max-width: 992px) {
             .margin-top-slider {
-                margin-top: 22% !important;
+                margin-top: 10% !important;
             }
         }
 
-        @media (min-width: 768px) and (max-width: 992px) {
+        @media (min-width: 993px) {
             .margin-top-slider {
-                margin-top: 6% !important;
+                margin-top: 20% !important;
             }
         }
 
-        @media (min-width: 1200px) {
+        @media (min-width: 1400px) {
             .margin-top-slider {
-                margin-top: 4% !important;
+                margin-top: 15% !important;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .margin-top-slider {
+                margin-top: 13% !important;
             }
         }
 
@@ -64,7 +70,7 @@ layout: page
         <div class="page-wrapper" id="vue-date">
             <div class="container-fluid min-vh-100">
 
-                <!-- <div class="row justify-content-center flex-grow-1">
+                <div class="row justify-content-center flex-grow-1">
                     <div class="area">
                         <ul class="circles">
                             <li></li>
@@ -79,20 +85,9 @@ layout: page
                             <li></li>
                         </ul>
                     </div>
-                </div> -->
-                <div class="row align-items-center">
-                    <div class="col d-none d-xl-block text-white">
-                        <div class="text-right">
-                            <h1 class="display-2 font-weight-bold text-primary">[[ getTime() ]]</h1>
-                            <span class="shadow-lg text-primary badge badge-pill font-18 p-3 font-weight-bold"
-                                style="background-color:#ffffff; margin-top: -15px;">
-                                [[ getDay()]]
-                            </span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="h-100 d-flex justify-content-center align-items-center margin-top-slider">
+                <div class="d-flex justify-content-center align-items-center margin-top-slider">
                     {% include slider-homepage.html %}
                 </div>
             </div>
@@ -103,7 +98,7 @@ layout: page
     {% include footer.html %}
 
     <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <!-- <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script> -->
     <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./dist/js/app-style-switcher.js"></script>
     <script src="./dist/js/feather.min.js"></script>
@@ -122,19 +117,9 @@ layout: page
             mixins: [hostsMixin],
             delimiters: ['[[', ']]'],
             data: {
-                date: new Date(),
                 swiper: null,
                 hosts: [],
                 room: "",
-                options_time: {
-                    hour: "2-digit",
-                    minute: "2-digit"
-                },
-                options_day: {
-                    weekday: "long",
-                    month: "long",
-                    day: "numeric",
-                },
                 prefSw: String,
             },
             mounted: function () {
@@ -151,6 +136,7 @@ layout: page
                     allowSwipeToNext: false,
                     allowSwipeToPrev: false,
                     allowTouchMove: false,
+                    noSwiping: true,
                     pagination: {
                         el: '.blog-slider__pagination',
                     },
@@ -159,12 +145,6 @@ layout: page
                 });
             },
             methods: {
-                getTime: function () {
-                    return this.date.toLocaleTimeString("it-it", this.options_time);
-                },
-                getDay: function () {
-                    return this.date.toLocaleString("it-it", this.options_day);
-                },
                 savePrefSw: function (sw) {
                     this.prefSw = sw
                     this.goNextSlide();

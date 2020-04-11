@@ -8,9 +8,9 @@
 
 <aside class="left-sidebar" data-sidebarbg="skin6">
     <div class="scroll-sidebar" data-sidebarbg="skin6">
-        <nav class="sidebar-nav" id="vue-sidebar">
+        <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="sidebar-item" v-bind:class="[ checkHomePage() ]">
+                <li id="first-element" class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="/index.html" aria-expanded="false">
                         <i data-feather="home" class="feather-icon"></i>
                         <span class="hide-menu">Homepage</span>
@@ -104,18 +104,14 @@
     </div>
 </aside>
 
-<script src="./dist/js/vue.min.js"></script>
+<!-- <script src="./dist/js/vue.min.js"></script> -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 <script>
-    var app = new Vue({
-        el: '#vue-sidebar',
-        delimiters: ['[[', ']]'],
-        methods: {
-            checkHomePage: function () {
-                if (window.location.pathname === "/") {
-                    return "selected"
-                }
-            }
-        },
-    })
+    function checkHomePage() {
+        if (window.location.pathname === "/") {
+            var firstlink = document.getElementById("first-element")
+            firstlink.classList += " selected"
+        }
+    }
+    checkHomePage()
 </script>

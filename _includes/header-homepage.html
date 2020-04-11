@@ -1,5 +1,5 @@
 <header class="topbar" data-navbarbg="skin6">
-    <nav class="navbar top-navbar navbar-expand-md">
+    <nav class="navbar top-navbar navbar-expand-md" style="display: flex;align-items: flex-end;">
         <div class="navbar-header" data-logobg="skin6">
             <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                     class="ti-menu ti-close"></i></a>
@@ -18,5 +18,49 @@
             <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="/come-si-usa.html"><i
                     class="fas fa-question-circle"></i></a>
         </div>
+        <div class="navbar-collapse collapse" id="navbarSupportedContent"
+            style="border-bottom: 0px !important; margin-bottom: -4.5rem;">
+            <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
+                <li class="nav-item d-none d-md-block">
+                    <!-- <a class="nav-link" href="/crediti.html">
+                        <i data-feather="info" class="svg-icon"></i>
+                    </a> -->
+                </li>
+            </ul>
+            <ul class="navbar-nav float-right">
+                <li class="nav-item d-none d-md-block mt-4 mr-4">
+                    <h1 id="getTime" class="display-3 font-weight-bold text-primary"></h1>
+                    <span id="getDay"
+                        class="float-right shadow-lg text-primary badge badge-pill font-16 p-3 font-weight-bold"
+                        style="background-color:#ffffff; margin-top: -15px;">
+                    </span>
+                </li>
+            </ul>
+        </div>
     </nav>
 </header>
+
+<script>
+    const date = new Date();
+
+    const options_time = {
+        hour: "2-digit",
+        minute: "2-digit"
+    };
+    const options_day = {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+    };
+
+    function getTime() {
+        return date.toLocaleTimeString("it-it", options_time);
+    };
+
+    function getDay() {
+        return date.toLocaleString("it-it", options_day);
+    };
+
+    document.getElementById("getTime").innerHTML = getTime();
+    document.getElementById("getDay").innerHTML = getDay();
+</script>
