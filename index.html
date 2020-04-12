@@ -7,6 +7,7 @@ layout: page
 <head>
     {% include head.html %}
     <link href="./dist/css/animated-bg.min.css" rel="stylesheet">
+
     <style>
         body {
             overflow-y: hidden;
@@ -106,6 +107,7 @@ layout: page
     <script src="./dist/js/sidebarmenu.js"></script>
     <script src="./dist/js/custom.js"></script>
 
+    <script src="./dist/js/vue-social-sharing.min.js"></script>
     <script src="./dist/js/swiper.min.js"></script>
 
     <script src="dist/js/vue.min.js"></script>
@@ -166,7 +168,7 @@ layout: page
                     if (base_url.slice(-1) !== '/')
                         base_url += '/';
                     window.open(base_url + this.room);
-                    this.room='';
+                    this.room = '';
                     this.swiper.slideTo(0);
                 },
                 getHashtag: function () {
