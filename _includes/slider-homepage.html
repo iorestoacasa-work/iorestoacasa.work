@@ -41,7 +41,7 @@
                     socializzare in questo periodo di emergenza!</div>
                 <div class="input-group">
                     <input v-model="room" v-on:keydown.enter="goNextSlide()" id="auto-room" autofocus="autofocus"
-                        class="form-control" id="room-name" placeholder="scrivi un nome per la tua videochiamata">
+                        class="form-control" id="room-name" placeholder="Scrivi un nome per la tua videochiamata">
                     <div class="input-group-append">
                         <button v-on:click="goNextSlide()" class="btn btn-primary" type="button">
                             <b>INIZIA</b>
@@ -103,7 +103,8 @@
                             <div class="margin-left-desktop card shadow-none" style="border-radius: 25px;">
                                 <div class="card-body d-flex flex-column">
                                     <h3 class="card-title">Tutto pronto!</h3>
-                                    <p class="card-text">Premi il bottone per collegati subito alla videochiamata. Potrai comunque
+                                    <p class="card-text">Premi il bottone per collegati subito alla videochiamata.
+                                        Potrai comunque
                                         condividere il link</p>
                                     <br>
                                     <button v-on:click="goToRoom()" class="mt-auto btn btn-success btn-rounded
