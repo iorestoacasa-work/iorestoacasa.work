@@ -20,3 +20,11 @@
     padding: 0px !important;
   }
 }
+
+.card-header {
+  border-radius: 25px 25px 0 0 !important;
+}
+
+.card {
+  border-radius: 25px 25px 25px 25px !important;
+}

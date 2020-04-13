@@ -3,9 +3,11 @@ layout: page
 ---
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
     {% include head.html %}
 </head>
+
 <body>
     <div class="preloader">
         <div class="lds-ripple">
@@ -40,93 +42,122 @@ layout: page
 
             <div class="container-fluid" style="padding-top: 15px;">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">Un solo click per avviare una videochiamata</h2>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted">
-                                    <ul>1 - scegli un nome unico per la tua videochiamata</ul>
-                                    <ul>2 - entra nella videochiamata con il browser</ul>
-                                    <ul>3 - condividi il link in modo che altri possano unirsi alla videochiamata</ul>
-                                </h3>
+                    <div class="col-12">
+                        <div class="card-deck">
+                            <div class="card">
+                                <div class="card-header bg-info text-white">
+                                    <h2 class="mb-0"><b>Un solo click per avviare una videochiamata</b></h2>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted">
+                                        <span class="badge badge-pill font-18 text-white bg-primary mb-2
+                                            mr-2" style="font-weight: 700; width: 35px;">1</span>Scegli un nome unico
+                                        per la tua
+                                        videochiamata<br><br>
+                                        <span class="badge badge-pill font-18 text-white bg-primary
+                                            mr-2 mb-2" style="font-weight: 700; width: 35px">2</span>Entra nella
+                                        videochiamata con il browser<br><br>
+                                        <span class="badge badge-pill font-18 text-white bg-primary
+                                            mr-2" style="font-weight: 700; width: 35px">3</span>Condividi
+                                        il link in modo che altri possano unirsi alla videochiamata<br>
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <div class=" card">
+                                <div class="card-header bg-info text-white">
+                                    <h2 class="mb-0"><b>Jitsi e Multiparty Meeting</b></h2>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted">
+                                        Sono due progetti <a href="https://it.wikipedia.org/wiki/Software_libero"
+                                            target="_blank" rel="noreferrer">Open Source</a> che permettono
+                                        di
+                                        effettuare
+                                        videochiamate
+                                        semplicemente aprendo un URL tramite browser, <b>senza installare
+                                            programmi</b>,
+                                        senza <b>registrarsi</b>.<br>
+                                    </h3>
+                                </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">
-                                    <a href="https://jitsi.org/jitsi-meet/">
-                                        <img style="height: 34px;" class="img-responsive" title="Jitsi Meet"
-                                            src="./assets/images/big/jitsi.png">
-                                        Jitsi Meet
-                                    </a>
-                                    e
-                                    <a href="https://github.com/havfo/multiparty-meeting">
-                                        <img style="height: 34px;" class="img-responsive" title="Multiparty-Meeting"
-                                            src="./assets/images/big/mm.png">
-                                        Multiparty-Meeting
-                                    </a>
-                                </h2>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted">
-                                    Sono due progetti <a href="https://it.wikipedia.org/wiki/Software_libero"
-                                        target="_blank" rel="noreferrer">Open Source</a> che permettono di effettuare videochiamate
-                                    semplicemente aprendo un URL tramite browser, <b>senza installare programmi</b>,
-                                    senza <b>registrarsi</b>.<br>
-                                    Stiamo sperimentando Multiparty-Meeting oltre a Jitsi perché ottimizza l'utilizzo di
-                                    banda, che in questi giorni è particolarmente sotto stress.
-                                </h3>
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <div class="card-deck">
+                            <div class="card">
+                                <div class="card-header bg-info text-white">
+                                    <h2 class="mb-0"><b>Browser supportati</b></h2>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted">
+                                        WebRTC, la tecnologia che permette di effettuare videochiamate tramite
+                                        browser,
+                                        funziona al meglio con <a
+                                            href="https://www.chromium.org/developers/how-tos/get-the-code">Chromium</a>
+                                        o
+                                        <a href="https://www.google.com/intl/it_it/chrome/">Google Chrome</a>.
+                                    </h3>
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted">
+                                        Puoi usare Jitsi da smartphone installando la app per <a
+                                            href="https://play.google.com/store/apps/details?id=org.jitsi.meet">Android</a>
+                                        o <a href="https://itunes.apple.com/us/app/jitsi-meet/id1165103905">iOS</a>
+                                    </h3>
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted">
+                                        Multiparty Meeting invece può essere usato dal browser del telefono senza
+                                        installare
+                                        alcuna app!
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header bg-info text-white">
+                                    <h2 class="mb-0"><b>Segui alcune accortezze</b></h2>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-subtitle mt-2 mb-2 text-muted">
+                                        Per ottenere la migliore esperienza devi assicurarti di osservare alcune
+                                        accortezze:
+                                        <ul>
+                                            <li>preferire la connessione via cavo al WiFi</li>
+                                            <li>ogni utente deve assicurarsi di avere a disposizione almeno 4Mbps in
+                                                upload
+                                                e download</li>
+                                            <li>dotarsi di cuffie</li>
+                                            <li>spegnere la webcam se non si sta parlando</li>
+                                            <li>accendere il microfono solo quando si parla <i>(in Jitsi la barra
+                                                    spaziatrice
+                                                    funge comodamente da "push to talk")</i></li>
+                                            <li>abbassare la qualità video nelle impostazioni</li>
+                                        </ul>
+                                    </h3>
+                                </div>
                             </div>
                         </div>
+                    </div>
+
+
+                    <div class="col-12 mt-3">
                         <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">Browser supportati</h2>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted">
-                                    WebRTC, la tecnologia che permette di effettuare videochiamate tramite browser,
-                                    funziona al meglio con <a
-                                        href="https://www.chromium.org/developers/how-tos/get-the-code">Chromium</a> o
-                                    <a href="https://www.google.com/intl/it_it/chrome/">Google Chrome</a>.
-                                </h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted">
-                                    Puoi usare Jitsi da smartphone installando la app per <a
-                                        href="https://play.google.com/store/apps/details?id=org.jitsi.meet">Android</a>
-                                    o <a href="https://itunes.apple.com/us/app/jitsi-meet/id1165103905">iOS</a>
-                                </h3>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted">
-                                    Multiparty-Meeting invece può essere usato dal browser del telefono senza installare
-                                    alcuna app!
-                                </h3>
+                            <div class="card-header bg-info text-white">
+                                <h2 class="mb-0"><b>Spargi la voce</b></h2>
                             </div>
-                        </div>
-                        <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title">Segui alcune accortezze</h2>
-                                <h3 class="card-subtitle mt-2 mb-2 text-muted">
-                                    Per ottenere la migliore esperienza devi assicurarti di osservare alcune accortezze:
-                                    <ul>
-                                        <li>preferire la connessione via cavo al WiFi</li>
-                                        <li>ogni utente deve assicurarsi di avere a disposizione almeno 4Mbps in upload
-                                            e download</li>
-                                        <li>dotarsi di cuffie</li>
-                                        <li>spegnere la webcam se non si sta parlando</li>
-                                        <li>accendere il microfono solo quando si parla (in Jitsi la barra spaziatrice
-                                            funge comodamente da "push to talk")</li>
-                                        <li>abbassare la qualità video nelle impostazioni</li>
-                                    </ul>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">Spargi la voce!</h2>
                                 <h3 class="card-subtitle mt-2 mb-2 text-muted">Condividi il link <a
-                                        href="https://iorestoacasa.work">https://iorestoacasa.work</a> a chi pensi possa
+                                        href="https://iorestoacasa.work">https://iorestoacasa.work</a> a chi pensi
+                                    possa
                                     averne bisogno.</h3>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
-        {%include footer.html%}
+    </div>
+    {%include footer.html%}
 
     </div>
 

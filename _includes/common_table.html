@@ -74,29 +74,44 @@
                             <div v-html="availableBandwidthHuman(host)"></div>
                         </td>
                         <td class="border-top-0 text-center py-2">
-                            <span class="font-16 badge badge-pill badge-secondary">
-                                <i v-if="host.core_count >= 8" class="fas fa-bolt"
-                                    style="color: rgb(252, 224, 68);"></i>
-                                <b>
-                                    [[ host.core_count == '?' ? "❓" :
-                                    host.core_count]]
-                                </b>
+                            <span class="font-16 badge badge-pill shadow-sm" style="background-color: white;">
+                                <div v-if="host.core_count >= 8 && host.core_count < 16">
+                                    <i class="fas fa-bolt mr-1" style="color: rgb(252, 224, 68);"></i>
+                                    <b>
+                                        [[ host.core_count == '?' ? "❓" :
+                                        host.core_count]]
+                                    </b>
+                                </div>
+                                <div v-else-if="host.core_count >= 16">
+                                    <!-- <i class="fas fa-bolt" style="color: rgb(252, 224, 68);"></i>
+                                    <i class="fas fa-bolt mr-1" style="color: rgb(252, 178, 68);"></i> -->
+                                    <i class="fas fa-tachometer-alt mr-1" style="color: rgb(252, 126, 68);"></i>
+                                    <b>
+                                        [[ host.core_count == '?' ? "❓" :
+                                        host.core_count]]
+                                    </b>
+                                </div>
+                                <div v-else>
+                                    <b>
+                                        [[ host.core_count == '?' ? "❓" :
+                                        host.core_count]]
+                                    </b>
+                                </div>
                             </span>
                         </td>
                         <td class="border-top-0 text-center py-2">
                             <a :href="host.url">
-                                <template v-if="host.software === 'MM'">
+                                <!-- <template v-if="host.software === 'MM'">
                                     <div class="btn btn-warning btn-rounded font-12 text-white">
                                         <b>BETA</b><i class="ml-1 fa fa-play text-white
                                                                     font-14" data-toggle="tooltip" title="Online"></i>
                                     </div>
-                                </template>
-                                <template v-else>
-                                    <button type="button" class="btn btn-rounded btn-primary">
-                                        <i class="fa fa-play text-white font-14" data-toggle="tooltip"
-                                            title="Online"></i>
-                                    </button>
-                                </template>
+                                </template> -->
+                                <!-- <template v-else> -->
+                                <button type="button" class="btn btn-rounded btn-primary">
+                                    <i class="fa fa-play text-white font-14" data-toggle="tooltip" title="Online"></i>
+                                </button>
+                                <!-- </template> -->
                             </a>
                         </td>
                     </tr>
