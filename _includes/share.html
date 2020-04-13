@@ -1,53 +1,44 @@
-<social-sharing url="https://vuejs.org/" title="The Progressive JavaScript Framework"
-    description="Intuitive, Fast and Composable MVVM for building interactive interfaces."
-    quote="Vue is a progressive framework for building user interfaces." hashtags="vuejs,javascript,framework"
-    twitter-user="vuejs" inline-template>
-    <div>
-        <p>CIAO</p>
-        <network network="email">
-            <i class="fa fa-envelope"></i> Email
-        </network>
-        <network network="facebook">
-            <i class="fa fa-facebook"></i> Facebook
-        </network>
-        <network network="googleplus">
-            <i class="fa fa-google-plus"></i> Google +
-        </network>
-        <network network="line">
-            <i class="fa fa-line"></i> Line
-        </network>
-        <network network="linkedin">
-            <i class="fa fa-linkedin"></i> LinkedIn
-        </network>
-        <network network="odnoklassniki">
-            <i class="fa fa-odnoklassniki"></i> Odnoklassniki
-        </network>
-        <network network="pinterest">
-            <i class="fa fa-pinterest"></i> Pinterest
-        </network>
-        <network network="reddit">
-            <i class="fa fa-reddit"></i> Reddit
-        </network>
-        <network network="skype">
-            <i class="fa fa-skype"></i> Skype
-        </network>
-        <network network="sms">
-            <i class="fa fa-commenting-o"></i> SMS
-        </network>
-        <network network="telegram">
-            <i class="fa fa-telegram"></i> Telegram
-        </network>
-        <network network="twitter">
-            <i class="fa fa-twitter"></i> Twitter
-        </network>
-        <network network="vk">
-            <i class="fa fa-vk"></i> VKontakte
-        </network>
-        <network network="weibo">
-            <i class="fa fa-weibo"></i> Weibo
-        </network>
-        <network network="whatsapp">
-            <i class="fa fa-whatsapp"></i> Whatsapp
-        </network>
+<div class="row">
+    <div class="col-12">
+        <button class="btn font-18" data-sharer="whatsapp" data-title="Inizia la videoconferenza!"
+            v-bind:data-url="[[ url_room ]]"><i class="rounded-circle fab fa-whatsapp mr-3 text-white"
+                style="padding: 10px; background-color: #43d854;"></i><b style="color: #313131;">WhatsApp</b></button>
     </div>
-</social-sharing>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button class="btn font-18" data-sharer="telegram" data-title="Inizia la videoconferenza!"
+            v-bind:data-url="[[ url_room ]]"><i class="rounded-circle fab fa-telegram mr-3 text-white"
+                style="padding: 10px; background-color: #00405d;"></i><b style="color: #313131;">Telegram</b></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button class="btn font-18" data-sharer="facebook" data-hashtag="iorestoacasawork, fabriano, isolatimanonsoli"
+            v-bind:data-url="[[ url_room ]]"><i class="rounded-circle fab fa-facebook mr-3 text-white"
+                style="padding: 10px; background-color: #3b5998;"></i><b style="color: #313131;">Facebook</b></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button class="btn font-18" data-sharer="reddit" v-bind:data-url="[[ url_room ]]"><i
+                class="rounded-circle fab fa-reddit-alien mr-3 text-white"
+                style="padding: 10px; background-color: #ff4500;"></i><b style="color: #313131;">Reddit</b></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button class="btn font-18" data-sharer="twitter" data-hashtag="iorestoacasawork, fabriano, isolatimanonsoli"
+            data-title="Inizia la videoconferenza!" v-bind:data-url="[[ url_room ]]"><i
+                class="rounded-circle fab fa-twitter mr-3 text-white"
+                style="padding: 10px; background-color: #55acee;"></i><b style="color: #313131;">Twitter</b></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button class="btn font-18" data-sharer="email" data-title="Inzia la videoconferenza!"
+            v-bind:data-url="[[ url_room ]]" data-subject="Utilizza la piattaforma iorestoacasa.work!"><i
+                class="rounded-circle fas fa-envelope mr-3 text-white bg-primary" style="padding: 10px;"></i><b
+                style="color: #313131;">Mail</b></button>
+    </div>
+</div>

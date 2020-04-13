@@ -107,8 +107,9 @@ layout: page
     <script src="./dist/js/sidebarmenu.js"></script>
     <script src="./dist/js/custom.js"></script>
 
-    <script src="./dist/js/vue-social-sharing.min.js"></script>
     <script src="./dist/js/swiper.min.js"></script>
+
+    <script src="./dist/js/sharer.min.js"></script>
 
     <script src="dist/js/vue.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
@@ -123,6 +124,7 @@ layout: page
                 hosts: [],
                 room: "",
                 prefSw: String,
+                url_room: String,
             },
             mounted: function () {
                 this.loadHosts();
@@ -149,6 +151,7 @@ layout: page
             methods: {
                 savePrefSw: function (sw) {
                     this.prefSw = sw
+                    this.fullLinkRoom()
                     this.goNextSlide();
                 },
                 goNextSlide: function () {
@@ -158,22 +161,27 @@ layout: page
                     this.swiper.slideTo(1);
                 },
                 goToRoom: function (e) {
+                    window.open(this.url_room);
+                    this.room = '';
+                    this.swiper.slideTo(0);
+                },
+                getHashtag: function () {
+                    return this.hashtags[Math.floor(Math.random() * this.hashtags.length)]
+                },
+                fullLinkRoom: function () {
                     if (this.room === "") {
                         this.room = Math.random().toString(36).substring(2, 15) +
                             Math.random().toString(36).substring(2, 15);
                     }
                     this.room = this.room.replace(/([^a-z0-9]+)/gi, '-');
 
-                    let base_url = this.hosts.find(u => u.software === e).url;
+                    let base_url = this.hosts.find(u => u.software === this.prefSw).url;
                     if (base_url.slice(-1) !== '/')
                         base_url += '/';
-                    window.open(base_url + this.room);
-                    this.room = '';
-                    this.swiper.slideTo(0);
-                },
-                getHashtag: function () {
-                    return this.hashtags[Math.floor(Math.random() * this.hashtags.length)]
+
+                    this.url_room = base_url + this.room
                 }
+
             },
         })
     </script>

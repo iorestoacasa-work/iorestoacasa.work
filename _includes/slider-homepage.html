@@ -106,7 +106,7 @@
                                     <p class="card-text">Collegati subito alla stanza creata! Potrai comunque
                                         condividere il link</p>
                                     <br>
-                                    <button v-on:click="goToRoom(prefSw)" class="mt-auto btn btn-success btn-rounded
+                                    <button v-on:click="goToRoom()" class="mt-auto btn btn-success btn-rounded
                                         float-right"><b>CONNETTITI</b><i class="ml-2 fas fa-play"></i></button>
                                 </div>
                             </div>
@@ -116,9 +116,8 @@
                                     <p class="card-text">Condividi rapidamente il link con chi
                                         vuoi e poi collegati alla chiamata</p>
                                     <br>
-                                    <button data-toggle="modal" data-target="#exampleModalLong" class="mt-auto btn btn-primary btn-rounded
+                                    <button data-toggle="modal" data-target="#shareModal" class="mt-auto btn btn-primary btn-rounded
                                         float-right"><b>CONDIVIDI</b><i class="fas fa-share ml-2"></i></button>
-
                                 </div>
                             </div>
                         </div>
@@ -130,17 +129,10 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-bottom" role="document">
-        <div class="modal-content" style="border: 0px !important; border-radius: 0px 0px 0px 0px !important;">
-            <div class="modal-header modal-colored-header bg-light" style="border-radius:0px 0px 0px 0px;">
-                <h3 class="modal-title text-dark" id="exampleModalLongTitle"><b>Condividi adesso!</b>
-                </h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span><i style="color: rgb(32, 32, 32);" data-feather="x"></i></span>
-                </button>
-            </div>
+        <div class="modal-content" style="border: 0px !important; border-radius: 25px 25px 0px 0px !important;">
             <div class="modal-body">
                 {% include share.html %}
             </div>
