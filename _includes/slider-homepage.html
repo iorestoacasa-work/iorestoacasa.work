@@ -41,7 +41,7 @@
                     socializzare in questo periodo di emergenza!</div>
                 <div class="input-group">
                     <input v-model="room" v-on:keydown.enter="goNextSlide()" id="auto-room" autofocus="autofocus"
-                        class="form-control" id="room-name" placeholder="Scrivi un nome per la tua videochiamata">
+                        class="form-control" id="room-name" placeholder="Scrivi un nome">
                     <div class="input-group-append">
                         <button v-on:click="goNextSlide()" class="btn btn-primary" type="button">
                             <b>INIZIA</b>
@@ -140,3 +140,15 @@
         </div>
     </div>
 </div>
+
+<script>
+    if (/iPhone|iPad|Android/.test(navigator.appVersion)) {
+        window.addEventListener("resize", function () {
+            if (document.activeElement.tagName == "INPUT" || document.activeElement.tagName == "TEXTAREA") {
+                document.getElementById("footer-page").style.display = "none"
+            } else {
+                document.getElementById("footer-page").style.display = "initial"
+            }
+        })
+    }
+</script>
