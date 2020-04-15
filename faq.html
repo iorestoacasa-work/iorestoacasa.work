@@ -58,7 +58,7 @@ layout: page
                                     data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
                                     <b>È gratuito?</b>
                                 </button>
-                                <button class="btn btn-link float-right">
+                                <button class="btn btn-link btn-copy float-right" data-clipboard-id="#collapse1" data-clipboard-text="">
                                     <i class="fas fa-link"></i>
                                 </button>
                             </h5>
@@ -66,8 +66,7 @@ layout: page
 
                         <div id="collapse1" class="collapse" aria-labelledby="headingOne" data-parent="#accordionWork">
                             <div class="card-body">
-                                Si, il servizio è gratuito, puoi usarlo con chi vuoi: colleghi, studenti, parenti, amici
-                                e nemici!
+                                Si, il servizio è gratuito, puoi usarlo con chi vuoi: colleghi, studenti, parenti, amici e nemici!
                             </div>
                         </div>
                     </div>
@@ -79,7 +78,7 @@ layout: page
                                     data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                                     <b>Quante persone possono partecipare alla stessa videochiamata?</b>
                                 </button>
-                                <button class="btn btn-link float-right">
+                                <button class="btn btn-link btn-copy float-right" data-clipboard-id="#collapse2" data-clipboard-text="">
                                     <i class="fas fa-link"></i>
                                 </button>
                             </h5>
@@ -99,10 +98,9 @@ layout: page
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
                                     data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                    <b>Abbiamo problemi audio / video: non ci ci sentiamo, si scollega, si sente "a
-                                        scatti".</b>
+                                    <b>Abbiamo problemi audio / video: non ci ci sentiamo, si scollega, si sente "a scatti".</b>
                                 </button>
-                                <button class="btn btn-link float-right">
+                                <button class="btn btn-link btn-copy float-right" data-clipboard-id="#collapse3" data-clipboard-text="">
                                     <i class="fas fa-link"></i>
                                 </button>
                             </h5>
@@ -134,13 +132,13 @@ layout: page
                                         Modificando hostname nel <code>.env</code> la configurazione di NGINX non cambia
                                     </b>
                                 </button>
-                                <button class="btn btn-link float-right">
+                                <button class="btn btn-link btn-copy float-right" data-clipboard-id="#collapse4" data-clipboard-text="">
                                     <i class="fas fa-link"></i>
                                 </button>
                             </h5>
                         </div>
 
-                        <div id="collapse5" class="collapse" aria-labelledby="headingOne" data-parent="#accordionWork">
+                        <div id="collapse4" class="collapse" aria-labelledby="headingOne" data-parent="#accordionWork">
                             <div class="card-body">
                                 Bisogna eliminare i file generati, che di default vengono memorizzati in:
                                 <br><br><code>~/.jitsi-meet-cfg/</code><br><br>
@@ -156,19 +154,19 @@ layout: page
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
-                                    data-target="#collapse6" aria-expanded="false" aria-controls="collapse4">
+                                    data-target="#collapse6" aria-expanded="false" aria-controls="#collapse5">
                                     <b>Quali porte devo aprire per ospitare Jitsi Meet?</b>
                                 </button>
-                                <button class="btn btn-link float-right">
+                                <button class="btn btn-link btn-copy float-right" data-clipboard-id="#collapse5" data-clipboard-text="">
                                     <i class="fas fa-link"></i>
                                 </button>
                             </h5>
                         </div>
 
-                        <div id="collapse6" class="collapse" aria-labelledby="headingOne" data-parent="#accordionWork">
+                        <div id="collapse5" class="collapse" aria-labelledby="headingOne" data-parent="#accordionWork">
                             <div class="card-body">
-                                Le porte da aprire sono descritte qui: <a
-                                    href="https://github.com/jitsi/docker-jitsi-meet#external-ports">https://github.com/jitsi/docker-jitsi-meet#external-ports</a><br>
+                                Le porte da aprire sono descritte qui:
+                                <a href="https://github.com/jitsi/docker-jitsi-meet#external-ports">https://github.com/jitsi/docker-jitsi-meet#external-ports</a><br>
                                 <br>A quelle dovrai aggiungere una porta TCP (HTTP) a tua scelta dove esporre le
                                 metriche.
                             </div>
@@ -188,9 +186,12 @@ layout: page
     <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./dist/js/app-style-switcher.js"></script>
     <script src="./dist/js/feather.min.js"></script>
+    <script src="./assets/libs/clipboard.min.js"></script>
     <!-- <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script> -->
     <script src="./dist/js/sidebarmenu.js"></script>
     <script src="./dist/js/custom.js"></script>
+    <script src="./dist/js/faq.js"></script>
+
 </body>
 
 </html>
