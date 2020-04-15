@@ -11073,7 +11073,7 @@ fieldset:disabled a.btn {
 .card-footer,
 .card-header {
   padding: 0.75rem 25px;
-  background-color: rgba(0, 0, 0, 0.03);
+  /* background-color: rgba(0, 0, 0, 0.03); */
 }
 
 .card-title {
