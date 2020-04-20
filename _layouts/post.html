@@ -5,6 +5,10 @@ layout: page
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
+<head>
+    {% include head.html %}
+</head>
+
 <body>
     <div class="preloader">
         <div class="lds-ripple">
@@ -14,12 +18,11 @@ layout: page
     </div>
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
-        {% include header.html %}
 
+        {% include header.html %}
         {% include sidebar.html %}
 
         <div class="page-wrapper">
-
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 align-self-center">
@@ -52,11 +55,10 @@ layout: page
                         </div>
                     </div>
                 </div>
-
             </div>
-            {%include footer.html%}
-
         </div>
+
+        {%include footer.html%}
 
         <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
         <script src="/assets/libs/popper.js/dist/umd/popper.min.js"></script>
