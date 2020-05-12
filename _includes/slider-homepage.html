@@ -41,9 +41,11 @@
                     socializzare in questo periodo di emergenza!</div>
                 <div class="input-group">
                     <input v-model="room" v-on:keydown.enter="goNextSlide()" id="auto-room" autofocus="autofocus"
-                        class="form-control" id="room-name" placeholder="Scrivi un nome">
+                        class="form-control" id="room-name" placeholder="Scrivi un nome" style="border-top-left-radius: 25px; border-bottom-left-radius: 25px;
+                        background-color:#579bde1f; border: 0px solid #e9ecef00;">
                     <div class="input-group-append">
-                        <button v-on:click="goNextSlide()" class="btn btn-primary" type="button">
+                        <button v-on:click="goNextSlide()" class="btn btn-primary" type="button"
+                            style="border-top-right-radius: 25px; border-bottom-right-radius: 25px;">
                             <b>INIZIA</b>
                         </button>
                     </div>
