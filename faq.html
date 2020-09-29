@@ -75,7 +75,7 @@ layout: page
 
                     <div class="card">
                         <div class="card-header" id="headingOne">
-                            <div class="mb-0">
+                            <div class="mb-0 text-center-mob">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq2"
                                     aria-expanded="false" aria-controls="faq2">
                                     <b>Quante persone possono partecipare alla stessa videochiamata?</b>
@@ -89,9 +89,19 @@ layout: page
 
                         <div id="faq2" class="collapse" aria-labelledby="headingOne" data-parent="#accordionWork">
                             <div class="card-body">
-                                Il limite per una singola conferenza è di circa 50 persone.
-                                Ognuno dei server che trovi nella tabella è in grado di gestire un carico di questo
-                                tipo.<br>
+                                In genere si partecipa tranquillamente ad una chiamata con decine di persone a
+                                condizione che in video siano meno di 10-15. Per questo, il moderatore della chiamata,
+                                può fare partire i nuovi partecipanti con audio e video spenti, per non arrivare a
+                                saturare subito la banda Internet.
+                                Sul lato tecnico, la risposta dipende principalmente dall'utilizzo della banda Internet
+                                di chi partecipa, difatti normalmente chi partecipa manda un flusso audio/video e
+                                riceve
+                                molti flussi audio/video. Questo, se la propria connessione non è buona, genera una
+                                cattiva visualizzazione della chiamata. <br><br>Di norma andrebbero evitate le
+                                connessioni
+                                telefoniche (indicate con nomi quali 3G, 4G, LTE) e potrebbero andare bene quella Wi-Fi
+                                se si è vicini ad un router, ma si preferisce sicuramente la connessione via cavo fino
+                                al router che a sua volta andrebbe connesso ad Internet tramite fibra.
                             </div>
                         </div>
                     </div>
@@ -197,14 +207,89 @@ layout: page
 
                         <div id="faq6" class="collapse" aria-labelledby="headingOne" data-parent="#accordionWork">
                             <div class="card-body">
-                                Puoi bloccare la stanza sia su Jitsi che su Multiparty-Meeting.
+                                Puoi bloccare la stanza sia su Jitsi che su eduMEET.
                                 <br>
                                 <br>
                                 Su Jitsi puoi impostare una password quando gli ospiti desiderati sono entrati, su
-                                Multiparty-Meeting invece puoi premere sull'icona del lucchetto per bloccare l'accesso.
+                                eduMEET invece puoi premere sull'icona del lucchetto per bloccare l'accesso.
                             </div>
                         </div>
                     </div>
+
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <div class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq7"
+                                    aria-expanded="false" aria-controls="faq7">
+                                    <b>Come posso prenotare (un link per) una stanza?</b>
+                                </button>
+                                <button class="btn btn-link btn-copy float-right" data-clipboard-id="#faq7"
+                                    data-clipboard-text="">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="faq7" class="collapse" aria-labelledby="headingOne" data-parent="#accordionWork">
+                            <div class="card-body">
+                                Ogni stanza ha un nome e viene aperta quando qualcuno vi accede. Il primo che vi accede
+                                ne è il moderatore e ha alcuni controlli aggiuntivi rispetto ai normali partecipanti.
+                                Quando il moderatore esce dalla stanza, un altro diventa il moderatore. Quando tutti
+                                escono dalla stanza, la stanza viene chiusa. La stanza corrisponde ad un link nel
+                                formato <i>http://nomeserver/nomestanza</i>.
+                                Non c'è un servizio di prenotazione: il primo che usa un certo nome diventa il
+                                moderatore della stanza. Il normale modus operandi è di aprire una nuova stanza,
+                                bloccarla con una password e inviare ai partecipanti il link poco prima dell'inizio
+                                della riunione. Il moderatore dovrebbe rimanere sempre collegato per non perdere il suo
+                                status.
+                                <br>
+                                <br>
+                                Un modus alternativo è quello di affidarsi alle probabilità: scegliere un nome difficile
+                                per la stanza (ad esempio <i>klj2458iSDH4</i> è sconsigliato usare simboli e spazi
+                                perché
+                                potrebbe essere richiesta la loro codifica all'interno dei link), inviare il link
+                                costruito con quel nome e la password che si imposterà ai partecipanti anche giorni
+                                prima della riunione, collegarsi alla stanza per tempo in modo da essere comunque il
+                                primo e diventarne moderatore e impostare la password comunicata. La probabilità gioca a
+                                favore perché probabilmente nessun altro starà usando quel nome per una riunione
+                                diversa.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <div class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq9"
+                                    aria-expanded="false" aria-controls="faq9">
+                                    <b>Ci sono differenze tra i server di iorestoacasa?</b>
+                                </button>
+                                <button class="btn btn-link btn-copy float-right" data-clipboard-id="#faq9"
+                                    data-clipboard-text="">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="faq9" class="collapse" aria-labelledby="headingOne" data-parent="#accordionWork">
+                            <div class="card-body">
+                                Sì, ci sono molte differenze: alcuni utilizzano la videoconferenza basata su
+                                <b>Jisti</b> e
+                                altri su <b>eduMEET</b>. Inoltre, anche se usano lo stesso software, alcuni server hanno
+                                abilitate opzioni diverse da altri; infine alcuni sono su macchine con maggiori
+                                prestazioni o più banda. Di norma, per chiamate non troppo affollate, un server vale
+                                l'altro, ma se si prevede una grossa affluenza, è meglio scegliere un server con un
+                                carico basso o con maggiore potenza.
+                                <br>
+                                <br>
+                                Per scegliere il server, dalla pagina principale di
+                                iorestoacasa, selezionare la voce di menu «Server» sulla sinistra e sceglierne uno
+                                dell'elenco in base alle indicazioni sul carico dei singoli server e alle proprie
+                                preferenze riguardo il software.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
